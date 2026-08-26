@@ -66,6 +66,7 @@ module.exports = function(eleventyConfig) {
   
   // --- 5. Directory Config ---
   return {
+    pathPrefix: "/blog", 
     dir: {
       input: ".",          
       output: "_site",     
