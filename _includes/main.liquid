@@ -60,6 +60,9 @@ title: Default title
 
 
             <h2>{{ title }}</h2>
+
+            <div class="blog-navigation>
+
                       <li class="nav-item">
               <a 
                 {% if page.url == "/" %}
@@ -77,7 +80,7 @@ title: Default title
                 {% endif %}
               href="/archive">Archives</a>
             </li>
-            
+            </div>
 	          {{ content }}
         </div>
 
