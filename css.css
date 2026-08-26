@@ -392,6 +392,15 @@ h2 {
 h1 span {display: inline-block; margin-top: 50px;}
 
 
+/*BLOG*/
+
+li .nav-item {
+  display: inline-block;
+  list-style-type: none;
+  	padding:0px;
+}
+
+
 #right-side {
 	width:47px;
 	background-image: url(../assets/lace-right.png);
