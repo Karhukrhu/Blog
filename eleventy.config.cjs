@@ -69,7 +69,7 @@ eleventyConfig.addFilter("niceDate", function(dateObj) {
   
   // --- 5. Directory Config ---
   return {
-
+    pathPrefix: "/blog", 
     dir: {
       input: ".",          
       output: "_site",     
