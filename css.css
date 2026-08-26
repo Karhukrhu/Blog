@@ -434,7 +434,7 @@ li.nav-item {
 .post-date {
   margin-left: auto; /* Pushes date to the far right */
   white-space: nowrap; 
-  font-size: 10px;
+  font-size: 11px;
   opacity: 0.75;
 }
 
