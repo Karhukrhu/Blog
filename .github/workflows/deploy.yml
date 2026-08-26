@@ -28,7 +28,7 @@ jobs:
         with:
           API_KEY: ${{ secrets.NEKOWEB_API_KEY }}
           BUILD_DIR: './_site'
-          DEPLOY_DIR: '/karhukarhu.nekoweb.org/blog' 
+          DEPLOY_DIR: '/karhukarhu.nekoweb.org/blog'  # <-- NO trailing slash here!
           CLEANUP: 'True'
-          DELAY: '1.5'                           # <-- Increased from 0.5 to prevent 429 errors
+          DELAY: '1.5'                                # <-- Keeps it from getting 429 errors
           NEKOWEB_PAGENAME: 'karhukarhu'
