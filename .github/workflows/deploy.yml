@@ -28,6 +28,7 @@ jobs:
         with:
           API_KEY: ${{ secrets.NEKOWEB_API_KEY }}
           BUILD_DIR: './_site'
-          DEPLOY_DIR: 'karhukarhu.nekoweb.org/blog'
+          DEPLOY_DIR: '/karhukarhu.nekoweb.org'  # <-- Removed '/blog' so it goes to the root
           CLEANUP: 'True'
-          NEKOWEB_PAGENAME: 'Karhukarhu'
+          DELAY: '1.5'                           # <-- Increased from 0.5 to prevent 429 errors
+          NEKOWEB_PAGENAME: 'karhukarhu'
