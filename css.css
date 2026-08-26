@@ -405,6 +405,15 @@ li.nav-item {
   	padding:0px;
 }
 
+.post-title {
+  display: inline-block;
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
+
 .post-date {
   display: inline;
   float:right;
