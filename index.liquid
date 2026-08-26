@@ -3,13 +3,15 @@ title: Blog
 layout: main
 ---
 
-<div class="post-list-wrapper">
 {% for post in collections.post reversed %}
 
-<div class="post-header">
-<a class="post-title" href="{{post.url}}">{{ post.data.title }}</a> <div class="post-date">{{ post.date | niceDate }}</div> <br/>
-</div>
-{% excerpt post %}
+  <div class="post-list-wrapper">
+    <div class="post-header">
+      <a class="post-title" href="{{post.url}}">{{ post.data.title }}</a> 
+      <div class="post-date">{{ post.date | niceDate }}</div> 
+    </div>
+    
+    {% excerpt post %}
+  </div>
 
 {% endfor %}
-</div>
