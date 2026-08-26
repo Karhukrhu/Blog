@@ -400,6 +400,11 @@ li.nav-item {
   	padding:0px;
 }
 
+.post-date {
+  display: inline-block;
+  float:right;
+}
+
 
 #right-side {
 	width:47px;
