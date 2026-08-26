@@ -15,10 +15,11 @@ pagination:
     <div class="post-header">
       <a class="post-title" href="{{post.url}}">{{ post.data.title }}</a> 
       <div class="post-date">{{ post.date | niceDate }}</div> 
+    </div>
 {% excerpt post %}
 
 {% endfor %}
-    </div>
+
 <p>
 {% if pagination.href.previous %}
 <a href=" {{ pagination.href.previous }}">Previous</a>
