@@ -12,6 +12,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addPassthroughCopy("css.css");
+  eleventyConfig.addPassthroughCopy("assets");
 
   // --- Helper to guarantee categories is always an array ---
   const getCategoriesArray = (categories) => {
