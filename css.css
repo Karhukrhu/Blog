@@ -214,6 +214,13 @@ h2 {
 	font-weight: 300;
 }
 
+h3 {
+    font-size:12px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color:#2d300e;
+}
+
 #the-content p {
 	line-height:2;
 	color:#432d14;
