@@ -11,6 +11,8 @@ module.exports = function(eleventyConfig) {
   // 3. Add the RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
+  eleventyConfig.addPassthroughCopy("css.css");
+
   // --- Helper to guarantee categories is always an array ---
   const getCategoriesArray = (categories) => {
     if (!categories) return [];
