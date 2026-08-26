@@ -66,6 +66,50 @@ eleventyConfig.addFilter("niceDate", function(dateObj) {
   
 
   eleventyConfig.addPassthroughCopy("blog/images/*");
+
+    // --- Tag Cloud Collection ---
+  eleventyConfig.addCollection("tagCloud", function(collectionApi) {
+    let categories = {};
+    let posts = collectionApi.getFilteredByTag('post');
+
+    // 1. Count how many posts are in each category
+    posts.forEach(post => {
+      let cats = post.data.categories || [];
+      if (!Array.isArray(cats)) cats = [cats];
+      cats.forEach(cat => {
+        categories[cat] = (categories[cat] || 0) + 1;
+      });
+    });
+
+    // 2. Find the lowest and highest counts to scale the sizes
+    let counts = Object.values(categories);
+    let minCount = Math.min(...counts);
+    let maxCount = Math.max(...counts);
+
+    // 3. Build the cloud and calculate font sizes
+    let cloud = Object.keys(categories).map(cat => {
+      let count = categories[cat];
+      
+      // Calculate size between 1rem (smallest) and 2.5rem (largest)
+      let fontSize = 1; 
+      if (maxCount > minCount) {
+        fontSize = 1 + ((count - minCount) / (maxCount - minCount)) * 1.5;
+      }
+
+      return {
+        name: cat,
+        count: count,
+        slug: cat.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]/g, ''),
+        fontSize: fontSize.toFixed(2) + 'rem' // e.g., "1.85rem"
+      };
+    });
+
+    // 4. Sort alphabetically so it looks like a nice cloud
+    cloud.sort((a, b) => a.name.localeCompare(b.name));
+
+    return cloud;
+  });
+  
   
   // --- 5. Directory Config ---
   return {

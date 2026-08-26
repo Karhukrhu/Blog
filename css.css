@@ -352,6 +352,35 @@ h3 {
   letter-spacing: 2px;
 }
 
+/* Tag Cloud Styles */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px 0;
+  align-items: baseline; /* Aligns text nicely even with different font sizes */
+}
+
+.tag-cloud-item {
+  text-decoration: none;
+  color: #5c4033; /* A nice dark brown */
+  transition: opacity 0.2s ease;
+  line-height: 1.2;
+}
+
+.tag-cloud-item:hover {
+  opacity: 0.6;
+  text-decoration: underline;
+}
+
+.tag-count {
+  font-size: 0.5em; /* Makes the number much smaller than the category name */
+  vertical-align: super;
+  opacity: 0.7;
+  font-weight: normal;
+}
+
+
 .post-content {
   grid-column: 2; 
   grid-row: 2;
