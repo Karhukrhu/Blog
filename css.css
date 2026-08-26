@@ -412,6 +412,9 @@ li.nav-item {
   	padding:0px;
 }
 
+.post-list-wrapper {
+  margin-bottom:20px;
+}
 .post-header {
   display: flex;
   justify-content: space-between;

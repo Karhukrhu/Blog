@@ -3,6 +3,7 @@ title: Blog
 layout: main
 ---
 
+<div class="post-list-wrapper">
 {% for post in collections.post reversed %}
 
 <div class="post-header">
@@ -11,3 +12,4 @@ layout: main
 {% excerpt post %}
 
 {% endfor %}
+</div>
