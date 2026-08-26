@@ -10,12 +10,11 @@ layout: main
 <p>
   <strong>Posted: </strong> {{ date | niceDate }}<br/>
   <strong>Categories: </strong>
-
 </p>
 
 {{ content }}
 
-<p>  {% for cat in categories %}
+<p>{% for cat in categories %}
     <a href="/categories/{{ cat | slugify }}">{{ cat }}</a>{% unless forloop.last %}, {% endunless %}
   {% endfor %}
 </p>
