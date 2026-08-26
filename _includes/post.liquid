@@ -6,7 +6,7 @@ layout: main
 
 {{ content }}
 
-<p>Categories {% for cat in categories %}
+<p>{% for cat in categories %}
     <a href="/categories/{{ cat | slugify }}">{{ cat }}</a>{% unless forloop.last %}, {% endunless %}
   {% endfor %}
 </p>
