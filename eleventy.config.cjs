@@ -55,11 +55,14 @@ module.exports = function(eleventyConfig) {
 
   // --- 4. niceDate Filter (MOVED OUTSIDE!) ---
   // Added formatting options so it looks like "October 26, 2023" instead of "10/26/2023"
-  const englishDate = new Intl.DateTimeFormat("en", {
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric'
+eleventyConfig.addFilter("niceDate", function(dateObj) {
+  const formatter = new Intl.DateTimeFormat("fi-FI", {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
   });
+  return formatter.format(dateObj);
+});
   
   eleventyConfig.addFilter("niceDate", function(dateObj) {
     return englishDate.format(dateObj);
