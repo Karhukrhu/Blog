@@ -464,6 +464,19 @@ li.nav-item {
   font-size: 11px !important;
 }
 
+.archive-year {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #ccc; /* Adds a nice line under the year */
+  color: #333;
+}
+
+/* Optional: Add a little space between posts so they don't bunch up */
+.post-header {
+  margin-bottom: 15px;
+}
+
 .post-date {
   margin-left: auto; /* Pushes date to the far right */
   white-space: nowrap; 
