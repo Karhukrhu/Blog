@@ -28,6 +28,6 @@ jobs:
         with:
           API_KEY: ${{ secrets.NEKOWEB_API_KEY }}
           BUILD_DIR: './_site'
-          DEPLOY_DIR: 'blog'
+          DEPLOY_DIR: '/blog'
           CLEANUP: 'True'
           NEKOWEB_PAGENAME: 'Karhukarhu'
