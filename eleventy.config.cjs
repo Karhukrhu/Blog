@@ -91,16 +91,16 @@ eleventyConfig.addFilter("niceDate", function(dateObj) {
       let count = categories[cat];
       
       // Calculate size between 1rem (smallest) and 2.5rem (largest)
-      let fontSize = 1; 
+      let fontSize = 9; 
       if (maxCount > minCount) {
-        fontSize = 1 + ((count - minCount) / (maxCount - minCount)) * 1.5;
+        fontSize = 10 + ((count - minCount) / (maxCount - minCount)) * 12;
       }
 
       return {
         name: cat,
         count: count,
         slug: cat.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]/g, ''),
-        fontSize: fontSize.toFixed(2) + 'rem' // e.g., "1.85rem"
+        fontSize: fontSize.toFixed(2) + 'px' // e.g., "1.85rem"
       };
     });
 
@@ -109,7 +109,7 @@ eleventyConfig.addFilter("niceDate", function(dateObj) {
 
     return cloud;
   });
-  
+
   
   // --- 5. Directory Config ---
   return {
