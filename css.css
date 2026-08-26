@@ -410,6 +410,7 @@ li.nav-item {
   justify-content: space-between;
   align-items: center; /* This vertically centers them */
   width: 100%;
+  max-width: 100%;
 }
 
 .post-title {
@@ -419,9 +420,13 @@ li.nav-item {
   overflow: hidden;
   text-overflow: ellipsis;
   vertical-align: bottom;
+  flex-shrink: 0;
 }
 
-
+.post-date {
+  margin-left: auto; /* Pushes date to the far right */
+  white-space: nowrap; /* Prevents date from wrapping */
+}
 
 #right-side {
 	width:47px;
