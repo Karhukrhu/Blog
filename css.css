@@ -408,9 +408,10 @@ li.nav-item {
 .post-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* This pushes title left and date right */
+  align-items: center; /* This vertically centers them */
+  width: 100%;
 }
-
 
 .post-title {
   display: inline-block;
