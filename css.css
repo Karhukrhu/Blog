@@ -394,6 +394,11 @@ h1 span {display: inline-block; margin-top: 50px;}
 
 /*BLOG*/
 
+.blog-navigation {
+  display:block;
+}
+
+
 li.nav-item {
   display: inline-block;
   list-style-type: none;
