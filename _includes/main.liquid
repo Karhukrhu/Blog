@@ -18,46 +18,46 @@ title: Default title
 </div>
 	
 	<div id="content-wrapper">
-	<div id="top">
-		<h1><span class="num1">K</span><span class="num2">a</span><span class="num3">r</span><span class="num4">h</span><span class="num5">u</span><span class="num6">k</span><span class="num7">a</span><span class="num8">r</span><span class="num9">h</span><span class="num10">u</span></h1>
-	</div>
 	
-<div class="grid-container">
-  <div id="left-side"></div>
-  <div id="content">
+    <div id="top">
+		  <h1><span class="num1">K</span><span class="num2">a</span><span class="num3">r</span><span class="num4">h</span><span class="num5">u</span><span class="num6">k</span><span class="num7">a</span><span class="num8">r</span><span class="num9">h</span><span class="num10">u</span></h1>
+	  </div>
+	
+    <div class="grid-container">
+      <div id="left-side"></div>
+      <div id="content">
   	  	<div id="daisies"></div>
   	  	
   	  	<div id="menu-text">↓ menu ↓ </div>
   	  	
   	  	<nav id="navigation">
-  		<div class="link"><a href="index.html">Home</a></div>
+  		    <div class="link"><a href="index.html">Home</a></div>
   		
-  		<div class="dropdown">
-  		<div class="link">About</div>
+  		    <div class="dropdown">
+  		      <div class="link">About</div>
   		
-  			  <div class="dropdown-content">
-    			<a href="site.html">site</a>
-   				<a href="me.html">Me</a>
- 			 </div>
- 	 	</div>
+  			    <div class="dropdown-content">
+    			    <a href="site.html">site</a>
+   				    <a href="me.html">Me</a>
+ 			      </div>
+ 	        </div>
  			 
-  		<div class="link"><a href="art.html">Art</a></div>
-  		<div class="link"><a href="blog.html">Blog</a></div>
-  		  		<div class="dropdown">
-  		<div class="link">Hi!</div>
+  		    <div class="link"><a href="art.html">Art</a></div>
+  		    <div class="link"><a href="blog.html">Blog</a></div>
+  		  	<div class="dropdown">
+  		      <div class="link">Hi!</div>
   		
-  		  	<div class="dropdown-content">
-    			<a href="gbook.html">gbook</a>
-   				<a href="email.html">email</a>
- 			 </div>
-  		</div>
+  		  	  <div class="dropdown-content">
+    			    <a href="gbook.html">gbook</a>
+   				    <a href="email.html">email</a>
+ 			      </div>
+  		    </div>
+  		
+  		    </nav>
   		
   		
-  		</nav>
-  		
-  		
-  	<div id="the-content">
-            <li class="nav-item">
+  	    <div id="the-content">
+          <li class="nav-item">
               <a 
                 {% if page.url == "/" %}
                 class="nav-link active" aria-current="page"
@@ -86,12 +86,11 @@ title: Default title
           </ul> 
         </div>
       </div>
-    </nav>
 
-    <h1>{{ title }}</h1>
+    <h2>{{ title }}</h2>
 
 	  {{ content }}
-	</div>
+
 </div>
   		<div id="watering"></div>
   	</div>
