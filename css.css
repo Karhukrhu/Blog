@@ -394,7 +394,7 @@ h1 span {display: inline-block; margin-top: 50px;}
 
 /*BLOG*/
 
-li .nav-item {
+li.nav-item {
   display: inline-block;
   list-style-type: none;
   	padding:0px;
