@@ -93,7 +93,7 @@ eleventyConfig.addFilter("niceDate", function(dateObj) {
       // Calculate size between 1rem (smallest) and 2.5rem (largest)
       let fontSize = 9; 
       if (maxCount > minCount) {
-        fontSize = 10 + ((count - minCount) / (maxCount - minCount)) * 12;
+        fontSize = 8 + ((count - minCount) / (maxCount - minCount)) * 12;
       }
 
       return {
