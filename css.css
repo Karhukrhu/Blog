@@ -1,0 +1,682 @@
+
+
+
+
+@font-face {
+  font-family: cavalhatriz; 
+  src: url(assets/Cavalhatriz.ttf); 
+}
+
+@font-face {
+  font-family: rat; 
+  src: url(assets/rat-typewriter.ttf); 
+}
+
+html, body, *, *::before, *::after {
+  cursor: none !important;
+  
+}
+
+#custom-gif-cursor {
+  cursor: none !important;         
+  pointer-events: none !important; 
+  position: fixed;
+  display: none;
+  z-index: 2147483647;
+
+}
+
+
+iframe, video, canvas, svg, object, embed {
+  cursor: none !important;
+}
+
+
+body, html {
+	background-image: url(assets/bckgr2.png);
+	margin:0;
+	padding:0;
+	cursor: none !important;
+		height:100%;
+}
+
+#custom-gif-cursor {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  pointer-events: none; 
+  z-index: 9999;
+  margin: 0;
+  padding: 0;
+}
+
+
+#custom-gif-cursor img {
+  display: block;
+  transform: translate(-50%, -50%); 
+}
+
+
+::-moz-selection { /* Code for Firefox */
+  color: #f3d5b1;
+  background: #855c28;
+}
+
+::selection {
+  color: #f3d5b1;
+  background: #855c28;
+}
+
+
+
+#content-wrapper {
+	margin: 0 auto;
+	height: auto; 
+    position: relative; 
+    width: 490px;
+}
+
+#top {
+	height:216px;
+	width:490px;
+	background-image: url(assets/top2.png);
+	background-repeat: no-repeat;
+	margin-left: calc(50% + 2px);
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+.grid-container {
+	width:479px;
+  display: grid;
+  grid-template-columns: 42px 395px 42px;
+  gap: 0rem;
+  margin:0 auto;
+}
+
+#left-side {
+	width:47px;
+	background-image: url(assets/lace-left.png);
+	background-repeat: repeat-y;
+}
+
+nav#navigation {
+	position: relative;
+	text-align: center;
+	padding:20px 0px 50px 0px;
+	font-size:9px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	z-index: 1000;
+}
+
+nav .link a, nav .link a:visited {
+	display: inline-block;
+	text-decoration: none;
+	color:#2d300e;
+}
+
+.link  {
+	  display: inline-block;
+	  vertical-align: middle;
+	  line-height: 30px;
+	width:60px;
+	height:26px;
+	margin:2px;
+	background-image: url(assets/button_up.png);	
+	z-index: 1000;
+}
+
+.link a:hover, .link a:active, .link a:focus {
+	width:60px;
+	height:26px;
+	background-image: url(assets/button_down.png);	
+	z-index: 1000;
+}
+
+
+
+.dropdown {
+	  position: relative;
+	  display: inline-block;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top:23px;
+  left:2px;
+  width: 60px;
+}
+.dropdown-content::after {
+	display: block;
+	content:" ";
+	width:60px;
+	height:6px;
+	background-image: url(assets/dropdown_bottom.png);
+}
+
+
+.dropdown-content a, .dropdown-content a:visited {
+  text-transform: lowercase;
+  color:#2d300e;
+  padding: 3px 5px;
+  font-size:9px;
+  text-decoration: none;
+    background-image: url(assets/dropdown_bckgr.png);
+  display: block;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+      background-image: url(assets/dropdown_bckgr_down.png);
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.dropdown:hover .link {
+  background-image: url(assets/button_down.png);	
+}
+
+
+#content {
+	background-color:#c09e81;
+	font-family: rat;
+	font-size: 11px;
+	padding:0px 15px 0px 15px;
+	color:#432d14;
+}
+
+#the-content {
+	padding:0px 20px 0px 20px;
+}
+
+h1 {
+	color:#2d300e;
+	font-family: cavalhatriz;
+	font-size:40px;
+	text-align: center;
+	 text-shadow: 1px 1px #fffbe2;
+	 font-weight: 300;
+}
+
+h2 {
+	margin-top:35px;
+	text-align: center;
+	color:#2d300e;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+#the-content p {
+	line-height:2;
+	color:#432d14;
+}
+
+#the-content a, a:visited {
+	text-decoration:none;
+	color:#4f533a;
+	background-color: #d1b48d;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 8px;
+	padding:6px 4px 4px 6px;
+	border-top: 1px solid #f3d5b1;
+	border-bottom: 1px solid #70480d;
+	border-right: 1px solid #70480d;
+	border-left: 1px solid #f3d5b1;
+	border-radius: 5px;
+}
+
+#the-content a:hover, a:active {
+	text-decoration:none;
+	background-color: #a19c86;
+	border-top: 1px solid #70480d;
+	border-bottom: 1px solid #f3d5b1;
+		border-right: 1px solid #f3d5b1;
+	border-left: 1px solid #70480d;
+}
+
+#the-content li {
+	margin-bottom:15px;
+	padding:0px;
+}
+
+#the-content ul {
+	padding:0px;
+}
+
+.updates {
+	width:100%;
+	max-height:100px;
+	overflow: auto;
+	background-color: #d1b48d;
+	border-top: 1px solid #70480d;
+	border-bottom: 1px solid #f3d5b1;
+		border-right: 1px solid #f3d5b1;
+	border-left: 1px solid #70480d;
+	border-radius: 5px;
+
+}
+
+.updates .row {
+	  display: flex;
+	  padding:5px 15px;
+  margin-bottom: 0px;
+}
+.updates .date {
+	white-space: nowrap; 
+	margin-right:10px;
+}
+
+.dot-table {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.dot-row {
+  display: flex;
+  align-items: baseline; 
+  margin-bottom: 12px;
+  font-family: rat;
+  font-size: 11px;
+  color: #2d300e;
+}
+
+.dot-label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap; 
+}
+
+
+.dot-line {
+  flex-grow: 1; 
+  border-bottom: 1px dotted #2d300e;
+  margin: 0 6px; 
+  position: relative;
+  top: -3px; 
+}
+
+.dot-desc {
+  white-space: nowrap; 
+}
+
+#blog-wrapper {
+	  margin-top:30px;
+}
+.blog-post {
+  display: grid;
+  grid-template-columns: 90px 1fr; 
+  grid-template-rows: auto auto;
+  gap: 10px 10px; /* 10px row gap, 30px column gap */
+  align-items: baseline;
+}
+
+.post-date {
+  grid-column: 1;
+  grid-row: 1;
+  color: #4f533a;
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.post-title {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.2;
+  color: #111;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.post-content {
+  grid-column: 2; 
+  grid-row: 2;
+  font-size: 11px;
+}
+
+.post-content p {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+
+
+.num1 {
+-webkit-transform: translate(0px, 30px) rotate(-35deg);
+}
+.num2 {
+-webkit-transform: translate(0px, 20px) rotate(-30deg);
+}
+.num3 {
+-webkit-transform: translate(0px, 15px) rotate(-25deg);
+}
+.num4 {
+-webkit-transform: translate(0px, 12px) rotate(-20deg);
+}
+.num5 {
+-webkit-transform: translate(0px, 10px) rotate(-0deg);
+}
+.num6 {
+-webkit-transform: translate(0px, 10px) rotate(0deg);
+}
+.num7 {
+-webkit-transform: translate(0px, 12px) rotate(20deg);
+}
+.num8 {
+-webkit-transform: translate(0px, 15px) rotate(25deg);
+}
+.num9 {
+-webkit-transform: translate(0px, 20px) rotate(30deg);
+}
+.num10 {
+-webkit-transform: translate(0px, 30px) rotate(35deg);
+}
+
+h1 span {display: inline-block; margin-top: 50px;}
+
+
+#right-side {
+	width:47px;
+	background-image: url(assets/lace-right.png);
+	background-repeat: repeat-y;
+}
+
+#watering {
+	position:absolute;
+	top:79px;
+	left:0px;
+	margin:0 auto;
+	width:170px;
+	height:180px;
+	background-image: url(assets/watering_can.gif);
+}
+
+#daisies {
+	position:absolute;
+	top:107px;
+	left:287px;
+	margin:0 auto;
+	width:200px;
+	height:263px;
+	background-image: url(assets/daisy_200px.png);
+	z-index: 100;
+}
+
+#menu-text {
+	text-align: center;
+	font-size:13px;
+	color:#70480d;
+	 text-shadow: 1px 1px #e2bea1;
+	 letter-spacing:3px;
+}
+
+#footer {
+	height:216px;
+	width:490px;
+	margin:0 auto;
+	background-image: url(assets/bottom.png);
+	text-align: center;
+}
+
+#footer span {
+	position:relative;
+	top:75px;
+	font-family: rat;
+	font-size: 11px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    Below you will be able to freely customize every aspect of the comment widget.
+    Most aspects of the widget are 100% able to be customized in CSS, but for strong structural changes,
+    you may have to edit the JavaScript file.
+
+    These are all the classes and IDs at your disposal!
+    Classes have a c- at the start and IDs have a c_
+    You don't need every single one for a good theme, but I tried to give as many options as possible!
+*/
+/*
+    Containers:
+        #c_widget - The container <div> for the entire widget
+        #c_inputArea - The wrapper <div> around the form
+        #c_container - The wrapper <div> around all the comments
+
+    The input form:
+        #c_form - The whole input <form>
+        #c_widgetTitle - The <h2> title at the top of the form
+
+        .c-inputWrapper- All <div> wrappers for each label/input pair
+        .c-label - All <label>s
+        .c-input - All <input>s
+
+        #c_nameWrapper - The wrapper <div> for the name field
+        .c-nameLabel - The <label> for the name field
+        .c-nameInput - The <input> for the name field
+
+        #c_websiteWrapper - The wrapper <div> for the website field
+        .c-websiteLabel - The <label> for the website field
+        .c-websiteInput - The <input> for the website field
+
+        #c_textWrapper - The wrapper <div> for the text field
+        .c-textLabel - The <label> for the text field
+        .c-textInput - The <input> for the text field
+
+        #c_submitButton - The submit button (It's an <input> element with a type of "submit")
+        #c_replyingText - The text <span> that displays when a user is replying to a comment
+
+    The comment section:
+        .c-comment - All comment <div>s
+        .c-reply - All reply <div>s (contained within parent comment <div>s)
+        .c-replyContainer - The wrapper <div> for all replies
+        .c-name - The name of the person submitting the comment/reply (an <h3> element)
+        .c-timestamp - The timestamp of when the comment/reply was made (a <span> element)
+        .c-site - The website linked at the top of the comment/reply (an <a> element)
+        .c-text - The actual text body of the comment/reply (a <p> element)
+        .c-replyButton - All reply <button>s
+        .c-expandButton - The <button>s to reveal/hide replies (These only show if s_collapsedReplies is set to true in the JS)
+        
+        #c_pagination - The <div> wrapper for the pagination at the bottom (Only shows if there's more than one page)
+        .c-paginationButton - Both left and right directional <button>s
+        #c_leftButton - The left <button>
+        #c_rightButton - The right <button>
+*/
+
+/* Main */
+#c_widget {
+    box-sizing: border-box;
+    height: 100%;
+    overflow: auto;
+    background-attachment: fixed;
+    font-family: rat;
+    font-size: 11px;
+    color: #432d14;
+}
+
+#c_widget button, #c_widget input[type=submit] {
+    padding:10px 7px 6px 10px;
+    font-family: rat;
+    font-size: 10px;
+    text-decoration: none;
+	text-align: center;
+    text-transform: uppercase;
+    background-color: #d1b48d;
+    color: #432d14;
+        border-top:1px solid #f3d5b1;
+    border-left:1px solid #f3d5b1;
+    border-right:1px solid #70480d;
+    border-bottom:1px solid #70480d;
+    border-radius: 5px;
+}
+#c_widget button:hover, #c_widget input[type=submit]:hover {
+    color: #432d14;
+    background-color: #a19c86;
+    border-top:1px solid #70480d;
+    border-left:1px solid #70480d;
+    border-right:1px solid #f3d5b1;
+    border-bottom:1px solid #f3d5b1;
+}
+#c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity:0.6;}
+#c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
+    color: #432d14;
+    border-top:1px solid #70480d;
+    border-left:1px solid #70480d;
+    border-right:1px solid #f3d5b1;
+    border-bottom:1px solid #f3d5b1;
+    opacity:0.6;
+}
+
+/* Input section */
+#c_inputDiv {
+    margin-bottom: 15px;
+}
+
+#c_widgetTitle {
+ 	margin-top:35px;
+	text-align: center;
+	color:#2d300e;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+.c-inputWrapper {
+    display: block;
+    text-align: right;
+}
+.c-input {
+    padding: 4px;
+    color: black;
+    background-color: #d1b48d;
+	outline: none;
+	border:1px solid transparent;
+	border-radius: 5px;
+	margin:5px 0px;
+	border-top:1px solid #70480d;
+    border-left:1px solid #70480d;
+    border-right:1px solid #f3d5b1;
+    border-bottom:1px solid #f3d5b1;
+}
+.c-input:focus {border: 1px solid #f3d5b1;}
+
+.c-textInput {
+    width: calc(100% - 10px);
+    max-width: 900px;
+    resize: none;
+}
+#c_submitButton {
+    display: block; 
+    margin-left: auto; 
+    margin-right: 0;
+}
+#c_replyingText {
+	margin-top:5px;
+    color: #70480d;
+    text-align: right;
+}
+
+/* Comment section */
+.c-comment {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+.c-reply {
+    display: block;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 10px;
+}
+
+.c-reply:last-child {margin-bottom: 0;}
+
+.c-replyContainer {
+    display: flex !important; /* Use !important to override any hidden 'inline' or 'block' rules */
+    align-items: center; /* THIS vertically centers the arrow in the middle */
+    margin: -10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.c-replyContainer::before {
+    content: "⤷";
+    font-size: 20px;
+    margin-right: 8px;
+    
+    /* These two lines are the secret to fixing the "still on top" issue */
+    display: inline-flex; 
+    align-items: center;
+    
+    flex-shrink: 0; /* Prevents the arrow from squishing */
+}
+.c-name {
+    display: inline-block;
+    margin: 0;
+    margin-right: 10px;
+    padding: 0;
+    font-size:12px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.c-site {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #B766FF;
+}
+.c-site:hover {color: white;}
+.c-timestamp {
+    float: right;
+    opacity: 75%;
+}
+.c-text {
+    margin-top: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 10px;
+    font-size: 11px;
+    text-align: justify;
+    color: white;
+    background-color: #d1b48d;
+    border-radius: 5px;
+    border-top:1px solid #f3d5b1;
+    border-left:1px solid #f3d5b1;
+    border-right:1px solid #70480d;
+    border-bottom:1px solid #70480d;
+}
+
+/* Pagination */
+#c_pagination {text-align: center;}
+.c-replyButton {
+    margin-top: -5px;
+    margin-right: 4px;
+}
+.c-expandButton {
+    margin-top: 10px;
+    margin-left: 4px;
+}
+.c-paginationButton {
+    margin-right: 4px;
+    margin-left: 4px;
+}
