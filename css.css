@@ -401,7 +401,7 @@ li.nav-item {
 }
 
 .post-date {
-  display: inline-block;
+  display: inline;
   float:right;
 }
 
