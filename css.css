@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: cavalhatriz; 
-  src: url(assets/Cavalhatriz.ttf); 
+  src: url(../assets/Cavalhatriz.ttf); 
 }
 
 @font-face {
   font-family: rat; 
-  src: url(assets/rat-typewriter.ttf); 
+  src: url(../assets/rat-typewriter.ttf); 
 }
 
 html, body, *, *::before, *::after {
@@ -33,7 +33,7 @@ iframe, video, canvas, svg, object, embed {
 
 
 body, html {
-	background-image: url(assets/bckgr2.png);
+	background-image: url(../assets/bckgr2.png);
 	margin:0;
 	padding:0;
 	cursor: none !important;
@@ -79,7 +79,7 @@ body, html {
 #top {
 	height:216px;
 	width:490px;
-	background-image: url(assets/top2.png);
+	background-image: url(../assets/top2.png);
 	background-repeat: no-repeat;
 	margin-left: calc(50% + 2px);
   transform: translateX(-50%);
@@ -96,7 +96,7 @@ body, html {
 
 #left-side {
 	width:47px;
-	background-image: url(assets/lace-left.png);
+	background-image: url(../assets/lace-left.png);
 	background-repeat: repeat-y;
 }
 
@@ -123,14 +123,14 @@ nav .link a, nav .link a:visited {
 	width:60px;
 	height:26px;
 	margin:2px;
-	background-image: url(assets/button_up.png);	
+	background-image: url(../assets/button_up.png);	
 	z-index: 1000;
 }
 
 .link a:hover, .link a:active, .link a:focus {
 	width:60px;
 	height:26px;
-	background-image: url(assets/button_down.png);	
+	background-image: url(../assets/button_down.png);	
 	z-index: 1000;
 }
 
@@ -154,7 +154,7 @@ nav .link a, nav .link a:visited {
 	content:" ";
 	width:60px;
 	height:6px;
-	background-image: url(assets/dropdown_bottom.png);
+	background-image: url(../assets/dropdown_bottom.png);
 }
 
 
@@ -164,14 +164,14 @@ nav .link a, nav .link a:visited {
   padding: 3px 5px;
   font-size:9px;
   text-decoration: none;
-    background-image: url(assets/dropdown_bckgr.png);
+    background-image: url(../assets/dropdown_bckgr.png);
   display: block;
 }
 
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
-      background-image: url(assets/dropdown_bckgr_down.png);
+      background-image: url(../assets/dropdown_bckgr_down.png);
 }
 
 
@@ -181,7 +181,7 @@ nav .link a, nav .link a:visited {
 
 
 .dropdown:hover .link {
-  background-image: url(assets/button_down.png);	
+  background-image: url(../assets/button_down.png);	
 }
 
 
@@ -273,6 +273,10 @@ h2 {
 .updates .date {
 	white-space: nowrap; 
 	margin-right:10px;
+}
+
+.updates .desc {
+	
 }
 
 .dot-table {
@@ -390,7 +394,7 @@ h1 span {display: inline-block; margin-top: 50px;}
 
 #right-side {
 	width:47px;
-	background-image: url(assets/lace-right.png);
+	background-image: url(../assets/lace-right.png);
 	background-repeat: repeat-y;
 }
 
@@ -401,7 +405,7 @@ h1 span {display: inline-block; margin-top: 50px;}
 	margin:0 auto;
 	width:170px;
 	height:180px;
-	background-image: url(assets/watering_can.gif);
+	background-image: url(../assets/watering_can.gif);
 }
 
 #daisies {
@@ -411,7 +415,7 @@ h1 span {display: inline-block; margin-top: 50px;}
 	margin:0 auto;
 	width:200px;
 	height:263px;
-	background-image: url(assets/daisy_200px.png);
+	background-image: url(../assets/daisy_200px.png);
 	z-index: 100;
 }
 
@@ -427,7 +431,7 @@ h1 span {display: inline-block; margin-top: 50px;}
 	height:216px;
 	width:490px;
 	margin:0 auto;
-	background-image: url(assets/bottom.png);
+	background-image: url(../assets/bottom.png);
 	text-align: center;
 }
 
