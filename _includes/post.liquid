@@ -1,7 +1,62 @@
 ---
 title: Default title
-layout: main
 ---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css.css">
+    <title>Karhukarhu</title>
+</head>
+<body>
+	
+	<div id="custom-gif-cursor">
+  <img src="https://karhukarhu.nekoweb.org/assets/cursor.gif" alt="Cursor">
+</div>
+	
+	<div id="content-wrapper">
+	
+    <div id="top">
+		  <h1><span class="num1">K</span><span class="num2">a</span><span class="num3">r</span><span class="num4">h</span><span class="num5">u</span><span class="num6">k</span><span class="num7">a</span><span class="num8">r</span><span class="num9">h</span><span class="num10">u</span></h1>
+	  </div>
+	
+    <div class="grid-container">
+      <div id="left-side"></div>
+      <div id="content">
+  	  	<div id="daisies"></div>
+  	  	
+  	  	<div id="menu-text">↓ menu ↓ </div>
+  	  	
+  	  	<nav id="navigation">
+  		    <div class="link"><a href="https://karhukarhu.nekoweb.org/">Home</a></div>
+  		
+  		    <div class="dropdown">
+  		      <div class="link">About</div>
+  		
+  			    <div class="dropdown-content">
+    			    <a href="https://karhukarhu.nekoweb.org/site.html">site</a>
+   				    <a href=".https://karhukarhu.nekoweb.org/me.html">Me</a>
+ 			      </div>
+ 	        </div>
+ 			 
+  		    <div class="link"><a href="https://karhukarhu.nekoweb.org/art.html">Art</a></div>
+  		    <div class="link"><a href="index.html">Blog</a></div>
+  		  	<div class="dropdown">
+  		      <div class="link">Hi!</div>
+  		
+  		  	  <div class="dropdown-content">
+    			    <a href="https://karhukarhu.nekoweb.org/gbook.html">gbook</a>
+   				    <a href="https://karhukarhu.nekoweb.org/email.html">email</a>
+ 			      </div>
+  		    </div>
+  		
+  		    </nav>
+  		
+  		
+  	    <div id="the-content">
 
 <p>
 	<strong>Posted: </strong> {{ date | niceDate }}<br/>
@@ -12,3 +67,39 @@ layout: main
 </p>
 
 {{ content }}
+
+        </div>
+
+  		<div id="watering"></div>
+  	</div>
+
+  <div id="right-side"></div>
+</div>
+
+  	
+  	  	<div id="footer"> <span>© 2026 Karhukarhu</span></div>
+  	</div>
+  	
+
+
+<script>
+const customCursor = document.getElementById('custom-gif-cursor');
+
+document.addEventListener('mousemove', (e) => {
+  // Make the cursor visible on the first movement
+  if (customCursor.style.display !== 'block') {
+    customCursor.style.display = 'block';
+  }
+  
+  // Move the GIF container to match the exact mouse coordinates
+  customCursor.style.left = `${e.clientX}px`;
+  customCursor.style.top = `${e.clientY}px`;
+});
+
+// Optional: Hide the custom cursor if the mouse leaves the browser window
+document.addEventListener('mouseleave', () => {
+  customCursor.style.display = 'none';
+});
+</script>
+</body>
+</html>
