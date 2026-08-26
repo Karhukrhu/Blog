@@ -433,8 +433,8 @@ li.nav-item {
 
 .post-date {
   margin-left: auto; /* Pushes date to the far right */
-  white-space: nowrap; /* Prevents date from wrapping */
-}
+  white-space: nowrap; 
+  font-size: 10px;
 
 #right-side {
 	width:47px;
