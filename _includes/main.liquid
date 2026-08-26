@@ -63,6 +63,15 @@ title: Blog
 
             <div class="blog-navigation">
               Blog nav :) →
+              <li class="nav-item">
+              <a 
+                {% if page.url == "/" %}
+                class="nav-link active" aria-current="page"
+                {% else %}
+                class="nav-link"
+                {% endif %}
+              href="/">Home</a>
+            </li>
             <li class="nav-item">
               <a 
                 {% if page.url == "/archive/" %}
