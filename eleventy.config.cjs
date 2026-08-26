@@ -51,22 +51,25 @@ module.exports = function(eleventyConfig) {
       let cats = getCategoriesArray(p.data.categories).map(s => s.toLowerCase());
       return cats.includes(cat);
     });
-  });
+  }); // <-- ✅ CLOSED PROPERLY HERE
 
-  // --- 4. niceDate Filter ---
-  eleventyConfig.addFilter("niceDate", function(dateObj) {
-    const formatter = new Intl.DateTimeFormat("fi-FI", {
-      day: 'numeric',
-      month: 'numeric',
-      year: 'numeric'
-    });
-    return formatter.format(dateObj);
+  // --- 4. niceDate Filter (MOVED OUTSIDE!) ---
+  // Added formatting options so it looks like "October 26, 2023" instead of "10/26/2023"
+eleventyConfig.addFilter("niceDate", function(dateObj) {
+  const formatter = new Intl.DateTimeFormat("fi-FI", {
+    day: 'numeric',
+    month: 'numeric',
+    year: 'numeric'
   });
+  return formatter.format(dateObj);
+});
+  
 
   eleventyConfig.addPassthroughCopy("blog/images/*");
   
   // --- 5. Directory Config ---
   return {
+
     dir: {
       input: ".",          
       output: "_site",     
