@@ -5,7 +5,9 @@ layout: main
 
 {% for post in collections.post reversed %}
 
-<a class="post-title" href="{{post.url}}">{{ post.data.title }}</a> <div class="post-date">{{ post.date | niceDate }}</div><br/>
+<div class="post-header">
+<a class="post-title" href="{{post.url}}">{{ post.data.title }}</a> <div class="post-date">{{ post.date | niceDate }}</div> <br/>
+</div>
 {% excerpt post %}
 
 {% endfor %}

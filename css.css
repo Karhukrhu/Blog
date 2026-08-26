@@ -405,6 +405,13 @@ li.nav-item {
   	padding:0px;
 }
 
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
 .post-title {
   display: inline-block;
   max-width: 150px;
@@ -414,10 +421,6 @@ li.nav-item {
   vertical-align: bottom;
 }
 
-.post-date {
-  display: inline;
-  float:right;
-}
 
 
 #right-side {
