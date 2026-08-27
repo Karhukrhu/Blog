@@ -7,21 +7,7 @@ tags: post
 
 For a few days now I've been struggling to deploy 11ty to my site. Eventually I got it working (maybe you can see that ;D)
 
-There were problems right at the beginnig. I was able to install 11ty, but did it in a wrong folder and it all got messed up. The tutorial I was following can be found <a href="https://cfjedimaster.github.io/eleventy-blog-guide/guide.html" target="new">here</a><svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="16"
-  height="16"
-  viewBox="0 0 21 21"
-  fill="none"
-  stroke="#000"
-  stroke-width="1"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
-  <path d="M11 13l9 -9" />
-  <path d="M15 4h5v5" />
-</svg>. It was of little help as I'm totally novice with terminal commands.
+There were problems right at the beginnig. I was able to install 11ty, but did it in a wrong folder and it all got messed up. The tutorial I was following can be found <a href="https://cfjedimaster.github.io/eleventy-blog-guide/guide.html" target="new">here</a><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 21 21" fill="none" stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /><path d="M11 13l9 -9" /><path d="M15 4h5v5" /></svg>. It was of little help as I'm totally novice with terminal commands.
 
 With a horrendous amount of iteration, trial and error, finetuning as well as getting used to new file formats, I managed to get some output of a raw page.
 
