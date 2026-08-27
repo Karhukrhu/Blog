@@ -19,7 +19,9 @@ eleventyExcludeFromCollections: true
   </author>
 
   {% for post in sorted_posts %}
-    {% assign absolutePostUrl = site.url | append: post.url %}
+    {% comment %} THE MAGIC FIX: This forces Eleventy to add /blog/ to the URL {% endcomment %}
+    {% assign postPath = post.url | url %}
+    {% assign absolutePostUrl = site.url | append: postPath %}
     
     <entry>
       <title>{{ post.data.title | xml_escape }}</title>
