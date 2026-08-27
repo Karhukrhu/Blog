@@ -11,7 +11,7 @@ eleventyExcludeFromCollections: true
   
   {% assign sorted_posts = collections.post | sort: 'date' | reverse %}
   {% assign newest_post = sorted_posts | first %}
-  <updated>{{ newest_post.date | date_to_xmlschema }}</updated>
+  <updated>{{ newest_post.date | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</updated>
   
   <id>{{ site.url }}/blog/</id>
   <author>
@@ -19,12 +19,13 @@ eleventyExcludeFromCollections: true
   </author>
 
   {% for post in sorted_posts %}
-    {%- assign absolutePostUrl = post.url | absoluteUrl: site.url -%}
+    {% comment %} Manually combine site URL and post URL (which already includes /blog/) {% endcomment %}
+    {% assign absolutePostUrl = site.url | append: post.url %}
     
     <entry>
       <title>{{ post.data.title | xml_escape }}</title>
       <link href="{{ absolutePostUrl }}"/>
-      <updated>{{ post.date | date_to_xmlschema }}</updated>
+      <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</updated>
       <id>{{ absolutePostUrl }}</id>
       <content type="html">{{ post.templateContent | xml_escape }}</content>
     </entry>
