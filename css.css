@@ -508,10 +508,10 @@ li.nav-item {
 }
 
 .rss-icon {
-  width: 15px;   /* Change this number to make it bigger or smaller */
-  height: 15px;  /* Keep this the same as the width for a perfect square */
+  width: 10px;   /* Change this number to make it bigger or smaller */
+  height: 10px;  /* Keep this the same as the width for a perfect square */
   vertical-align: middle; /* Keeps it aligned nicely if it's next to text */
-  padding:3px;
+  padding:3px 0px 3px 0px;
 }
 
 
