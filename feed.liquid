@@ -6,12 +6,12 @@ eleventyExcludeFromCollections: true
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Karhukarhu Blog</title>
   <subtitle>Latest posts from Karhukarhu</subtitle>
-  <link href="{{ site.url }}/blog/feed.xml" rel="self"/>
-  <link href="{{ site.url }}/blog/"/>
+  <link href="{{ site.url }}/blog/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="{{ site.url }}/blog/" rel="alternate" type="text/html"/>
   
   {% assign sorted_posts = collections.post | sort: 'date' | reverse %}
   {% assign newest_post = sorted_posts | first %}
-  <updated>{{ newest_post.date | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</updated>
+  <updated>{{ newest_post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
   
   <id>{{ site.url }}/blog/</id>
   <author>
@@ -19,13 +19,12 @@ eleventyExcludeFromCollections: true
   </author>
 
   {% for post in sorted_posts %}
-    {% comment %} Manually combine site URL and post URL (which already includes /blog/) {% endcomment %}
     {% assign absolutePostUrl = site.url | append: post.url %}
     
     <entry>
       <title>{{ post.data.title | xml_escape }}</title>
-      <link href="{{ absolutePostUrl }}"/>
-      <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</updated>
+      <link href="{{ absolutePostUrl }}" rel="alternate" type="text/html"/>
+      <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
       <id>{{ absolutePostUrl }}</id>
       <content type="html">{{ post.templateContent | xml_escape }}</content>
     </entry>
