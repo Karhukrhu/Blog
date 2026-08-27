@@ -1,18 +1,27 @@
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+// 1. Require the module
+const rssModule = require("@11ty/eleventy-plugin-rss");
+
+// 2. BULLETPROOF UNWRAP (Required for Node 20 / Eleventy 3 compatibility)
+const pluginRss = typeof rssModule === 'function' ? rssModule : rssModule.default;
 
 module.exports = function(eleventyConfig) {
+  
+  // 3. Add the RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
+  // 4. Passthrough copies
   eleventyConfig.addPassthroughCopy("css.css");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("blog/images/*");
 
+  // --- Helper to guarantee categories is always an array ---
   const getCategoriesArray = (categories) => {
     if (!categories) return [];
     if (Array.isArray(categories)) return categories;
     return [categories]; 
   };
 
+  // --- 5. Excerpt Shortcode ---
   eleventyConfig.addShortcode("excerpt", (post) => {
     const content = post.templateContent || "";
     const endIndex = content.indexOf('</p>');
@@ -22,16 +31,20 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
+  // --- 6. Categories Collection ---
   eleventyConfig.addCollection("categories", function(collectionApi) {
     let categories = new Set();
     let posts = collectionApi.getFilteredByTag('post');
+    
     posts.forEach(p => {
       let cats = getCategoriesArray(p.data.categories);
       cats.forEach(c => categories.add(c));
     });
+    
     return Array.from(categories);
   });
 
+  // --- 7. Filter by Category ---
   eleventyConfig.addFilter("filterByCategory", function(posts, cat) {
     cat = cat.toLowerCase();
     return posts.filter(p => {
@@ -40,6 +53,7 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  // --- 8. niceDate Filter ---
   eleventyConfig.addFilter("niceDate", function(dateObj) {
     const formatter = new Intl.DateTimeFormat("fi-FI", {
       day: 'numeric',
@@ -49,6 +63,7 @@ module.exports = function(eleventyConfig) {
     return formatter.format(dateObj);
   });
 
+  // --- 9. Tag Cloud Collection ---
   eleventyConfig.addCollection("tagCloud", function(collectionApi) {
     let categories = {};
     let posts = collectionApi.getFilteredByTag('post');
@@ -84,6 +99,7 @@ module.exports = function(eleventyConfig) {
     return cloud;
   });
 
+  // --- 10. Directory Config ---
   return {
     pathPrefix: "/blog", 
     dir: {
