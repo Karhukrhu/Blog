@@ -1,25 +1,18 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
-console.log("✅ SUCCESS: eleventy.config.cjs IS LOADING!");
-
 module.exports = function(eleventyConfig) {
-  
-  // 1. Add the RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
-  // 2. Passthrough copies
   eleventyConfig.addPassthroughCopy("css.css");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("blog/images/*");
 
-  // --- Helper to guarantee categories is always an array ---
   const getCategoriesArray = (categories) => {
     if (!categories) return [];
     if (Array.isArray(categories)) return categories;
     return [categories]; 
   };
 
-  // --- 3. Excerpt Shortcode ---
   eleventyConfig.addShortcode("excerpt", (post) => {
     const content = post.templateContent || "";
     const endIndex = content.indexOf('</p>');
@@ -29,20 +22,16 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
-  // --- 4. Categories Collection ---
   eleventyConfig.addCollection("categories", function(collectionApi) {
     let categories = new Set();
     let posts = collectionApi.getFilteredByTag('post');
-    
     posts.forEach(p => {
       let cats = getCategoriesArray(p.data.categories);
       cats.forEach(c => categories.add(c));
     });
-    
     return Array.from(categories);
   });
 
-  // --- 5. Filter by Category ---
   eleventyConfig.addFilter("filterByCategory", function(posts, cat) {
     cat = cat.toLowerCase();
     return posts.filter(p => {
@@ -51,7 +40,6 @@ module.exports = function(eleventyConfig) {
     });
   });
 
-  // --- 6. niceDate Filter ---
   eleventyConfig.addFilter("niceDate", function(dateObj) {
     const formatter = new Intl.DateTimeFormat("fi-FI", {
       day: 'numeric',
@@ -61,7 +49,6 @@ module.exports = function(eleventyConfig) {
     return formatter.format(dateObj);
   });
 
-  // --- 7. Tag Cloud Collection ---
   eleventyConfig.addCollection("tagCloud", function(collectionApi) {
     let categories = {};
     let posts = collectionApi.getFilteredByTag('post');
@@ -88,4 +75,21 @@ module.exports = function(eleventyConfig) {
       return {
         name: cat,
         count: count,
-        slug
+        slug: cat.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, ''),
+        fontSize: Math.round(fontSize) + 'px'
+      };
+    });
+
+    cloud.sort((a, b) => a.name.localeCompare(b.name));
+    return cloud;
+  });
+
+  return {
+    pathPrefix: "/blog", 
+    dir: {
+      input: ".",          
+      output: "_site",     
+      includes: "_includes" 
+    }
+  };
+};
