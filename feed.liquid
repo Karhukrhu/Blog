@@ -9,10 +9,9 @@ eleventyExcludeFromCollections: true
   <link href="{{ site.url }}/blog/feed.xml" rel="self"/>
   <link href="{{ site.url }}/blog/"/>
   
-  {% comment %} Get the newest post date safely without plugin filters {% endcomment %}
   {% assign sorted_posts = collections.post | sort: 'date' | reverse %}
   {% assign newest_post = sorted_posts | first %}
-  <updated>{{ newest_post.date | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</updated>
+  <updated>{{ newest_post.date | date_to_xmlschema }}</updated>
   
   <id>{{ site.url }}/blog/</id>
   <author>
@@ -20,13 +19,12 @@ eleventyExcludeFromCollections: true
   </author>
 
   {% for post in sorted_posts %}
-    {% comment %} Build absolute URL manually to be safe {% endcomment %}
-    {% assign absolutePostUrl = site.url | append: post.url %}
+    {%- assign absolutePostUrl = post.url | absoluteUrl: site.url -%}
     
     <entry>
       <title>{{ post.data.title | xml_escape }}</title>
       <link href="{{ absolutePostUrl }}"/>
-      <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</updated>
+      <updated>{{ post.date | date_to_xmlschema }}</updated>
       <id>{{ absolutePostUrl }}</id>
       <content type="html">{{ post.templateContent | xml_escape }}</content>
     </entry>
