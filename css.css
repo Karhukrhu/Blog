@@ -487,6 +487,34 @@ li.nav-item {
   opacity: 0.75;
 }
 
+.post-navigation {
+  display: flex;
+  justify-content: space-between; /* Pushes left and right items apart */
+  align-items: flex-start;        /* Keeps them at the top if one has two lines */
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.nav-prev {
+  text-align: left;
+  max-width: 45%; /* Prevents long titles from crossing the middle */
+}
+
+.nav-next {
+  text-align: right;
+  max-width: 45%; /* Prevents long titles from crossing the middle */
+  margin-left: auto; /* Forces it to the right just in case */
+}
+
+
+
+
+
+
+
+
 #right-side {
 	width:47px;
 	background-image: url(../assets/lace-right.png);
