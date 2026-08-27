@@ -517,7 +517,11 @@ li.nav-item {
 }
 
 
-
+.back-to-top {
+    display: block;
+    position:absolute;
+    top:50px;
+}
 
 
 #right-side {
