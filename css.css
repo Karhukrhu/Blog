@@ -512,7 +512,7 @@ li.nav-item {
   height: 10px;  /* Keep this the same as the width for a perfect square */
   vertical-align: middle; /* Keeps it aligned nicely if it's next to text */
   padding:0px 0px 5px 0px;
-  fill: #432d14;
+  fill: currentColor;
 }
 
 
