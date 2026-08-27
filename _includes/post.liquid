@@ -10,3 +10,25 @@ layout: main
     <a href="/categories/{{ cat | slugify }}">{{ cat }}</a>{% unless forloop.last %} {% endunless %}
   {% endfor %}
 </p>
+
+<!-- Post Navigation -->
+{% assign previousPost = collections.post | getPreviousCollectionItem %}
+{% assign nextPost = collections.post | getNextCollectionItem %}
+
+<div class="post-navigation">
+  {% if previousPost %}
+    <a href="{{ previousPost.url }}" class="nav-link prev">
+      ← Previous<br>
+      <span class="nav-title">{{ previousPost.data.title }}</span>
+    </a>
+  {% else %}
+    <div></div> <!-- Empty div to keep the layout balanced if there is no previous post -->
+  {% endif %}
+
+  {% if nextPost %}
+    <a href="{{ nextPost.url }}" class="nav-link next">
+      Next →<br>
+      <span class="nav-title">{{ nextPost.data.title }}</span>
+    </a>
+  {% endif %}
+</div>
