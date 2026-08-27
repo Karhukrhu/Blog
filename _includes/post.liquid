@@ -18,8 +18,7 @@ layout: main
 <div class="post-navigation">
   {% if previousPost %}
     <a href="{{ previousPost.url }}" class="nav-link prev">
-      ← Previous<br>
-      <span class="nav-title">{{ previousPost.data.title }}</span>
+      ← Previous
     </a>
   {% else %}
     <div></div> <!-- Empty div to keep the layout balanced if there is no previous post -->
@@ -27,8 +26,7 @@ layout: main
 
   {% if nextPost %}
     <a href="{{ nextPost.url }}" class="nav-link next">
-      Next →<br>
-      <span class="nav-title">{{ nextPost.data.title }}</span>
+      Next →
     </a>
   {% endif %}
 </div>
