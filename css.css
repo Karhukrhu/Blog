@@ -523,6 +523,30 @@ li.nav-item {
     top:50px;
 }
 
+.back-to-top a, a:visited {
+	text-decoration:none;
+	color:#4f533a;
+	background-color: #d1b48d;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 8px;
+	padding:6px 4px 4px 6px;
+	border-top: 1px solid #f3d5b1;
+	border-bottom: 1px solid #70480d;
+	border-right: 1px solid #70480d;
+	border-left: 1px solid #f3d5b1;
+	border-radius: 5px;
+}
+
+.back-to-top a:hover, a:active {
+	text-decoration:none;
+	background-color: #a19c86;
+	border-top: 1px solid #70480d;
+	border-bottom: 1px solid #f3d5b1;
+		border-right: 1px solid #f3d5b1;
+	border-left: 1px solid #70480d;
+}
+
 
 #right-side {
 	width:47px;
