@@ -8,7 +8,14 @@ console.log("✅ SUCCESS: eleventy.config.cjs IS LOADING!");
 
 module.exports = function(eleventyConfig) {
   
-  // 3. Add the RSS plugin
+// 1. Require the module (Standard, no complex unwrapping needed)
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+
+console.log("✅ SUCCESS: eleventy.config.cjs IS LOADING!");
+
+module.exports = function(eleventyConfig) {
+  
+  // 2. Add the RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addPassthroughCopy("css.css");

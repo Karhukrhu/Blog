@@ -8,19 +8,27 @@ eleventyExcludeFromCollections: true
   <subtitle>Latest posts from Karhukarhu</subtitle>
   <link href="{{ site.url }}/blog/feed.xml" rel="self"/>
   <link href="{{ site.url }}/blog/"/>
-  <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  
+  {% comment %} Get the newest post date safely without plugin filters {% endcomment %}
+  {% assign sorted_posts = collections.post | sort: 'date' | reverse %}
+  {% assign newest_post = sorted_posts | first %}
+  <updated>{{ newest_post.date | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</updated>
+  
   <id>{{ site.url }}/blog/</id>
   <author>
     <name>Karhukarhu</name>
   </author>
-  {%- for post in collections.post reversed %}
-    {%- set absolutePostUrl %}{{ post.url | absoluteUrl(site.url) }}{% endset %}
+
+  {% for post in sorted_posts %}
+    {% comment %} Build absolute URL manually to be safe {% endcomment %}
+    {% assign absolutePostUrl = site.url | append: post.url %}
+    
     <entry>
-      <title>{{ post.data.title }}</title>
+      <title>{{ post.data.title | xml_escape }}</title>
       <link href="{{ absolutePostUrl }}"/>
-      <updated>{{ post.date | dateToRfc3339 }}</updated>
+      <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</updated>
       <id>{{ absolutePostUrl }}</id>
-      <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+      <content type="html">{{ post.templateContent | xml_escape }}</content>
     </entry>
-  {%- endfor %}
+  {% endfor %}
 </feed>
