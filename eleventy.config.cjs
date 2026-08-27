@@ -1,25 +1,16 @@
-// 1. Require the module
-const rssModule = require("@11ty/eleventy-plugin-rss");
-
-// 2. BULLETPROOF UNWRAP: 
-const pluginRss = typeof rssModule === 'function' ? rssModule : rssModule.default;
-
-console.log("✅ SUCCESS: eleventy.config.cjs IS LOADING!");
-
-module.exports = function(eleventyConfig) {
-  
-// 1. Require the module (Standard, no complex unwrapping needed)
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 console.log("✅ SUCCESS: eleventy.config.cjs IS LOADING!");
 
 module.exports = function(eleventyConfig) {
   
-  // 2. Add the RSS plugin
+  // 1. Add the RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
+  // 2. Passthrough copies
   eleventyConfig.addPassthroughCopy("css.css");
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("blog/images/*");
 
   // --- Helper to guarantee categories is always an array ---
   const getCategoriesArray = (categories) => {
@@ -28,7 +19,7 @@ module.exports = function(eleventyConfig) {
     return [categories]; 
   };
 
-  // --- 1. Excerpt Shortcode ---
+  // --- 3. Excerpt Shortcode ---
   eleventyConfig.addShortcode("excerpt", (post) => {
     const content = post.templateContent || "";
     const endIndex = content.indexOf('</p>');
@@ -38,7 +29,7 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
-  // --- 2. Categories Collection ---
+  // --- 4. Categories Collection ---
   eleventyConfig.addCollection("categories", function(collectionApi) {
     let categories = new Set();
     let posts = collectionApi.getFilteredByTag('post');
@@ -51,35 +42,30 @@ module.exports = function(eleventyConfig) {
     return Array.from(categories);
   });
 
-  // --- 3. Filter by Category ---
+  // --- 5. Filter by Category ---
   eleventyConfig.addFilter("filterByCategory", function(posts, cat) {
     cat = cat.toLowerCase();
     return posts.filter(p => {
       let cats = getCategoriesArray(p.data.categories).map(s => s.toLowerCase());
       return cats.includes(cat);
     });
-  }); // <-- ✅ CLOSED PROPERLY HERE
-
-  // --- 4. niceDate Filter (MOVED OUTSIDE!) ---
-  // Added formatting options so it looks like "October 26, 2023" instead of "10/26/2023"
-eleventyConfig.addFilter("niceDate", function(dateObj) {
-  const formatter = new Intl.DateTimeFormat("fi-FI", {
-    day: 'numeric',
-    month: 'numeric',
-    year: 'numeric'
   });
-  return formatter.format(dateObj);
-});
-  
 
-  eleventyConfig.addPassthroughCopy("blog/images/*");
+  // --- 6. niceDate Filter ---
+  eleventyConfig.addFilter("niceDate", function(dateObj) {
+    const formatter = new Intl.DateTimeFormat("fi-FI", {
+      day: 'numeric',
+      month: 'numeric',
+      year: 'numeric'
+    });
+    return formatter.format(dateObj);
+  });
 
-    // --- Tag Cloud Collection ---
+  // --- 7. Tag Cloud Collection ---
   eleventyConfig.addCollection("tagCloud", function(collectionApi) {
     let categories = {};
     let posts = collectionApi.getFilteredByTag('post');
 
-    // 1. Count how many posts are in each category
     posts.forEach(post => {
       let cats = post.data.categories || [];
       if (!Array.isArray(cats)) cats = [cats];
@@ -88,16 +74,12 @@ eleventyConfig.addFilter("niceDate", function(dateObj) {
       });
     });
 
-    // 2. Find the lowest and highest counts to scale the sizes
     let counts = Object.values(categories);
     let minCount = Math.min(...counts);
     let maxCount = Math.max(...counts);
 
-    // 3. Build the cloud and calculate font sizes
     let cloud = Object.keys(categories).map(cat => {
       let count = categories[cat];
-      
-      // Calculate size between 1rem (smallest) and 2.5rem (largest)
       let fontSize = 9; 
       if (maxCount > minCount) {
         fontSize = 8 + ((count - minCount) / (maxCount - minCount)) * 12;
@@ -106,25 +88,4 @@ eleventyConfig.addFilter("niceDate", function(dateObj) {
       return {
         name: cat,
         count: count,
-        slug: cat.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]/g, ''),
-        fontSize: fontSize.toFixed(2) + 'px' // e.g., "1.85rem"
-      };
-    });
-
-    // 4. Sort alphabetically so it looks like a nice cloud
-    cloud.sort((a, b) => a.name.localeCompare(b.name));
-
-    return cloud;
-  });
-
-  
-  // --- 5. Directory Config ---
-  return {
-    pathPrefix: "/blog", 
-    dir: {
-      input: ".",          
-      output: "_site",     
-      includes: "_includes" 
-    }
-  };
-};
+        slug
