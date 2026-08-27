@@ -519,7 +519,7 @@ li.nav-item {
 
 .back-to-top {
     display: block;
-    position:absolute;
+    position:relative;
     top:50px;
 }
 
