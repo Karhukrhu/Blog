@@ -507,8 +507,11 @@ li.nav-item {
   margin-left: auto; /* Forces it to the right just in case */
 }
 
-
-
+.rss-icon {
+  width: 20px;   /* Change this number to make it bigger or smaller */
+  height: 20px;  /* Keep this the same as the width for a perfect square */
+  vertical-align: middle; /* Keeps it aligned nicely if it's next to text */
+}
 
 
 
