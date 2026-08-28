@@ -586,14 +586,14 @@ li.nav-item {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
+    width: 12px;
     flex-shrink: 0;
   }
   
   /* The SVG heart itself */
   .heart-svg {
-    width: 16px;
-    height: 16px;
+    width: 11px;
+    height: 11px;
     display: block;
   }
   
