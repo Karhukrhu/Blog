@@ -517,6 +517,76 @@ li.nav-item {
 }
 
 
+
+.like-button {
+    /* Layout & Spacing */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    
+    /* Appearance */
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px; /* Makes it pill-shaped */
+    cursor: pointer;
+    
+    /* Typography */
+    font-family: inherit;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Hover state */
+  .like-button:hover {
+    	background-color: #d1b48d;
+	border-top: 1px solid #70480d;
+	border-bottom: 1px solid #f3d5b1;
+		border-right: 1px solid #f3d5b1;
+	border-left: 1px solid #70480d;
+    color: #ff4d4d;
+    transform: translateY(-2px);
+  }
+  
+  /* Active/Clicked state */
+  .like-button:active {
+    transform: translateY(0);
+  }
+  
+  /* Disabled state (already liked) */
+  .like-button:disabled {
+    	background-color: #d1b48d;
+	border-top: 1px solid #70480d;
+	border-bottom: 1px solid #f3d5b1;
+		border-right: 1px solid #f3d5b1;
+	border-left: 1px solid #70480d;
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+  
+  /* The heart icon */
+  .like-heart {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Heart animation when clicked */
+  .like-button:active .like-heart {
+    transform: scale(1.3);
+  }
+  
+  /* The count number */
+  .like-count {
+    font-weight: 600;
+    min-width: 20px;
+  }
+
+
+
+
+
 .back-to-top {
     display: block;
     position:relative;
