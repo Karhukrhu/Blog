@@ -2,12 +2,23 @@
 layout: main
 ---
 
-<div class="post-header"><h3>{{ title }}</h3> <div class="post-date">{{ date | niceDate }}</div></div>
+<div class="post-header">
+  <h3>{{ title }}</h3> 
+  <div class="post-date">{{ date | niceDate }}</div>
+</div>
 
 {{ content }}
-<p><div id="likes"></div></p>
-<script src="http://www.likeslikes.net/likes.js" defer></script>
-<p>{% for cat in categories %}
+
+<!-- LIKE BUTTON (Drop-in Method: Simplest & Most Reliable) -->
+<p>
+  <div id="likes"></div>
+</p>
+<!-- Note: Changed http to https for security -->
+<script src="https://www.likeslikes.net/likes.js" defer></script>
+
+<!-- CATEGORIES -->
+<p>
+  {% for cat in categories %}
     <a href="/categories/{{ cat | slugify }}">{{ cat }}</a>{% unless forloop.last %} {% endunless %}
   {% endfor %}
 </p>
@@ -31,45 +42,3 @@ layout: main
     </a>
   {% endif %}
 </div>
-
-
-<script>
-const API = 'https://www.likeslikes.net';
-const url = window.location.href;
-const btn = document.getElementById('like-btn');
-const count = document.getElementById('like-count');
-const heart = document.querySelector('.like-heart');
-
-// Fetch current like count
-fetch(`${API}/api/v1/likes?url=${encodeURIComponent(url)}`)
-  .then(r => r.json())
-  .then(({ data }) => {
-    count.textContent = data.likes;
-    if (data.is_liked) {
-      btn.disabled = true;
-      heart.textContent = '♥';
-    }
-  })
-  .catch(err => {
-    console.error('Error fetching likes:', err);
-    count.textContent = '0';
-  });
-
-// Handle click
-btn.addEventListener('click', () => {
-  fetch(`${API}/api/v1/likes`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ url })
-  })
-    .then(r => r.json())
-    .then(({ data }) => {
-      if (data.success) {
-        count.textContent = data.likes;
-        heart.textContent = '♥';
-        btn.disabled = true;
-      }
-    })
-    .catch(err => console.error('Error liking:', err));
-});
-</script>
