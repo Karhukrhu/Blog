@@ -521,7 +521,8 @@ li.nav-item {
     /* Layout & Spacing */
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 0px;
+    padding:0px 2px 0px 2px;
     
     /* Appearance */
     background: #d1b48d;
@@ -529,8 +530,7 @@ li.nav-item {
     border-bottom: 1px solid #70480d;
     border-right: 1px solid #70480d;
     border-left: 1px solid #f3d5b1;
-    border-radius: 50px; /* Makes it pill-shaped */
-    cursor: pointer;
+    border-radius: 5px;
     
     /* Typography */
     font-family: inherit;
