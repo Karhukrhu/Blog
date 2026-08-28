@@ -31,3 +31,45 @@ layout: main
     </a>
   {% endif %}
 </div>
+
+
+<script>
+const API = 'https://www.likeslikes.net';
+const url = window.location.href;
+const btn = document.getElementById('like-btn');
+const count = document.getElementById('like-count');
+const heart = document.querySelector('.like-heart');
+
+// Fetch current like count
+fetch(`${API}/api/v1/likes?url=${encodeURIComponent(url)}`)
+  .then(r => r.json())
+  .then(({ data }) => {
+    count.textContent = data.likes;
+    if (data.is_liked) {
+      btn.disabled = true;
+      heart.textContent = '♥';
+    }
+  })
+  .catch(err => {
+    console.error('Error fetching likes:', err);
+    count.textContent = '0';
+  });
+
+// Handle click
+btn.addEventListener('click', () => {
+  fetch(`${API}/api/v1/likes`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ url })
+  })
+    .then(r => r.json())
+    .then(({ data }) => {
+      if (data.success) {
+        count.textContent = data.likes;
+        heart.textContent = '♥';
+        btn.disabled = true;
+      }
+    })
+    .catch(err => console.error('Error liking:', err));
+});
+</script>
