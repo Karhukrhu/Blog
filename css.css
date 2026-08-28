@@ -516,6 +516,10 @@ li.nav-item {
   fill: currentColor;
 }
 
+.button-wrapper {
+  width:100%;
+  text-align: right;
+}
 
   .like-button {
     /* Layout & Spacing */
