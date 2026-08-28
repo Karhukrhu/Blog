@@ -534,8 +534,8 @@ li.nav-item {
     padding: 0px 0px 0px 6px;
     
     /* FIX: Add fixed dimensions to prevent resizing */
-    min-width: 60px;
-    height: 28px;
+    min-width: 10px;
+    height: 21px;
     
     /* Appearance */
     background: #d1b48d;
