@@ -517,37 +517,35 @@ li.nav-item {
 }
 
 
-
-.like-button {
+  .like-button {
     /* Layout & Spacing */
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
     
     /* Appearance */
     background: #d1b48d;
-    	border-top: 1px solid #f3d5b1;
-	border-bottom: 1px solid #70480d;
-		border-right: 1px solid #70480d;
-	border-left: 1px solid #f3d5b1;
+    border-top: 1px solid #f3d5b1;
+    border-bottom: 1px solid #70480d;
+    border-right: 1px solid #70480d;
+    border-left: 1px solid #f3d5b1;
     border-radius: 50px; /* Makes it pill-shaped */
     cursor: pointer;
     
     /* Typography */
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 11px;
     color: #2d300e;
   }
   
   /* Hover state */
   .like-button:hover {
-    	background-color: #d1b48d;
-	border-top: 1px solid #70480d;
-	border-bottom: 1px solid #f3d5b1;
-		border-right: 1px solid #f3d5b1;
-	border-left: 1px solid #70480d;
-    color: #ff4d4d;
+    background-color: #d1b48d;
+    border-top: 1px solid #70480d;
+    border-bottom: 1px solid #f3d5b1;
+    border-right: 1px solid #f3d5b1;
+    border-left: 1px solid #70480d;
+    color: #70480d; 
     transform: translateY(-2px);
   }
   
@@ -558,21 +556,20 @@ li.nav-item {
   
   /* Disabled state (already liked) */
   .like-button:disabled {
-    	background-color: #d1b48d;
-	border-top: 1px solid #70480d;
-	border-bottom: 1px solid #f3d5b1;
-		border-right: 1px solid #f3d5b1;
-	border-left: 1px solid #70480d;
-    color: white;
+    background-color: #d1b48d;
+    border-top: 1px solid #70480d;
+    border-bottom: 1px solid #f3d5b1;
+    border-right: 1px solid #f3d5b1;
+    border-left: 1px solid #70480d;
+    color: #70480d;
     cursor: not-allowed;
-    opacity: 0.9;
+    opacity: 0.7;
   }
   
   /* The heart icon */
   .like-heart {
     font-size: 1.2rem;
     font-weight: bold;
-    transition: transform 0.3s ease;
   }
   
   /* Heart animation when clicked */
@@ -582,7 +579,7 @@ li.nav-item {
   
   /* The count number */
   .like-count {
-    font-weight: 600;
+    font-weight: 300;
     min-width: 20px;
   }
 

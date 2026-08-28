@@ -106,7 +106,7 @@ layout: main
       count.textContent = data.likes;
       if (data.is_liked) {
         btn.disabled = true;
-        heart.textContent = '♥';
+        heart.textContent = '♡';
       }
     })
     .catch(err => {
@@ -125,7 +125,7 @@ layout: main
       .then(({ data }) => {
         if (data.success) {
           count.textContent = data.likes;
-          heart.textContent = '♥';
+          heart.textContent = '♡';
           btn.disabled = true;
         }
       })
