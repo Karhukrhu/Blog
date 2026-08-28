@@ -516,6 +516,10 @@ li.nav-item {
   fill: currentColor;
 }
 
+
+
+
+
 .button-wrapper {
   width:100%;
   text-align: right;
@@ -550,7 +554,6 @@ li.nav-item {
     border-right: 1px solid #f3d5b1;
     border-left: 1px solid #70480d;
     color: #70480d; 
-    transform: translateY(-2px);
   }
   
   /* Active/Clicked state */
@@ -574,11 +577,6 @@ li.nav-item {
   .like-heart {
     font-size: 16px;
     font-weight: normal;
-  }
-  
-  /* Heart animation when clicked */
-  .like-button:active .like-heart {
-    transform: scale(1.3);
   }
   
   /* The count number */
