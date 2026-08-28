@@ -14,20 +14,29 @@ layout: main
 
 <div class="button-wrapper"> Like this post →
 <button id="like-btn" class="like-button">
-  <span class="like-heart">♡</span>
+  <span class="like-heart">
+    <!-- Unliked state: outline heart SVG -->
+    <svg id="heart-outline" class="heart-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+    </svg>
+    <!-- Liked state: filled heart SVG (hidden by default) -->
+    <svg id="heart-filled" class="heart-svg" style="display: none;" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+    </svg>
+  </span>
   <span id="like-count" class="like-count">0</span>
 </button>
 </div>
 
 
-<!-- 3. THE JAVASCRIPT (Wrapped in raw tags for Liquid safety) -->
 {% raw %}
 <script>
   const API = 'https://www.likeslikes.net';
   const url = window.location.href;
   const btn = document.getElementById('like-btn');
   const count = document.getElementById('like-count');
-  const heart = document.querySelector('.like-heart');
+  const heartOutline = document.getElementById('heart-outline');
+  const heartFilled = document.getElementById('heart-filled');
 
   // Fetch current like count
   fetch(`${API}/api/v1/likes?url=${encodeURIComponent(url)}`)
@@ -36,7 +45,8 @@ layout: main
       count.textContent = data.likes;
       if (data.is_liked) {
         btn.disabled = true;
-        heart.textContent = '♥';
+        heartOutline.style.display = 'none';
+        heartFilled.style.display = 'block';
       }
     })
     .catch(err => {
@@ -55,7 +65,8 @@ layout: main
       .then(({ data }) => {
         if (data.success) {
           count.textContent = data.likes;
-          heart.textContent = '♥';
+          heartOutline.style.display = 'none';
+          heartFilled.style.display = 'block';
           btn.disabled = true;
         }
       })

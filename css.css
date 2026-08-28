@@ -525,12 +525,17 @@ li.nav-item {
   text-align: right;
 }
 
-  .like-button {
+.like-button {
     /* Layout & Spacing */
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0px;
-    padding:0px 0px 0px 6px;
+    padding: 0px 0px 0px 6px;
+    
+    /* FIX: Add fixed dimensions to prevent resizing */
+    min-width: 60px;
+    height: 28px;
     
     /* Appearance */
     background: #d1b48d;
@@ -539,11 +544,14 @@ li.nav-item {
     border-right: 1px solid #70480d;
     border-left: 1px solid #f3d5b1;
     border-radius: 5px;
+    cursor: pointer;
     
     /* Typography */
     font-family: inherit;
     font-size: 11px;
     color: #2d300e;
+    line-height: 1;
+    transition: all 0.2s ease;
   }
   
   /* Hover state */
@@ -567,22 +575,46 @@ li.nav-item {
     border-top: 1px solid #70480d;
     border-bottom: 1px solid #f3d5b1;
     border-right: 1px solid #f3d5b1;
-    border-left: 1px solid #70480d;
+    border-left: 1px solid #f3d5b1;
     color: #70480d;
     cursor: not-allowed;
     opacity: 0.7;
   }
   
-  /* The heart icon */
+  /* The heart icon container */
   .like-heart {
-    font-size: 16px;
-    font-weight: normal;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    flex-shrink: 0;
+  }
+  
+  /* The SVG heart itself */
+  .heart-svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+  
+  /* Style for the outline heart */
+  #heart-outline {
+    stroke: #2d300e;
+  }
+  
+  /* Hover state for outline heart */
+  .like-button:hover #heart-outline {
+    stroke: #70480d;
   }
   
   /* The count number */
   .like-count {
     font-weight: 300;
     min-width: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2px;
   }
 
 
