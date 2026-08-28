@@ -9,12 +9,133 @@ layout: main
 
 {{ content }}
 
-<!-- LIKE BUTTON (Drop-in Method: Simplest & Most Reliable) -->
-<p>
-  <div id="likes"></div>
-</p>
-<!-- Note: Changed http to https for security -->
-<script src="https://www.likeslikes.net/likes.js" defer></script>
+
+
+
+<!-- 1. THE CUSTOM HTML BUTTON -->
+<button id="like-btn" class="like-button">
+  <span class="like-heart">♡</span>
+  <span id="like-count" class="like-count">0</span>
+</button>
+
+<!-- 2. YOUR CUSTOM CSS -->
+<style>
+  .like-button {
+    /* Layout & Spacing */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    
+    /* Appearance */
+    background: #d1b48d;
+    border-top: 1px solid #f3d5b1;
+    border-bottom: 1px solid #70480d;
+    border-right: 1px solid #70480d;
+    border-left: 1px solid #f3d5b1;
+    border-radius: 50px; /* Makes it pill-shaped */
+    cursor: pointer;
+    
+    /* Typography */
+    font-family: inherit;
+    font-size: 1rem;
+    color: #2d300e;
+    transition: all 0.2s ease;
+  }
+  
+  /* Hover state */
+  .like-button:hover {
+    background-color: #d1b48d;
+    border-top: 1px solid #70480d;
+    border-bottom: 1px solid #f3d5b1;
+    border-right: 1px solid #f3d5b1;
+    border-left: 1px solid #70480d;
+    color: #70480d; /* Changed from red to match your theme better, change back if you want! */
+    transform: translateY(-2px);
+  }
+  
+  /* Active/Clicked state */
+  .like-button:active {
+    transform: translateY(0);
+  }
+  
+  /* Disabled state (already liked) */
+  .like-button:disabled {
+    background-color: #d1b48d;
+    border-top: 1px solid #70480d;
+    border-bottom: 1px solid #f3d5b1;
+    border-right: 1px solid #f3d5b1;
+    border-left: 1px solid #70480d;
+    color: #70480d;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  /* The heart icon */
+  .like-heart {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Heart animation when clicked */
+  .like-button:active .like-heart {
+    transform: scale(1.3);
+  }
+  
+  /* The count number */
+  .like-count {
+    font-weight: 600;
+    min-width: 20px;
+  }
+</style>
+
+<!-- 3. THE JAVASCRIPT (Wrapped in raw tags for Liquid safety) -->
+{% raw %}
+<script>
+  const API = 'https://www.likeslikes.net';
+  const url = window.location.href;
+  const btn = document.getElementById('like-btn');
+  const count = document.getElementById('like-count');
+  const heart = document.querySelector('.like-heart');
+
+  // Fetch current like count
+  fetch(`${API}/api/v1/likes?url=${encodeURIComponent(url)}`)
+    .then(r => r.json())
+    .then(({ data }) => {
+      count.textContent = data.likes;
+      if (data.is_liked) {
+        btn.disabled = true;
+        heart.textContent = '♥';
+      }
+    })
+    .catch(err => {
+      console.error('Error fetching likes:', err);
+      count.textContent = '0';
+    });
+
+  // Handle click
+  btn.addEventListener('click', () => {
+    fetch(`${API}/api/v1/likes`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url })
+    })
+      .then(r => r.json())
+      .then(({ data }) => {
+        if (data.success) {
+          count.textContent = data.likes;
+          heart.textContent = '♥';
+          btn.disabled = true;
+        }
+      })
+      .catch(err => console.error('Error liking:', err));
+  });
+</script>
+{% endraw %}
+
+
+
 
 <!-- CATEGORIES -->
 <p>
