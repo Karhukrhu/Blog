@@ -522,7 +522,7 @@ li.nav-item {
     display: inline-flex;
     align-items: center;
     gap: 0px;
-    padding:0px 2px 0px 2px;
+    padding:0px 0px 0px 6px;
     
     /* Appearance */
     background: #d1b48d;
@@ -568,8 +568,8 @@ li.nav-item {
   
   /* The heart icon */
   .like-heart {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: normal;
   }
   
   /* Heart animation when clicked */
