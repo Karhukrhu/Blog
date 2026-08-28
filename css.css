@@ -544,14 +544,12 @@ li.nav-item {
     border-right: 1px solid #70480d;
     border-left: 1px solid #f3d5b1;
     border-radius: 5px;
-    cursor: pointer;
     
     /* Typography */
     font-family: inherit;
     font-size: 11px;
     color: #2d300e;
     line-height: 1;
-    transition: all 0.2s ease;
   }
   
   /* Hover state */
