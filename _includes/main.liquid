@@ -91,7 +91,7 @@ title: Blog
             <h2>Blog ✎</h2>
 
             <div class="blog-navigation">
-              Blog nav :) →
+              <span class="blog-nav-text">Blog nav :) →</span>
               <li class="nav-item">
               <a 
                 {% if page.url == "/" %}
@@ -148,6 +148,23 @@ title: Blog
   	</div>
   	
 
+
+<script>
+  const openBtn = document.getElementById('open-menu-btn');
+  const closeBtn = document.getElementById('close-menu-btn');
+  const menu = document.getElementById('fullscreen-menu');
+  const body = document.body;
+
+  // Function to toggle the menu
+  function toggleMenu() {
+    menu.classList.toggle('active');
+    body.classList.toggle('menu-is-open');
+  }
+
+  // Add click events
+  openBtn.addEventListener('click', toggleMenu);
+  closeBtn.addEventListener('click', toggleMenu);
+</script>
 
 <script>
 const customCursor = document.getElementById('custom-gif-cursor');
