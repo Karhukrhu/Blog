@@ -363,21 +363,29 @@ body.menu-is-open {
     display:block;
 }
 
-/* 5. Style the links inside the menu */
 .mobile-links a, a:visited {
   display: block;
   font-family: rat;
-  font-size: 25px;
-  color: #2d300e;
+  font-size: 15px;
+  color: #70480d;
   text-decoration: none;
   margin: 15px 0;
-  text-shadow: 1px 1px #fffbe2;
+  padding:10px;
+      	       background-color: #d1b48d;
+    	       border-top: 1px solid #f3d5b1;
+	        border-bottom: 1px solid #70480d;
+	        border-right: 1px solid #70480d;
+	        border-left: 1px solid #f3d5b1;
+	        border-radius: 5px;
 }
 
 .mobile-links a:hover {
   color: #70480d;
+  	border-top: 1px solid #70480d;
+	border-bottom: 1px solid #f3d5b1;
+		border-right: 1px solid #f3d5b1;
+	border-left: 1px solid #70480d;
 }
-
 
 }
 
