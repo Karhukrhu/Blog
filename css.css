@@ -1,7 +1,6 @@
 
 
 
-
 @font-face {
   font-family: cavalhatriz; 
   src: url(../assets/Cavalhatriz.ttf); 
@@ -12,9 +11,17 @@
   src: url(../assets/rat-typewriter.ttf); 
 }
 
+
+
 html, body, *, *::before, *::after {
   cursor: none !important;
   
+}
+
+@media screen and (max-width: 600px) {
+html, body, *, *::before, *::after {
+    cursor:default!important;
+  }
 }
 
 #custom-gif-cursor {
@@ -26,11 +33,22 @@ html, body, *, *::before, *::after {
 
 }
 
+@media screen and (max-width: 600px) {
+#custom-gif-cursor {
+    display:none;
+  }
 
+}
 iframe, video, canvas, svg, object, embed {
   cursor: none !important;
 }
 
+@media screen and (max-width: 600px) {
+iframe, video, canvas, svg, object, embed {
+    cursor:default!important;
+  }
+
+}
 
 body, html {
 	background-image: url(../assets/bckgr2.png);
@@ -38,7 +56,14 @@ body, html {
 	padding:0;
 	cursor: none !important;
 		height:100%;
-    scroll-behavior: smooth;
+		scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 600px) {
+body, html {
+    cursor:default!important;
+  }
+
 }
 
 #custom-gif-cursor {
@@ -56,6 +81,13 @@ body, html {
   display: block;
   transform: translate(-50%, -50%); 
 }
+
+@media screen and (max-width: 600px) {
+#custom-gif-cursor img {
+    display:none;
+  }
+}
+
 
 
 ::-moz-selection { /* Code for Firefox */
@@ -77,6 +109,11 @@ body, html {
     width: 490px;
 }
 
+@media screen and (max-width: 600px) {
+#content-wrapper {
+        width: 345px;
+  }
+}
 #top {
 	height:216px;
 	width:490px;
@@ -87,19 +124,64 @@ body, html {
   overflow: hidden;
 }
 
+@media screen and (max-width: 600px) {
+#top {
+    width: 345px;
+    height: 152px;
+    background-size: 100%;
+    
+    /* Add these two lines to fix the alignment: */
+    margin: 0 auto; 
+    transform: none;  
+  }
+}
+  
+#top  h1.place {
+     position:relative;
+     top:0px;
+     font-size:30px;
+     letter-spacing: 2px;
+     margin:0px;
+     padding:0px;
+     line-height:0;
+}
+
 .grid-container {
-	width:479px;
+	width:476px;
   display: grid;
   grid-template-columns: 42px 395px 42px;
   gap: 0rem;
   margin:0 auto;
 }
 
+@media screen and (max-width: 600px) {
+.grid-container {
+    width:345px;
+  display: grid;
+  grid-template-columns: 33px 278px 33px;
+  gap: 0rem;
+  margin:0 auto;
+  }
+}
+
+
+
 #left-side {
 	width:47px;
 	background-image: url(../assets/lace-left.png);
 	background-repeat: repeat-y;
 }
+
+@media screen and (max-width: 600px) {
+#left-side {
+    width:36px;
+	background-size: 100%;
+  }
+}
+
+
+
+/* NAVIGATION */
 
 nav#navigation {
 	position: relative;
@@ -185,6 +267,123 @@ nav .link a, nav .link a:visited {
   background-image: url(../assets/button_down.png);	
 }
 
+
+/* navigation responsive */
+
+@media screen and (max-width: 600px) {
+.link {
+    display:none;
+  }
+}
+
+
+.mobile-navigation {
+    display: none;
+}
+
+.mobile-links {
+    display:none;
+}
+
+.close-btn {
+    display:none;
+}
+@media screen and (max-width: 600px) {
+    
+    
+        .mobile-navigation {
+            display:block;
+              width: 30px;      
+              height: 30px;
+              color: #2d300e;   
+              line-height: 0;
+              cursor: pointer;
+    	       background-color: #d1b48d;
+    	       border-top: 1px solid #f3d5b1;
+	        border-bottom: 1px solid #70480d;
+	        border-right: 1px solid #70480d;
+	        border-left: 1px solid #f3d5b1;
+	        border-radius: 5px;
+	        margin:0 auto;
+    
+      }
+  
+  button.mobile-navigation:hover,   button.mobile-navigation:active,   button.mobile-navigation:focus {
+	border-top: 1px solid #70480d;
+	border-bottom: 1px solid #f3d5b1;
+		border-right: 1px solid #f3d5b1;
+	border-left: 1px solid #70480d;
+      
+  }
+  
+  
+  /* 1. The rule to disable scrolling */
+body.menu-is-open {
+  overflow: hidden; 
+}
+
+/* 2. The fullscreen overlay */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #c09e81; /* Matches your #content background */
+  z-index: 9998; /* High enough to cover everything, but below your custom cursor */
+  
+  /* Hidden by default */
+  display: none; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* 3. Show the menu when the 'active' class is added */
+.fullscreen-menu.active {
+  display: flex;
+}
+
+/* 4. Style the close button */
+.close-btn {
+    display:block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  color: #2d300e;
+  cursor: pointer;
+  font-family: cavalhatriz; /* Matches your site font */
+}
+
+.mobile-links {
+    display:block;
+}
+
+/* 5. Style the links inside the menu */
+.mobile-links a, a:visited {
+  display: block;
+  font-family: rat;
+  font-size: 25px;
+  color: #2d300e;
+  text-decoration: none;
+  margin: 15px 0;
+  text-shadow: 1px 1px #fffbe2;
+}
+
+.mobile-links a:hover {
+  color: #70480d;
+}
+
+
+}
+
+
+/* CONTENT */ 
+
 #content {
 	background-color:#c09e81;
 	font-family: rat;
@@ -206,6 +405,12 @@ h1 {
 	 font-weight: 300;
 }
 
+@media screen and (max-width: 600px) {
+h1{
+    font-size: 35px;
+  }
+}
+
 h2 {
 	margin-top:35px;
 	text-align: center;
@@ -220,7 +425,6 @@ h3 {
     font-weight: 300;
     color:#2d300e;
     letter-spacing: 2px;
-    margin-right: 20px;
 }
 
 #the-content p {
@@ -261,6 +465,41 @@ h3 {
 	padding:0px;
 }
 
+@media screen and (max-width: 600px) {
+#the-content img {
+    width:100%;
+    height:auto;
+}
+}
+
+
+.fanlistings-design {
+    font-size: 0; 
+    text-align: center;
+    line-height: 0;
+}
+
+#the-content .fanlistings-design a {
+    display:inline-block;
+width:50px;
+height:50px;
+background-blend-mode:multiply;background-color:#d1b48d;
+padding:0px;
+margin:2px;
+}
+
+#the-content .fanlistings-design a, .fanlistings-design a:visited {
+    border:1px transparent solid;
+}
+
+#the-content .fanlistings-design a:hover, .fanlistings-design a:active{
+    background-blend-mode:normal;
+	border-top: 1px solid #70480d;
+	border-bottom: 1px solid #f3d5b1;
+	border-right: 1px solid #f3d5b1;
+	border-left: 1px solid #70480d;
+}
+
 .updates {
 	width:100%;
 	max-height:100px;
@@ -279,7 +518,6 @@ h3 {
 	  padding:5px 15px;
   margin-bottom: 0px;
 }
-
 .updates .date {
 	white-space: nowrap; 
 	margin-right:10px;
@@ -309,6 +547,7 @@ h3 {
   white-space: nowrap; 
 }
 
+
 .dot-line {
   flex-grow: 1; 
   border-bottom: 1px dotted #2d300e;
@@ -320,6 +559,7 @@ h3 {
 .dot-desc {
   white-space: nowrap; 
 }
+
 
 #blog-wrapper {
 	  margin-top:30px;
@@ -398,35 +638,112 @@ h3 {
 .num1 {
 -webkit-transform: translate(0px, 30px) rotate(-35deg);
 }
+
+@media screen and (max-width: 600px) {
+.num1 {
+-webkit-transform: translate(0px, 33px) rotate(-40deg);
+  }
+}
+
 .num2 {
 -webkit-transform: translate(0px, 20px) rotate(-30deg);
 }
+
+@media screen and (max-width: 600px) {
+.num2 {
+-webkit-transform: translate(0px, 20px) rotate(-35deg);
+  }
+}
+
 .num3 {
 -webkit-transform: translate(0px, 15px) rotate(-25deg);
 }
+
+@media screen and (max-width: 600px) {
+.num3 {
+-webkit-transform: translate(0px, 14px) rotate(-30deg);
+  }
+}
+
 .num4 {
 -webkit-transform: translate(0px, 12px) rotate(-20deg);
 }
+
+@media screen and (max-width: 600px) {
+.num4 {
+-webkit-transform: translate(0px, 12px) rotate(-20deg);
+  }
+}
+
 .num5 {
 -webkit-transform: translate(0px, 10px) rotate(-0deg);
 }
+
+@media screen and (max-width: 600px) {
+.num5 {
+-webkit-transform: translate(0px, 9px) rotate(-10deg);
+  }
+}
+
 .num6 {
--webkit-transform: translate(0px, 10px) rotate(0deg);
+-webkit-transform: translate(0px, 10px) rotate(-0deg);
+}
+
+@media screen and (max-width: 600px) {
+.num6 {
+-webkit-transform: translate(0px, 9px) rotate(10deg);
+  }
 }
 .num7 {
 -webkit-transform: translate(0px, 12px) rotate(20deg);
 }
+
+@media screen and (max-width: 600px) {
+.num7 {
+-webkit-transform: translate(0px, 12px) rotate(20deg);
+  }
+}
+
 .num8 {
 -webkit-transform: translate(0px, 15px) rotate(25deg);
 }
+
+@media screen and (max-width: 600px) {
+.num8 {
+-webkit-transform: translate(0px, 14px) rotate(30deg);
+  }
+}
+
 .num9 {
 -webkit-transform: translate(0px, 20px) rotate(30deg);
 }
+
+@media screen and (max-width: 600px) {
+.num9 {
+-webkit-transform: translate(0px, 20px) rotate(35deg);
+  }
+}
+
 .num10 {
 -webkit-transform: translate(0px, 30px) rotate(35deg);
 }
 
+@media screen and (max-width: 600px) {
+.num10 {
+-webkit-transform: translate(0px, 33px) rotate(40deg);
+  }
+}
+
 h1 span {display: inline-block; margin-top: 50px;}
+
+@media screen and (max-width: 600px) {
+h1 span {
+display: inline-block; 
+margin-top: 30px;
+margin-bottom:25px;
+  }
+}
+
 
 
 /*BLOG*/
@@ -656,6 +973,13 @@ li.nav-item {
 	background-repeat: repeat-y;
 }
 
+@media screen and (max-width: 600px) {
+#right-side {
+    width:36px;
+	background-size: 100%;
+  }
+}
+
 #watering {
 	position:absolute;
 	top:79px;
@@ -664,6 +988,11 @@ li.nav-item {
 	width:170px;
 	height:180px;
 	background-image: url(../assets/watering_can.gif);
+}
+
+@media screen and (max-width: 600px) {
+#watering {
+  }
 }
 
 #daisies {
@@ -677,12 +1006,38 @@ li.nav-item {
 	z-index: 100;
 }
 
+@media screen and (max-width: 600px) {
+#daisies{
+    position:absolute;
+	top:116px;
+	left:190px;
+	margin:0 auto;
+	width:150px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+  }
+}
+
 #menu-text {
 	text-align: center;
 	font-size:13px;
 	color:#70480d;
 	 text-shadow: 1px 1px #e2bea1;
 	 letter-spacing:3px;
+}
+
+.back-to-top {
+    display: block;
+    position:relative;
+    top:50px;
+    text-align: right;
+}
+
+@media screen and (max-width: 600px) {
+.back-to-top{
+    position:relative;
+    top:25px;
+  }
 }
 
 #footer {
@@ -693,11 +1048,25 @@ li.nav-item {
 	text-align: center;
 }
 
+@media screen and (max-width: 600px) {
+#footer {
+        width: 345px;
+        height:152px;
+        background-size: 100%;
+  }
+}
+
 #footer span {
 	position:relative;
 	top:75px;
 	font-family: rat;
 	font-size: 11px;
+}
+@media screen and (max-width: 600px) {
+#footer span{
+	position:relative;
+	top:50px;
+  }
 }
 
 
