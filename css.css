@@ -950,6 +950,13 @@ li.nav-item {
     top:50px;
 }
 
+@media screen and (max-width: 600px) {
+.back-to-top{
+    position:relative;
+    top:25px;
+  }
+}
+
 .back-to-top a, a:visited {
 	text-decoration:none;
 	color:#4f533a;
