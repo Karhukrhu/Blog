@@ -791,7 +791,7 @@ li.nav-item {
 }
 
 @media screen and (max-width: 600px) {
-.blog-nav-text {
+.post-title {
     max-width: 100px;
     font-size: 10px !important;
 }
