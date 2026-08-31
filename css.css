@@ -146,6 +146,14 @@ body, html {
      line-height:0;
 }
 
+@media screen and (max-width: 600px) {
+#top  h1.place {
+     position:relative;
+     top:-20px;
+     font-size:25px;
+  }
+}
+
 .grid-container {
 	width:476px;
   display: grid;
