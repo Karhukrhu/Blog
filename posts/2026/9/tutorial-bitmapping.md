@@ -1,7 +1,7 @@
 ---
 title: Tutorial on How to Create A Pixelated Image look
 date: 2026-09-02
-cover: "/blog/posts/2026/9/bitmapping-tutorial/ba.png"
+cover: "/posts/2026/9/bitmapping-tutorial/ba.png"
 categories: ["Photo editing", "Tutorial", "Bitmap"]
 tags: post
 ---
