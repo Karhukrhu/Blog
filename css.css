@@ -74,12 +74,14 @@ body, html {
   z-index: 9999;
   margin: 0;
   padding: 0;
+  z-index: 2147483647;
 }
 
 
 #custom-gif-cursor img {
   display: block;
   transform: translate(-50%, -50%); 
+  z-index: 2147483647;
 }
 
 @media screen and (max-width: 600px) {
@@ -977,6 +979,79 @@ li.nav-item {
   stroke: #70480d;
   fill:#70480d;
 }
+
+/* Remove underline and border from lightbox image links */
+#content #the-content a.lightbox {
+  text-decoration: none;
+  padding: 0px;
+  border: 1px solid transparent;
+  display: inline-block; /* This is the key! */
+  outline: none;
+}
+
+/* Add a centering class */
+.img-center {
+  text-align: center;
+}
+
+#content #the-content a.lightbox:hover {
+  text-decoration: none;
+    background-color: #d1b48d;
+    border-top: 1px solid #70480d;
+    border-bottom: 1px solid #f3d5b1;
+    border-right: 1px solid #f3d5b1;
+    border-left: 1px solid #f3d5b1;
+    border-radius: 5px;
+  outline: none;
+}
+
+a.lightbox img {
+  border: none;
+  display: block;
+  border-radius: 5px;
+}
+
+
+.img-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.img-row .img-center {
+  flex: 1;
+  min-width: 100px; /* Minimum width before stacking */
+  max-width: 200px; /* Maximum width for each image */
+}
+
+.img-row .img-center a.lightbox {
+  width: 100%;
+}
+
+.img-row .img-center img {
+  width: 100%;
+  height: auto;
+}
+
+/* For mobile: stack images vertically */
+@media (max-width: 600px) {
+  .img-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .img-row .img-center {
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+
 
 
 .back-to-top {

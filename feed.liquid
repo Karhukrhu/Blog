@@ -19,7 +19,6 @@ eleventyExcludeFromCollections: true
   </author>
 
   {% for post in sorted_posts %}
-    {% comment %} THE MAGIC FIX: This forces Eleventy to add /blog/ to the URL {% endcomment %}
     {% assign postPath = post.url | url %}
     {% assign absolutePostUrl = site.url | append: postPath %}
     
@@ -28,7 +27,17 @@ eleventyExcludeFromCollections: true
       <link href="{{ absolutePostUrl }}" rel="alternate" type="text/html"/>
       <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
       <id>{{ absolutePostUrl }}</id>
-      <content type="html">{{ post.templateContent | xml_escape }}</content>
+      
+      {# --- 1. ADD THIS: Atom Enclosure for Preview Image --- #}
+      {% if post.data.cover %}
+        {% assign absoluteCoverUrl = site.url | append: post.data.cover %}
+        <link rel="enclosure" type="image/jpeg" href="{{ absoluteCoverUrl }}" />
+      {% endif %}
+      {# ----------------------------------------------------- #}
+
+      {# --- 2. FIX THIS: Use CDATA so <img> tags actually render --- #}
+      {# Removed | xml_escape, which was hiding your images from readers! #}
+      <content type="html"><![CDATA[{{ post.templateContent }}]]></content>
     </entry>
   {% endfor %}
 </feed>

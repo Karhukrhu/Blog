@@ -13,6 +13,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css.css");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("blog/images/*");
+  
+  // 🐻 ADD THESE LINES TO COPY IMAGES FROM YOUR POSTS FOLDER:
+  eleventyConfig.addPassthroughCopy("posts/**/*.png");
+  eleventyConfig.addPassthroughCopy("posts/**/*.jpg");
+  eleventyConfig.addPassthroughCopy("posts/**/*.jpeg");
+  eleventyConfig.addPassthroughCopy("posts/**/*.webp");
+  eleventyConfig.addPassthroughCopy("posts/**/*.gif");
 
   // --- Helper to guarantee categories is always an array ---
   const getCategoriesArray = (categories) => {
@@ -108,4 +115,4 @@ module.exports = function(eleventyConfig) {
       includes: "_includes" 
     }
   };
-};
+}; 
