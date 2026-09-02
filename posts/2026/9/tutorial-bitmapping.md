@@ -204,4 +204,6 @@ Here is the result zoomed to 100%
 
 So, I highly recommend that you bitmap only after resizing your image to the preferred size, so it will render nicely.
 
-Here’s what I know about picture bitmapping on Photoshop. I hope this tutorial will help you with your works!
+Here’s what I know about picture bitmapping on Photoshop. I hope this tutorial will help you with your works! 
+
+Also, if you know any more of this topic or have something to change or other comments, please reach out to me at karhukarhu[at]karhukarhu.net and I will update the tutorial.
