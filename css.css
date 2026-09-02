@@ -490,25 +490,32 @@ h3 {
 }
 
 #the-content strong {
-    /* Your text styles */
-    font-weight: normal; 
-    color: #000000; /* Black text like in your image */
+    /* 1. Setup the text */
+    font-weight: normal;
+    color: #d1b48d;
+    
+    /* 2. Crucial: Makes the text act like a block so we can size things behind it */
+    display: inline-block; 
+    position: relative; 
+    z-index: 1; /* Keeps the text on top */
+}
 
-    /* 1. The background block color */
-    background-color: #d1b48d; /* The tan color from your image */
+/* 3. The Magic: Creates the background block */
+#the-content strong::before {
+    content: "";
+    position: absolute;
+    z-index: -1; /* Puts the block BEHIND the text */
     
-    /* 2. Make the block smaller than the text */
-    /* First number is width (80% of text width), second is height (50% of text height) */
-    background-size: 80% 50%; 
+    /* --- TWEAK THESE TO CHANGE THE BLOCK SIZE --- */
+    width: 90%;  /* Makes the block narrower than the text */
+    height: 60%; /* Makes the block shorter than the text */
     
-    /* 3. Position the block in the bottom-right area */
-    /* First number is horizontal position (15% from left), second is vertical (50% from top) */
-    background-position: 15% 50%; 
+    /* --- TWEAK THESE TO MOVE THE BLOCK --- */
+    top: 30%;    /* Pushes it down (text sticks out the top) */
+    left: 10%;   /* Pushes it right (text sticks out the left) */
     
-    background-repeat: no-repeat;
-    
-    /* Optional: A tiny bit of padding so it doesn't hug the letters too tightly */
-    padding: 0 2px; 
+    /* The color of your block */
+    background-color: #2d300e; 
 }
 
 
