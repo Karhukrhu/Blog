@@ -491,8 +491,14 @@ h3 {
 
 #the-content strong {
     font-weight: normal;
-    color:#d1b48d;
-    box-shadow: 1px 1px 0px 4px #2d300e; 
+    
+    background-color: #d1b48d; 
+    
+    /* 2. The block peeking out from the bottom-right */
+    /* Syntax: X-offset | Y-offset | Blur | SPREAD | Color */
+    box-shadow: 3px 3px 0px 0px #d1b48d; 
+    padding: 2px 4px; 
+}
 }
 
 @media screen and (max-width: 600px) {
