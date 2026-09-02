@@ -491,13 +491,12 @@ h3 {
 
 #the-content strong {
     font-weight: normal;
-    
-    background-color: #d1b48d; 
-    
-    /* 2. The block peeking out from the bottom-right */
-    /* Syntax: X-offset | Y-offset | Blur | SPREAD | Color */
-    box-shadow: 3px 3px 0px 0px #d1b48d; 
-    padding: 2px 4px; 
+    background-color: #d1b48d;
+    background-size: 100% 60%;       /* 100% width, but only 60% of the text's height */
+    background-position: center bottom; /* Pushes the block to the bottom so the top of the text sticks out */
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px 0px 0px #d1b48d; 
+    padding: 0 4px; 
 }
 }
 
