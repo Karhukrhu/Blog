@@ -1,7 +1,8 @@
 ---
 permalink: /feed.xml
 eleventyExcludeFromCollections: true
----<?xml version="1.0" encoding="utf-8"?>
+---
+<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <title>Karhukarhu Blog</title>
   <subtitle>Latest posts from Karhukarhu</subtitle>
@@ -26,8 +27,8 @@ eleventyExcludeFromCollections: true
         {% assign absoluteCoverUrl = site.url | append: post.data.cover %}
         <link rel="enclosure" type="image/png" href="{{ absoluteCoverUrl }}" />
         <media:content url="{{ absoluteCoverUrl }}" medium="image" />
+        <media:thumbnail url="{{ absoluteCoverUrl }}" />
       {% endif %}
-      <summary type="html"><![CDATA[{{ post.templateContent | strip_html | truncate: 500 }}]]></summary>
       <content type="html"><![CDATA[{{ post.templateContent }}]]></content>
     </entry>
   {% endfor %}
