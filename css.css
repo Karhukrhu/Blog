@@ -491,9 +491,8 @@ h3 {
 
 #the-content strong {
     font-weight: normal;
-    background-color: #d1b48d;
-    margin-top:-3px;
-    margin-left:-3px;
+    colour:#d1b48d;
+    box-shadow: 3px 3px 0px 0px #2d300e; 
 }
 
 @media screen and (max-width: 600px) {
