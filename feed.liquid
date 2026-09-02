@@ -27,14 +27,14 @@ eleventyExcludeFromCollections: true
       <link href="{{ absolutePostUrl }}" rel="alternate" type="text/html"/>
       <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
       <id>{{ absolutePostUrl }}</id>
-   
+      
+      {% comment %} Atom Enclosure for Preview Image {% endcomment %}
       {% if post.data.cover %}
         {% assign absoluteCoverUrl = site.url | append: post.data.cover %}
         <link rel="enclosure" type="image/jpeg" href="{{ absoluteCoverUrl }}" />
       {% endif %}
-   
 
-      {# Removed | xml_escape, which was hiding your images from readers! #}
+      {% comment %} Use CDATA so img tags actually render {% endcomment %}
       <content type="html"><![CDATA[{{ post.templateContent }}]]></content>
     </entry>
   {% endfor %}
