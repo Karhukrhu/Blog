@@ -14,13 +14,13 @@ tags: post
 </a>
 </div>
 
-I’ve come across quite a few people using pixelated images in their layouts. I guess they’re quite popular. In any way, I got very excited about the old newspaper print look and decided to make a small tutorial on how to achieve this rasterized style.
+I’ve come across quite a few people using pixelated images in their layouts. I guess they’re pretty popular. In any way, I got very excited about the old newspaper print look and decided to make a small tutorial on how to achieve this rasterized style. Heck, I even use myself :'D
 
-First off, a few notes about the topic. I use Photoshop for editing images. Unfortunately, I have zero experience with any other editing software so I can’t help you with them. There is a possibility that other software work similarly, so you might benefit from this tutorial.
+First off, a few notes about the tutorial. I use Photoshop for editing images. Unfortunately, I have zero experience with any other editing software so I can’t help you with them. There is a possibility that other software work similarly, so you might benefit from this article afterall.
 
-My PS in in Finnish and it seems I can’t change the user interface in English. I assume you have a basic knowledge in how to use your chosen software, but I will translate the titles and process in English as the tutorial goes on.
+My PS in in Finnish and it seems I can’t change the user interface to English. I assume you have a basic knowledge in how to use your chosen software, but I will translate the titles and process in English as the tutorial goes on.
 
-So unsurprisingly we start by choosing an image and opening it in PS. I chose to use this flower picture I’ve taken some time ago.
+So, unsurprisingly, we start by choosing an image and opening it in PS. I chose to use this flower picture I’ve taken some time ago.
 
 <div class="img-center">
 <a href="/posts/2026/9/bitmapping-tutorial/Picture1.png" class="lightbox" data-gallery="bitmapping">
@@ -65,7 +65,7 @@ Now we can choose bitmap
 </a>
 </div>
 
-Make sure output has the same value than input. For me it’s 72. Photoshop shows automatically which resolution you’re using. This will prevent the image resizing after converting it to bitmap.
+Make sure output has the same value than input. For me it’s 72. Photoshop shows automatically which resolution you’re using. This will prevent the image from resizing after converting it to bitmap.
 
 <div class="img-center">
 <a href="/posts/2026/9/bitmapping-tutorial/Picture5.png" class="lightbox" data-gallery="bitmapping">
@@ -76,7 +76,7 @@ Make sure output has the same value than input. For me it’s 72. Photoshop show
 </a>
 </div>
 
-You can find out your resolution from image size dialog box. Just go to <strong>image > Image size > Resolution</strong>. Or just use Shortcut: <strong>Press Ctrl + Alt + I (Windows) or Cmd + Opt + I (Mac)</strong>.
+You can find out your resolution from image size dialog box. Just go to <strong>image > Image size > Resolution</strong>. Or use Shortcut: Press Ctrl + Alt + I (Windows) or Cmd + Opt + I (Mac).
 
 <div class="img-center">
 <a href="/posts/2026/9/bitmapping-tutorial/Picture6.png" class="lightbox" data-gallery="bitmapping">
@@ -96,7 +96,7 @@ You can find out your resolution from image size dialog box. Just go to <strong>
 </a>
 </div>
 
-I choose to use “Halftone Screen” as a method. You can freely experiment with different options! In the next dialogue box after pressing ok, you can the degree option. If you want a classic, old newspaper print look, leave 45 degrees in the second box. As of Shape, I use round. 
+I choose to use “Halftone Screen” as a method. You can freely experiment with different options! In the next dialogue box after pressing ok, you can see the degree option. If you want a classic, old newspaper print look, leave it at 45 degrees in the second box. As of Shape, I use round. 
 
 <div class="img-center">
 <a href="/posts/2026/9/bitmapping-tutorial/Picture8.png" class="lightbox" data-gallery="bitmapping">
@@ -118,9 +118,9 @@ After clicking OK, your Image should look like this:
 </a>
 </div>
 
-Different shapes will give you different outputs, but these show only on larger images. In my example there isn’t any difference between shapes.
+Different shapes are used in eg. printing a physical image, but here it doesn't matter which shape you use.
 
-If you really want to make the image stand out, before converting to bitmap, you can change levels for more contrast. Go to <strong>Image > Adjustments > Levels</strong>. (Shortcut: Press <strong>Ctrl + L (Windows) or Cmd + L (Mac)</strong>.) There is a way to make this through a safer way, but for the simplicity we will use this straightforward method.
+If you really want to make the image stand out, before converting to bitmap, you can change levels for more contrast. Go to <strong>Image > Adjustments > Levels</strong> (Shortcut: Press Ctrl + L (Windows) or Cmd + L (Mac).) There is a way to make this through a safer way, but for the simplicity we will use this straightforward method.
 
 <div class="img-center">
 <a href="/posts/2026/9/bitmapping-tutorial/Picture10.png" class="lightbox" data-gallery="bitmapping">
@@ -131,7 +131,7 @@ If you really want to make the image stand out, before converting to bitmap, you
 </a>
 </div>
 
-A properties panel will show up. Here you need to adjust the small triangles to adjust the contrast. There is no need to touch the lower triangles. Instead, move the upper triangles right below the graph. You will see a preview of your adjustments as you make them.
+A properties panel will show up. Here you need to adjust the small triangles to adjust the contrast. There is no need to touch the lower triangles. Instead, move the upper ones right below the graph. You will see a preview of your adjustments as you make them.
 
 <div class="img-center">
 <a href="/posts/2026/9/bitmapping-tutorial/Picture11.png" class="lightbox" data-gallery="bitmapping">
@@ -202,8 +202,8 @@ Here is the result zoomed to 100%
 </div>
 </div>
 
-So, I highly recommend that you bitmap only after resizing your image to the preferred size, so it will render nicely.
+So, I highly recommend that you bitmap only after resizing your image to the preferred size, so it will render nicely. It's pretty much trial and error so keep experimenting for the optimal result!
 
 Here’s what I know about picture bitmapping on Photoshop. I hope this tutorial will help you with your works! 
 
-Also, if you know any more of this topic or have something to change or other comments, please reach out to me at karhukarhu[at]karhukarhu.net and I will update the tutorial.
+Also, if you know any more of this topic or have something to correct or other comments, please reach out to me at karhukarhu[at]karhukarhu.net and I will update the tutorial.
