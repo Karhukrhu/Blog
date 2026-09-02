@@ -10,7 +10,7 @@ tags: post
   <img src="/posts/2026/9/bitmapping-tutorial/ba.png" 
        alt="Before after comparizon between unpixelated and pixelated image" 
        width="800" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;" />
 </a>
 </div>
 
@@ -27,7 +27,7 @@ So, unsurprisingly, we start by choosing an image and opening it in PS. I chose 
   <img src="/posts/2026/9/bitmapping-tutorial/Picture1.png" 
        alt="A flower picture before applying the bitmap effect" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -40,7 +40,7 @@ Next, we go to <strong>Image > Mode > Grayscale</strong>. Eventually we’re goi
   <img src="/posts/2026/9/bitmapping-tutorial/Picture2.png" 
        alt="Choosing the grayscale" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -50,7 +50,7 @@ Choose discard colour information when a pop-up window pops out.
   <img src="/posts/2026/9/bitmapping-tutorial/Picture3.png" 
        alt="Choose to discard" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -61,7 +61,7 @@ Now we can choose bitmap
   <img src="/posts/2026/9/bitmapping-tutorial/Picture4.png" 
        alt="Choosing the bitmap" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -72,7 +72,7 @@ Make sure output has the same value than input. For me it’s 72. Photoshop show
   <img src="/posts/2026/9/bitmapping-tutorial/Picture5.png" 
        alt="Check the resolution" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -83,7 +83,7 @@ You can find out your resolution from image size dialog box. Just go to <strong>
   <img src="/posts/2026/9/bitmapping-tutorial/Picture6.png" 
        alt="Check the resolution through image size" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -92,7 +92,7 @@ You can find out your resolution from image size dialog box. Just go to <strong>
   <img src="/posts/2026/9/bitmapping-tutorial/Picture7.png" 
        alt="Check the resolution through image size" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -103,7 +103,7 @@ I choose to use “Halftone Screen” as a method. You can freely experiment wit
   <img src="/posts/2026/9/bitmapping-tutorial/Picture8.png" 
        alt="Choosing the method" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -114,7 +114,7 @@ After clicking OK, your Image should look like this:
   <img src="/posts/2026/9/bitmapping-tutorial/Picture9.png" 
        alt="End result" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -127,7 +127,7 @@ If you really want to make the image stand out, before converting to bitmap, you
   <img src="/posts/2026/9/bitmapping-tutorial/Picture10.png" 
        alt="Choosing levels" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -138,7 +138,7 @@ A properties panel will show up. Here you need to adjust the small triangles to 
   <img src="/posts/2026/9/bitmapping-tutorial/Picture11.png" 
        alt="Properties panel with the levels" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -149,7 +149,7 @@ I chose it like so
   <img src="/posts/2026/9/bitmapping-tutorial/Picture12.png" 
        alt="Chosen levels" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -163,7 +163,7 @@ Here’s the end result compared to the previous result we got.
         <img src="/posts/2026/9/bitmapping-tutorial/Picture13.png" 
             alt="Second end result" 
             width="200" 
-            style="max-width: 100%; height: auto;">
+            style="max-width: 100%; height: auto;"/>
         </a>
     </div>
 
@@ -171,7 +171,7 @@ Here’s the end result compared to the previous result we got.
   <img src="/posts/2026/9/bitmapping-tutorial/Picture14.png" 
        alt="First end result" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 </div>
@@ -188,7 +188,7 @@ Here is the result zoomed to 100%
   <img src="/posts/2026/9/bitmapping-tutorial/Picture15.png" 
        alt="End result with image resizing" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 
@@ -197,7 +197,7 @@ Here is the result zoomed to 100%
   <img src="/posts/2026/9/bitmapping-tutorial/Picture16.png" 
        alt="End result without image resizing" 
        width="200" 
-       style="max-width: 100%; height: auto;">
+       style="max-width: 100%; height: auto;"/>
 </a>
 </div>
 </div>
