@@ -490,15 +490,27 @@ h3 {
 }
 
 #the-content strong {
-    font-weight: normal;
-    background-color: #d1b48d;
-    background-size: 100% 40%;       /* 100% width, but only 60% of the text's height */
-    background-position: center bottom; /* Pushes the block to the bottom so the top of the text sticks out */
+    /* Your text styles */
+    font-weight: normal; 
+    color: #000000; /* Black text like in your image */
+
+    /* 1. The background block color */
+    background-color: #d1b48d; /* The tan color from your image */
+    
+    /* 2. Make the block smaller than the text */
+    /* First number is width (80% of text width), second is height (50% of text height) */
+    background-size: 80% 50%; 
+    
+    /* 3. Position the block in the bottom-right area */
+    /* First number is horizontal position (15% from left), second is vertical (50% from top) */
+    background-position: 15% 50%; 
+    
     background-repeat: no-repeat;
-    box-shadow: 2px 2px 0px 0px #d1b48d; 
-    padding: 0 4px; 
+    
+    /* Optional: A tiny bit of padding so it doesn't hug the letters too tightly */
+    padding: 0 2px; 
 }
-}
+
 
 @media screen and (max-width: 600px) {
 #the-content img {
