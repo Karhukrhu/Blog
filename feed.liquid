@@ -25,7 +25,7 @@ eleventyExcludeFromCollections: true
       <id>{{ absolutePostUrl }}</id>
       {% if post.data.cover %}
         {% assign absoluteCoverUrl = site.url | append: post.data.cover %}
-        <link rel="enclosure" type="image/jpeg" href="{{ absoluteCoverUrl }}" />
+        <link rel="enclosure" type="image/png" href="{{ absoluteCoverUrl }}" />
       {% endif %}
       <content type="html"><![CDATA[{{ post.templateContent }}]]></content>
     </entry>
