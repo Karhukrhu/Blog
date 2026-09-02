@@ -489,6 +489,13 @@ h3 {
 	padding:0px;
 }
 
+#the-content strong {
+    font-weight: normal;
+    background-color: #d1b48d;
+    margin-top:-3px;
+    margin-left:-3px;
+}
+
 @media screen and (max-width: 600px) {
 #the-content img {
     width:100%;
