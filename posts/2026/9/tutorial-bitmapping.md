@@ -167,13 +167,14 @@ Here’s the end result compared to the previous result we got.
         </a>
     </div>
 
-<div class="img-center"><a href="/posts/2026/9/bitmapping-tutorial/Picture14.png" class="lightbox" data-gallery="bitmapping">
-  <img src="/posts/2026/9/bitmapping-tutorial/Picture14.png" 
-       alt="First end result" 
-       width="200" 
-       style="max-width: 100%; height: auto;"/>
-</a>
-</div>
+    <div class="img-center">
+        <a href="/posts/2026/9/bitmapping-tutorial/Picture14.png" class="lightbox" data-gallery="bitmapping">
+        <img src="/posts/2026/9/bitmapping-tutorial/Picture14.png" 
+            alt="First end result" 
+            width="200" 
+            style="max-width: 100%; height: auto;"/>
+        </a>
+    </div>
 </div>
 
 But how does the image size effect on the result?
@@ -183,23 +184,23 @@ The same process, same values, just different image size. I will use 1333px x 20
 Here is the result zoomed to 100%
 
 <div class="img-row">
-<div class="img-center">
-<a href="/posts/2026/9/bitmapping-tutorial/Picture15.png" class="lightbox" data-gallery="bitmapping">
-  <img src="/posts/2026/9/bitmapping-tutorial/Picture15.png" 
-       alt="End result with image resizing" 
-       width="200" 
-       style="max-width: 100%; height: auto;"/>
-</a>
-</div>
+    <div class="img-center">
+        <a href="/posts/2026/9/bitmapping-tutorial/Picture15.png" class="lightbox" data-gallery="bitmapping">
+        <img src="/posts/2026/9/bitmapping-tutorial/Picture15.png" 
+            alt="End result with image resizing" 
+            width="200" 
+            style="max-width: 100%; height: auto;"/>
+        </a>
+    </div>
 
-<div class="img-center">
-<a href="/posts/2026/9/bitmapping-tutorial/Picture16.png" class="lightbox" data-gallery="bitmapping">
-  <img src="/posts/2026/9/bitmapping-tutorial/Picture16.png" 
-       alt="End result without image resizing" 
-       width="200" 
-       style="max-width: 100%; height: auto;"/>
-</a>
-</div>
+    <div class="img-center">
+        <a href="/posts/2026/9/bitmapping-tutorial/Picture16.png" class="lightbox" data-gallery="bitmapping">
+        <img src="/posts/2026/9/bitmapping-tutorial/Picture16.png" 
+            alt="End result without image resizing" 
+            width="200" 
+            style="max-width: 100%; height: auto;"/>
+        </a>
+    </div>
 </div>
 
 So, I highly recommend that you bitmap only after resizing your image to the preferred size, so it will render nicely. It's pretty much trial and error so keep experimenting for the optimal result!
