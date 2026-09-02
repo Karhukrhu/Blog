@@ -27,6 +27,7 @@ eleventyExcludeFromCollections: true
         <link rel="enclosure" type="image/png" href="{{ absoluteCoverUrl }}" />
         <media:content url="{{ absoluteCoverUrl }}" medium="image" />
       {% endif %}
+      <summary type="html"><![CDATA[{{ post.templateContent | strip_html | truncate: 500 }}]]></summary>
       <content type="html"><![CDATA[{{ post.templateContent }}]]></content>
     </entry>
   {% endfor %}
