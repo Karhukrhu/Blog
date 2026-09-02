@@ -153,7 +153,7 @@ I chose it like so
 </a>
 </div>
 
-Then we do the bitmapping again. Note that you can’t do bitmap unless the image is not in grayscale mode. 
+Then we do the bitmapping again. Note that you can’t do bitmap unless the image is in grayscale mode. 
 
 Here’s the end result compared to the previous result we got.
 
