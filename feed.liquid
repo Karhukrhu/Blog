@@ -1,5 +1,5 @@
 ---
-permalink: /feed.xml
+permalink: /blog/feed.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
@@ -9,6 +9,7 @@ eleventyExcludeFromCollections: true
   <subtitle>Latest posts from Karhukarhu</subtitle>
   <link href="{{ site.url }}/blog/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="{{ site.url }}/blog/" rel="alternate" type="text/html"/>
+  
   {% assign sorted_posts = collections.post | sort: 'date' | reverse %}
   {% assign newest_post = sorted_posts | first %}
   <updated>{{ newest_post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
@@ -16,6 +17,7 @@ eleventyExcludeFromCollections: true
   <author>
     <name>Karhukarhu</name>
   </author>
+  
   {% for post in sorted_posts %}
     {% assign postPath = post.url | url %}
     {% assign absolutePostUrl = site.url | append: postPath %}
