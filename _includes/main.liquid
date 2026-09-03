@@ -14,6 +14,18 @@ title: Blog
     <meta name="likes-verification" content="likes-8750fbe37ca4dd38413775ccf70886ef">
     <link rel="icon" type="image/png" href="https://karhukarhu.place/assets/favicon.png">
     <title>❀ Karhukarhu.place ❀</title>
+
+    <script>
+  // Automatically updates the CSS link with today's date (e.g., css.css?v=20260903)
+  document.addEventListener('DOMContentLoaded', () => {
+    const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+    const cssLink = document.querySelector('link[rel="stylesheet"]');
+    if (cssLink) {
+      cssLink.href = cssLink.href + '?v=' + today;
+    }
+  });
+</script>
+
 </head>
 <body>
 	
