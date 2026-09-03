@@ -1,0 +1,79 @@
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: #fdfbf7; /* Soft off-white */
+    color: #4a4a4a;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* The main title of your blog */
+channel > title {
+    font-size: 2.5em;
+    color: #d488a6; /* Soft pink */
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* The description of your blog */
+channel > description {
+    font-style: italic;
+    color: #777;
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px dashed #d488a6;
+    padding-bottom: 20px;
+}
+
+/* Each individual blog post (item) */
+item {
+    background: #ffffff;
+    border: 1px solid #f0e6eb;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(212, 136, 166, 0.1);
+}
+
+/* The title of the blog post */
+item > title {
+    font-size: 1.6em;
+    color: #5c4d7d; /* Soft purple */
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* The link to the blog post */
+item > link {
+    color: #88c0d0; /* Soft blue */
+    display: block;
+    margin-bottom: 15px;
+    word-break: break-all;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+item > link:hover {
+    text-decoration: underline;
+}
+
+/* The date of the blog post */
+item > pubDate {
+    font-size: 0.8em;
+    color: #999;
+    display: block;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+/* The description/summary of the post */
+item > description {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dotted #eee;
+}

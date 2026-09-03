@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Karhukarhu Blog</title>
+  <subtitle>Latest posts from Karhukarhu</subtitle>
+  <link href="https://karhukarhu.place/blog/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://karhukarhu.place/blog/" rel="alternate" type="text/html"/>
+  
+  
+  
+  <updated>2026-09-02T03:00:00Z</updated>
+  
+  <id>https://karhukarhu.place/blog/</id>
+  <author>
+    <name>Karhukarhu</name>
+  </author>
+
+  
+    
+    
+    
+    <entry>
+      <title>Tutorial on How to Create A Pixelated Image look</title>
+      <link href="https://karhukarhu.place/blog/posts/2026/9/tutorial-bitmapping/" rel="alternate" type="text/html"/>
+      <updated>2026-09-02T03:00:00Z</updated>
+      <id>https://karhukarhu.place/blog/posts/2026/9/tutorial-bitmapping/</id>
+      
+      
+      
+        
+        <link rel="enclosure" type="image/jpeg" href="https://karhukarhu.place/blog/posts/2026/9/bitmapping-tutorial/ba.png" />
+      
+
+      
+      <content type="html"><![CDATA[<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/ba.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/ba.png" 
+       alt="Before after comparizon between unpixelated and pixelated image" 
+       width="800" 
+       style="max-width: 100%; height: auto;" />
+</a>
+</div>
+<p>I’ve come across quite a few people using pixelated images in their layouts. I guess they’re pretty popular. In any way, I got very excited about the old newspaper print look and decided to make a small tutorial on how to achieve this rasterized style. Heck, I even use myself :'D</p>
+<p>First off, a few notes about the tutorial. I use Photoshop for editing images. Unfortunately, I have zero experience with any other editing software so I can’t help you with them. There is a possibility that other software work similarly, so you might benefit from this article afterall.</p>
+<p>My PS in in Finnish and it seems I can’t change the user interface to English. I assume you have a basic knowledge in how to use your chosen software, but I will translate the titles and process in English as the tutorial goes on.</p>
+<p>So, unsurprisingly, we start by choosing an image and opening it in PS. I chose to use this flower picture I’ve taken some time ago.</p>
+<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture1.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/Picture1.png" 
+       alt="A flower picture before applying the bitmap effect" 
+       width="200" 
+       style="max-width: 100%; height: auto;"/>
+</a>
+</div>
+<p>I resized the picture to be 200px x 300px, so it fits my blog post nicely :P</p>
+<p>Next, we go to <strong>Image &gt; Mode &gt; Grayscale</strong>. Eventually we’re going to go for bitmap, but we can’t choose it before making the image grayscale. Note that you can’t use this method on coloured pictures.</p>
+<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture2.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/Picture2.png" 
+       alt="Choosing the grayscale" 
+       width="200" 
+       style="max-width: 100%; height: auto;"/>
+</a>
+</div>
+<p>Choose discard colour information when a pop-up window pops out.</p>
+<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture3.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/Picture3.png" 
+       alt="Choose to discard" 
+       width="200" 
+       style="max-width: 100%; height: auto;"/>
+</a>
+</div>
+<p>Now we can choose bitmap</p>
+<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture4.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/Picture4.png" 
+       alt="Choosing the bitmap" 
+       width="200" 
+       style="max-width: 100%; height: auto;"/>
+</a>
+</div>
+<p>Make sure output has the same value than input. For me it’s 72. Photoshop shows automatically which resolution you’re using. This will prevent the image from resizing after converting it to bitmap.</p>
+<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture5.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/Picture5.png" 
+       alt="Check the resolution" 
+       width="200" 
+       style="max-width: 100%; height: auto;"/>
+</a>
+</div>
+<p>You can find out your resolution from image size dialog box. Just go to <strong>image &gt; Image size &gt; Resolution</strong>. Or use Shortcut: Press Ctrl + Alt + I (Windows) or Cmd + Opt + I (Mac).</p>
+<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture6.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/Picture6.png" 
+       alt="Check the resolution through image size" 
+       width="200" 
+       style="max-width: 100%; height: auto;"/>
+</a>
+</div>
+<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture7.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/Picture7.png" 
+       alt="Check the resolution through image size" 
+       width="200" 
+       style="max-width: 100%; height: auto;"/>
+</a>
+</div>
+<p>I choose to use “Halftone Screen” as a method. You can freely experiment with different options! In the next dialogue box after pressing ok, you can see the degree option. If you want a classic, old newspaper print look, leave it at 45 degrees in the second box. As of Shape, I use round.</p>
+<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture8.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/Picture8.png" 
+       alt="Choosing the method" 
+       width="200" 
+       style="max-width: 100%; height: auto;"/>
+</a>
+</div>
+<p>After clicking OK, your Image should look like this:</p>
+<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture9.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/Picture9.png" 
+       alt="End result" 
+       width="200" 
+       style="max-width: 100%; height: auto;"/>
+</a>
+</div>
+<p>Different shapes are used in eg. printing a physical image, but here it doesn't matter which shape you use.</p>
+<p>If you really want to make the image stand out, before converting to bitmap, you can change levels for more contrast. Go to <strong>Image &gt; Adjustments &gt; Levels</strong> (Shortcut: Press Ctrl + L (Windows) or Cmd + L (Mac).) There is a way to make this through a safer way, but for the simplicity we will use this straightforward method.</p>
+<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture10.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/Picture10.png" 
+       alt="Choosing levels" 
+       width="200" 
+       style="max-width: 100%; height: auto;"/>
+</a>
+</div>
+<p>A properties panel will show up. Here you need to adjust the small triangles to adjust the contrast. There is no need to touch the lower triangles. Instead, move the upper ones right below the graph. You will see a preview of your adjustments as you make them.</p>
+<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture11.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/Picture11.png" 
+       alt="Properties panel with the levels" 
+       width="200" 
+       style="max-width: 100%; height: auto;"/>
+</a>
+</div>
+<p>I chose it like so</p>
+<div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture12.png" class="lightbox" data-gallery="bitmapping">
+  <img src="/posts/2026/9/bitmapping-tutorial/Picture12.png" 
+       alt="Chosen levels" 
+       width="200" 
+       style="max-width: 100%; height: auto;"/>
+</a>
+</div>
+<p>Then we do the bitmapping again. Note that you can’t do bitmap unless the image is in grayscale mode.</p>
+<p>Here’s the end result compared to the previous result we got.</p>
+<div class="img-row">
+    <div class="img-center">
+        <a href="/posts/2026/9/bitmapping-tutorial/Picture13.png" class="lightbox" data-gallery="bitmapping">
+        <img src="/posts/2026/9/bitmapping-tutorial/Picture13.png" 
+            alt="Second end result" 
+            width="200" 
+            style="max-width: 100%; height: auto;"/>
+        </a>
+    </div>
+<p><div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture14.png" class="lightbox" data-gallery="bitmapping">
+<img src="/posts/2026/9/bitmapping-tutorial/Picture14.png" 
+            alt="First end result" 
+            width="200" 
+            style="max-width: 100%; height: auto;"/>
+</a>
+</div></p>
+</div>
+<p>But how does the image size effect on the result?</p>
+<p>The same process, same values, just different image size. I will use 1333px x 2000px for an example and then downsize it back to 200px.</p>
+<p>Here is the result zoomed to 100%</p>
+<div class="img-row">
+    <div class="img-center">
+        <a href="/posts/2026/9/bitmapping-tutorial/Picture15.png" class="lightbox" data-gallery="bitmapping">
+        <img src="/posts/2026/9/bitmapping-tutorial/Picture15.png" 
+            alt="End result with image resizing" 
+            width="200" 
+            style="max-width: 100%; height: auto;"/>
+        </a>
+    </div>
+<p><div class="img-center">
+<a href="/posts/2026/9/bitmapping-tutorial/Picture16.png" class="lightbox" data-gallery="bitmapping">
+<img src="/posts/2026/9/bitmapping-tutorial/Picture16.png" 
+            alt="End result without image resizing" 
+            width="200" 
+            style="max-width: 100%; height: auto;"/>
+</a>
+</div></p>
+</div>
+<p>So, I highly recommend that you bitmap only after resizing your image to the preferred size, so it will render nicely. It's pretty much trial and error so keep experimenting for the optimal result!</p>
+<p>Here’s what I know about picture bitmapping on Photoshop. I hope this tutorial will help you with your works!</p>
+<p>Also, if you know any more of this topic or have something to correct or other comments, please reach out to me at karhukarhu[at]karhukarhu.net and I will update the tutorial.</p>
+]]></content>
+    </entry>
+  
+    
+    
+    
+    <entry>
+      <title>New Website Name</title>
+      <link href="https://karhukarhu.place/blog/posts/2026/8/new-name/" rel="alternate" type="text/html"/>
+      <updated>2026-08-31T03:00:00Z</updated>
+      <id>https://karhukarhu.place/blog/posts/2026/8/new-name/</id>
+      
+      
+      
+
+      
+      <content type="html"><![CDATA[<p>Here we go! We have a new domain and a name. In the future this blog can be found at https://karhukarhu.place/blog.</p>
+<p>Of course this didn't go smoothly, just like with 11ty (see the <a href="https://karhukarhu.place/blog/posts/2026/8/eleventy-post/" >previous post</a>). I had quite big troubles having the domain connected with Nekoweb. I tried many things, some were supid things. Like deleting the original karhukarhu.nekoweb.org directory, which deleted all my followers and other existing data. I'm not sure though, did Nekoweb delete this directory or was it me (・・ )?</p>
+<p>Also the post likes got reset, but there weren't many of them so I can live with that.</p>
+<p>Anyway, we're here now. Living in a new house after all that A, AAAA, CNAME and nameserver hassle.</p>
+<p>I'm truly sorry if you were following my site previously. Unfortunately, you'll have to follow again because all my follower data got reset during this process. This makes me really sad :(</p>
+]]></content>
+    </entry>
+  
+    
+    
+    
+    <entry>
+      <title>Bumpy Road of Installing 11ty</title>
+      <link href="https://karhukarhu.place/blog/posts/2026/8/eleventy-post/" rel="alternate" type="text/html"/>
+      <updated>2026-08-27T03:00:00Z</updated>
+      <id>https://karhukarhu.place/blog/posts/2026/8/eleventy-post/</id>
+      
+      
+      
+
+      
+      <content type="html"><![CDATA[<p>For a few days now I've been struggling to deploy 11ty to my site. Eventually I got it working (maybe you can see that ;D)</p>
+<p>There were problems right at the beginnig. I was able to install 11ty, but did it in a wrong folder and it all got messed up. The tutorial I was following can be found <a href="https://cfjedimaster.github.io/eleventy-blog-guide/guide.html" target="new">here</a><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 21 21" fill="none" stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /><path d="M11 13l9 -9" /><path d="M15 4h5v5" /></svg>. It was of little help as I'm totally novice with terminal commands.</p>
+<p>With a horrendous amount of iteration, trial and error, finetuning as well as getting used to new file formats, I managed to get some output of a raw page.</p>
+<p>Then, even my English laguage skills were put to the test as I understood something totally wrong from the tut. And that, of course, broke the whole process again. Everytime I edited eleventy.config file, something went wrong.</p>
+<p>It took so much time trying to understand what went wrong and why. I was getting frustrated. I mean even the date format was giving me gray hair.</p>
+<p>After all struggle with local server, it was time to get the creation online. For that I used GitHub's actions. Totally new thing to me as well. It didn't go smoothly.</p>
+<p>The biggest problem turned out to be file paths. Despite using / and ../ and even ../../ I couldn't get the images and URLs direct to a right file. As I still don't. I'm forced to use absolute URLs because of the &quot;complexity&quot; of my file paths :'')</p>
+<p>Aaand then GitHub went down. I had to wait even though I was getting excited instead of frustrated. The blog started to look like something!</p>
+<p>Then something happened. Because of a human error (mine) the blog got directed to the root folder deleting all the pages, like about pages and guestbook. And they were gone.</p>
+<p>Here I thank, for the first time ever, my cached site. I was able to fetch the source codes from those cached pages, So I could happily recreate all of them without contacting Nekoweb support.</p>
+<p>As of today, I still don't know if my RSS works or not. That's something I need to test soon. Other than that, it's starting to look the way I want it to. Yay!</p>
+]]></content>
+    </entry>
+  
+    
+    
+    
+    <entry>
+      <title>Website Ready</title>
+      <link href="https://karhukarhu.place/blog/posts/2026/8/website-ready/" rel="alternate" type="text/html"/>
+      <updated>2026-08-24T03:00:00Z</updated>
+      <id>https://karhukarhu.place/blog/posts/2026/8/website-ready/</id>
+      
+      
+      
+
+      
+      <content type="html"><![CDATA[<p>I'm happy to announce that this site is officially up. Some things are still WIP, but the base structure and most of content is there.</p>
+<p>I had so much fun doing this since it's something I don't usually do. I'm pretty content with the result as well.</p>
+<p>There are some quirks and stuff I'm not totally happy with, but they're not jumping at one's face so that's okay. At least I hope so -_-</p>
+]]></content>
+    </entry>
+  
+</feed>
