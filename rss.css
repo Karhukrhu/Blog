@@ -70,7 +70,6 @@ item > pubDate {
     font-style: italic;
 }
 
-/* The description/summary of the post */
 item > description {
     display: block;
     margin-top: 10px;
