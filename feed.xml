@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<?xml-stylesheet type="text/css" href="http://karhukarhu.place/blog/rss.css" ?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <title>Karhukarhu Blog</title>
   <subtitle>Latest posts from Karhukarhu</subtitle>
   <link href="https://karhukarhu.place/blog/feed.xml" rel="self" type="application/atom+xml"/>
@@ -8,14 +9,12 @@
   
   
   <updated>2026-09-02T03:00:00Z</updated>
-  
   <id>https://karhukarhu.place/blog/</id>
   <author>
     <name>Karhukarhu</name>
   </author>
-
   
-    
+  
     
     
     <entry>
@@ -24,12 +23,10 @@
       <updated>2026-09-02T03:00:00Z</updated>
       <id>https://karhukarhu.place/blog/posts/2026/9/tutorial-bitmapping/</id>
       
-      
-      
         
-        <link rel="enclosure" type="image/jpeg" href="https://karhukarhu.place/blog/posts/2026/9/bitmapping-tutorial/ba.png" />
-      
-
+        <link rel="enclosure" type="image/png" href="https://karhukarhu.place/blog/posts/2026/9/bitmapping-tutorial/ba.png" />
+        <media:content url="https://karhukarhu.place/blog/posts/2026/9/bitmapping-tutorial/ba.png" medium="image" />
+        <media:thumbnail url="https://karhukarhu.place/blog/posts/2026/9/bitmapping-tutorial/ba.png" />
       
       <content type="html"><![CDATA[<div class="img-center">
 <a href="/posts/2026/9/bitmapping-tutorial/ba.png" class="lightbox" data-gallery="bitmapping">
@@ -200,16 +197,11 @@
   
     
     
-    
     <entry>
       <title>New Website Name</title>
       <link href="https://karhukarhu.place/blog/posts/2026/8/new-name/" rel="alternate" type="text/html"/>
       <updated>2026-08-31T03:00:00Z</updated>
       <id>https://karhukarhu.place/blog/posts/2026/8/new-name/</id>
-      
-      
-      
-
       
       <content type="html"><![CDATA[<p>Here we go! We have a new domain and a name. In the future this blog can be found at https://karhukarhu.place/blog.</p>
 <p>Of course this didn't go smoothly, just like with 11ty (see the <a href="https://karhukarhu.place/blog/posts/2026/8/eleventy-post/" >previous post</a>). I had quite big troubles having the domain connected with Nekoweb. I tried many things, some were supid things. Like deleting the original karhukarhu.nekoweb.org directory, which deleted all my followers and other existing data. I'm not sure though, did Nekoweb delete this directory or was it me (・・ )?</p>
@@ -221,16 +213,11 @@
   
     
     
-    
     <entry>
       <title>Bumpy Road of Installing 11ty</title>
       <link href="https://karhukarhu.place/blog/posts/2026/8/eleventy-post/" rel="alternate" type="text/html"/>
       <updated>2026-08-27T03:00:00Z</updated>
       <id>https://karhukarhu.place/blog/posts/2026/8/eleventy-post/</id>
-      
-      
-      
-
       
       <content type="html"><![CDATA[<p>For a few days now I've been struggling to deploy 11ty to my site. Eventually I got it working (maybe you can see that ;D)</p>
 <p>There were problems right at the beginnig. I was able to install 11ty, but did it in a wrong folder and it all got messed up. The tutorial I was following can be found <a href="https://cfjedimaster.github.io/eleventy-blog-guide/guide.html" target="new">here</a><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 21 21" fill="none" stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /><path d="M11 13l9 -9" /><path d="M15 4h5v5" /></svg>. It was of little help as I'm totally novice with terminal commands.</p>
@@ -248,16 +235,11 @@
   
     
     
-    
     <entry>
       <title>Website Ready</title>
       <link href="https://karhukarhu.place/blog/posts/2026/8/website-ready/" rel="alternate" type="text/html"/>
       <updated>2026-08-24T03:00:00Z</updated>
       <id>https://karhukarhu.place/blog/posts/2026/8/website-ready/</id>
-      
-      
-      
-
       
       <content type="html"><![CDATA[<p>I'm happy to announce that this site is officially up. Some things are still WIP, but the base structure and most of content is there.</p>
 <p>I had so much fun doing this since it's something I don't usually do. I'm pretty content with the result as well.</p>
