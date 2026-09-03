@@ -61,7 +61,6 @@ item > link:hover {
     text-decoration: underline;
 }
 
-/* The date of the blog post */
 item > pubDate {
     font-size: 0.8em;
     color: #999;
