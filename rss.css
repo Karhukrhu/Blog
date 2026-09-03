@@ -1,4 +1,8 @@
-body {
+/* rss.css - Cozy styling for Karhukarhu's Atom feed */
+
+/* The main background and text */
+feed {
+    display: block;
     font-family: 'Georgia', 'Times New Roman', serif;
     background-color: #fdfbf7; /* Soft off-white */
     color: #4a4a4a;
@@ -9,7 +13,7 @@ body {
 }
 
 /* The main title of your blog */
-channel > title {
+feed > title {
     font-size: 2.5em;
     color: #d488a6; /* Soft pink */
     display: block;
@@ -17,8 +21,8 @@ channel > title {
     text-align: center;
 }
 
-/* The description of your blog */
-channel > description {
+/* The subtitle of your blog */
+feed > subtitle {
     font-style: italic;
     color: #777;
     display: block;
@@ -28,8 +32,9 @@ channel > description {
     padding-bottom: 20px;
 }
 
-/* Each individual blog post (item) */
-item {
+/* Each individual blog post (entry) */
+entry {
+    display: block;
     background: #ffffff;
     border: 1px solid #f0e6eb;
     border-radius: 12px;
@@ -39,7 +44,7 @@ item {
 }
 
 /* The title of the blog post */
-item > title {
+entry > title {
     font-size: 1.6em;
     color: #5c4d7d; /* Soft purple */
     display: block;
@@ -48,7 +53,7 @@ item > title {
 }
 
 /* The link to the blog post */
-item > link {
+entry > link {
     color: #88c0d0; /* Soft blue */
     display: block;
     margin-bottom: 15px;
@@ -57,11 +62,12 @@ item > link {
     font-size: 0.9em;
 }
 
-item > link:hover {
+entry > link:hover {
     text-decoration: underline;
 }
 
-item > pubDate {
+/* The date of the blog post */
+entry > updated {
     font-size: 0.8em;
     color: #999;
     display: block;
@@ -69,9 +75,11 @@ item > pubDate {
     font-style: italic;
 }
 
-item > description {
+/* The content of the post */
+entry > content {
     display: block;
     margin-top: 10px;
     padding-top: 10px;
     border-top: 1px dotted #eee;
+    font-size: 0.95em;
 }
