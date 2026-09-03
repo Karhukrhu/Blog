@@ -14,6 +14,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("blog/images/*");
   
+  // 🌸 NEW LINE ADDED HERE: Tell Eleventy to copy the RSS CSS file!
+  eleventyConfig.addPassthroughCopy("blog/rss.css");
+  
   // 🐻 ADD THESE LINES TO COPY IMAGES FROM YOUR POSTS FOLDER:
   eleventyConfig.addPassthroughCopy("posts/**/*.png");
   eleventyConfig.addPassthroughCopy("posts/**/*.jpg");
@@ -115,4 +118,4 @@ module.exports = function(eleventyConfig) {
       includes: "_includes" 
     }
   };
-}; 
+};
