@@ -15,13 +15,15 @@ module.exports = function(eleventyConfig) {
     result = result.replace(/src="\//g, 'src="https://karhukarhu.place/blog/');
     result = result.replace(/href="\//g, 'href="https://karhukarhu.place/blog/');
 
-    // 2. Force Centering (Bulletproof regex)
-    // Matches class="img-center" even if there are extra spaces or single quotes
+    // 2. Force Centering on the wrapper div
     result = result.replace(/class=["']img-center\s*["']/gi, 'style="text-align: center; margin: 15px auto; width: 100%;"');
 
-    // 3. Force Image Centering
-    // Matches <img followed by any whitespace (space, tab, or newline)
-    result = result.replace(/<img\s/gi, '<img style="display: inline-block; margin: 0 auto; max-width: 100%; height: auto;" ');
+    // 3. 🚨 THE SECRET SAUCE: Force the LINK wrapping the image to center itself 🚨
+    // This stops the link from stretching 100% and pushing the image to the left.
+    result = result.replace(/<a\s/gi, '<a style="display: inline-block; text-align: center; margin: 0 auto;" ');
+
+    // 4. Force the IMAGE to center inside the link
+    result = result.replace(/<img\s/gi, '<img style="display: block; margin: 0 auto; max-width: 100%; height: auto;" ');
 
     return result;
   });
