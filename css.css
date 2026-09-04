@@ -824,14 +824,14 @@ li.nav-item {
 }
 
 .post-title {
-  display: inline-block;
   max-width: 200px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  vertical-align: bottom;
-  flex-shrink: 0;
   font-size: 11px !important;
+    flex: 1;                
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;    /* max 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 600px) {
@@ -856,6 +856,9 @@ li.nav-item {
 /* Optional: Add a little space between posts so they don't bunch up */
 .post-header {
   margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start; 
+  gap: 12px;
 }
 
 .post-date {
@@ -863,6 +866,8 @@ li.nav-item {
   white-space: nowrap; 
   font-size: 11px;
   opacity: 0.75;
+  flex-shrink: 0;           /* date never shrinks */
+}
 }
 
 .post-navigation {
