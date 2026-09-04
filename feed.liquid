@@ -40,6 +40,24 @@ eleventyExcludeFromCollections: true
             font-family: 'rat';
             src: url('https://karhukarhu.place/assets/rat-typewriter.ttf') format('truetype');
           }
+
+                    .img-center {
+            text-align: center !important;
+            margin: 15px auto !important;
+            width: 100% !important;
+          }
+          .img-center img, .img-center a {
+            display: inline-block !important;
+            margin: 0 auto !important;
+          }
+          
+          /* Fallback: Center ANY image just in case it's not in an .img-center div */
+          img {
+            display: block !important;
+            margin: 10px auto !important;
+            max-width: 100% !important;
+            height: auto !important;
+          }
         </style>
 
         <div style="font-family: 'rat', 'Courier New', monospace; background-color: #c09e81; border-top: 1px solid #f3d5b1; border-bottom: 1px solid #70480d; border-right: 1px solid #70480d; border-left: 1px solid #f3d5b1; border-radius: 5px; padding: 20px; max-width: 800px; margin: 0 auto; overflow: hidden;">
