@@ -6,13 +6,11 @@ const pluginRss = typeof rssModule === 'function' ? rssModule : rssModule.defaul
 
 module.exports = function(eleventyConfig) {
 
-  // ✅ 1. ADD THE FILTER HERE (Clean, simple, and bulletproof)
-  eleventyConfig.addFilter("makeUrlsAbsolute", function(content) {
+ eleventyConfig.addFilter("makeUrlsAbsolute", function(content) {
     if (!content) return content;
-    // This finds src="/ and href="/ and adds your full domain in front of it
     return content
-      .replace(/src="\//g, 'src="https://karhukarhu.place/')
-      .replace(/href="\//g, 'href="https://karhukarhu.place/');
+      .replace(/src="\//g, 'src="https://karhukarhu.place/blog/')
+      .replace(/href="\//g, 'href="https://karhukarhu.place/blog/');
   });
 
   // 3. Add the RSS plugin
