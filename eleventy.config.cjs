@@ -8,12 +8,22 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("makeUrlsAbsolute", function(content) {
     if (!content) return content;
-    return content
-      // 1. Fix the URLs
-      .replace(/src="\//g, 'src="https://karhukarhu.place/blog/')
-      .replace(/href="\//g, 'href="https://karhukarhu.place/blog/')
-      // 2. Force center the images for RSS readers!
-      .replace(/<div class="img-center">/g, '<div style="text-align: center; margin: 15px 0;">');
+    
+    let result = content;
+
+    // 1. Fix URLs
+    result = result.replace(/src="\//g, 'src="https://karhukarhu.place/blog/');
+    result = result.replace(/href="\//g, 'href="https://karhukarhu.place/blog/');
+
+    // 2. Force Centering (Bulletproof regex)
+    // Matches class="img-center" even if there are extra spaces or single quotes
+    result = result.replace(/class=["']img-center\s*["']/gi, 'style="text-align: center; margin: 15px auto; width: 100%;"');
+
+    // 3. Force Image Centering
+    // Matches <img followed by any whitespace (space, tab, or newline)
+    result = result.replace(/<img\s/gi, '<img style="display: inline-block; margin: 0 auto; max-width: 100%; height: auto;" ');
+
+    return result;
   });
 
   // 3. Add the RSS plugin
