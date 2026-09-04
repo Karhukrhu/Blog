@@ -33,7 +33,7 @@ So, unsurprisingly, we start by choosing an image and opening it in PS. I chose 
 
 I resized the picture to be 200px x 300px, so it fits my blog post nicely :P
 
-Next, we go to <strong>Image > Mode > Grayscale</strong>. Eventually we’re going to go for bitmap, but we can’t choose it before making the image grayscale. Note that you can’t use this method on coloured pictures.
+Next, we go to <strong>Image</strong> > <strong>Mode</strong> > <strong>Grayscale</strong>. Eventually we’re going to go for bitmap, but we can’t choose it before making the image grayscale. Note that you can’t use this method on coloured pictures.
 
 <div class="img-center">
 <a href="/posts/2026/9/bitmapping-tutorial/Picture2.png" class="lightbox" data-gallery="bitmapping">
@@ -76,7 +76,7 @@ Make sure output has the same value than input. For me it’s 72. Photoshop show
 </a>
 </div>
 
-You can find out your resolution from image size dialog box. Just go to <strong>image > Image size > Resolution</strong>. Or use Shortcut: Press Ctrl + Alt + I (Windows) or Cmd + Opt + I (Mac).
+You can find out your resolution from image size dialog box. Just go to <strong>image</strong> > <strong>Image size</strong> > <strong>Resolution</strong>. Or use Shortcut: Press Ctrl + Alt + I (Windows) or Cmd + Opt + I (Mac).
 
 <div class="img-center">
 <a href="/posts/2026/9/bitmapping-tutorial/Picture6.png" class="lightbox" data-gallery="bitmapping">
@@ -120,7 +120,7 @@ After clicking OK, your Image should look like this:
 
 Different shapes are used in eg. printing a physical image, but here it doesn't matter which shape you use.
 
-If you really want to make the image stand out, before converting to bitmap, you can change levels for more contrast. Go to <strong>Image > Adjustments > Levels</strong> (Shortcut: Press Ctrl + L (Windows) or Cmd + L (Mac).) There is a way to make this through a safer way, but for the simplicity we will use this straightforward method.
+If you really want to make the image stand out, before converting to bitmap, you can change levels for more contrast. Go to <strong>Image</strong> > <strong>Adjustments</strong> > <strong>Levels</strong> (Shortcut: Press Ctrl + L (Windows) or Cmd + L (Mac).) There is a way to make this through a safer way, but for the simplicity we will use this straightforward method.
 
 <div class="img-center">
 <a href="/posts/2026/9/bitmapping-tutorial/Picture10.png" class="lightbox" data-gallery="bitmapping">
