@@ -6,11 +6,14 @@ const pluginRss = typeof rssModule === 'function' ? rssModule : rssModule.defaul
 
 module.exports = function(eleventyConfig) {
 
- eleventyConfig.addFilter("makeUrlsAbsolute", function(content) {
+  eleventyConfig.addFilter("makeUrlsAbsolute", function(content) {
     if (!content) return content;
     return content
+      // 1. Fix the URLs
       .replace(/src="\//g, 'src="https://karhukarhu.place/blog/')
-      .replace(/href="\//g, 'href="https://karhukarhu.place/blog/');
+      .replace(/href="\//g, 'href="https://karhukarhu.place/blog/')
+      // 2. Force center the images for RSS readers!
+      .replace(/<div class="img-center">/g, '<div style="text-align: center; margin: 15px 0;">');
   });
 
   // 3. Add the RSS plugin
