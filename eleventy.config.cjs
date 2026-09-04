@@ -15,19 +15,21 @@ module.exports = function(eleventyConfig) {
     result = result.replace(/src="\//g, 'src="https://karhukarhu.place/blog/');
     result = result.replace(/href="\//g, 'href="https://karhukarhu.place/blog/');
 
-    // 2. Force Centering on the wrapper div
-    result = result.replace(/class=["']img-center\s*["']/gi, 'style="text-align: center; margin: 15px auto; width: 100%;"');
-
-    // 3. 🚨 THE SECRET SAUCE: Force the LINK wrapping the image to center itself 🚨
-    // This stops the link from stretching 100% and pushing the image to the left.
-    result = result.replace(/<a\s/gi, '<a style="display: inline-block; text-align: center; margin: 0 auto;" ');
-
-    // 4. Force the IMAGE to center inside the link
-    result = result.replace(/<img\s/gi, '<img style="display: block; margin: 0 auto; max-width: 100%; height: auto;" ');
+    // 2. THE RETRO FIX: Replace the div with a <center> tag
+    // We match the opening div and replace it with <center>
+    result = result.replace(/<div\s+class=["']img-center["'][^>]*>/gi, '<center>');
+    
+    // We match the closing </div> that belongs to img-center. 
+    // Note: This is a bit tricky, so we will just replace the first </div> we see after an image, 
+    // OR we can just leave the </div> and hope <center> does the heavy lifting.
+    // Actually, let's just wrap the image directly to be safe!
+    
+    // 3. Wrap the image and link in <center> directly
+    result = result.replace(/<a\s/gi, '<center><a ');
+    result = result.replace(/<\/a>/gi, '</a></center>');
 
     return result;
   });
-
   // 3. Add the RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
