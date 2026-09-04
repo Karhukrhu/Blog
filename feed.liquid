@@ -51,7 +51,7 @@ eleventyExcludeFromCollections: true
           </h1>
 
           <div style="color: #432d14; line-height: 1.6; font-size: 11px; font-family: 'rat', 'Courier New', monospace;">
-            {{ post.templateContent }}
+            {{ post.templateContent | makeUrlsAbsolute }}
           </div>
 
         </div>

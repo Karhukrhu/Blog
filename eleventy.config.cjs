@@ -5,7 +5,16 @@ const rssModule = require("@11ty/eleventy-plugin-rss");
 const pluginRss = typeof rssModule === 'function' ? rssModule : rssModule.default;
 
 module.exports = function(eleventyConfig) {
-  
+
+  // ✅ 1. ADD THE FILTER HERE (Clean, simple, and bulletproof)
+  eleventyConfig.addFilter("makeUrlsAbsolute", function(content) {
+    if (!content) return content;
+    // This finds src="/ and href="/ and adds your full domain in front of it
+    return content
+      .replace(/src="\//g, 'src="https://karhukarhu.place/')
+      .replace(/href="\//g, 'href="https://karhukarhu.place/');
+  });
+
   // 3. Add the RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
@@ -13,10 +22,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css.css");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("blog/images/*");
+  eleventyConfig.addPassthroughCopy({ "rss.css": "blog/rss.css" });
   
-eleventyConfig.addPassthroughCopy({ "rss.css": "blog/rss.css" });
-  
-  // 🐻 ADD THESE LINES TO COPY IMAGES FROM YOUR POSTS FOLDER:
+  // 🐻 COPY IMAGES FROM YOUR POSTS FOLDER:
   eleventyConfig.addPassthroughCopy("posts/**/*.png");
   eleventyConfig.addPassthroughCopy("posts/**/*.jpg");
   eleventyConfig.addPassthroughCopy("posts/**/*.jpeg");
