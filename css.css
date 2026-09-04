@@ -829,9 +829,7 @@ li.nav-item {
     flex: 1;                
   margin: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 2;    /* max 2 lines */
   -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 600px) {
@@ -868,7 +866,7 @@ li.nav-item {
   opacity: 0.75;
   flex-shrink: 0;           /* date never shrinks */
 }
-}
+
 
 .post-navigation {
   display: flex;
