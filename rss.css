@@ -4,8 +4,8 @@
 feed {
     display: block;
     font-family: 'Georgia', 'Times New Roman', serif;
-    background-color: #fdfbf7; /* Soft off-white */
-    color: #4a4a4a;
+    background-color: #f3d5b1; /* Soft off-white */
+    color: #432d14;
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
@@ -15,38 +15,37 @@ feed {
 /* The main title of your blog */
 feed > title {
     font-size: 2.5em;
-    color: #d488a6; /* Soft pink */
+    color: #2d300e; /* Soft pink */
     display: block;
     margin-bottom: 5px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 /* The subtitle of your blog */
 feed > subtitle {
     font-style: italic;
-    color: #777;
+    color: #fffbe2;
     display: block;
     margin-bottom: 30px;
     text-align: center;
-    border-bottom: 2px dashed #d488a6;
     padding-bottom: 20px;
 }
 
 /* Each individual blog post (entry) */
 entry {
     display: block;
-    background: #ffffff;
-    border: 1px solid #f0e6eb;
-    border-radius: 12px;
+    background: #d1b48d;
+    border: 2px solid #fffbe2;
+    border-radius: 5px;
     padding: 20px;
     margin-bottom: 25px;
-    box-shadow: 0 4px 6px rgba(212, 136, 166, 0.1);
 }
 
 /* The title of the blog post */
 entry > title {
     font-size: 1.6em;
-    color: #5c4d7d; /* Soft purple */
+    color: #855c28; 
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
@@ -54,7 +53,7 @@ entry > title {
 
 /* The link to the blog post */
 entry > link {
-    color: #88c0d0; /* Soft blue */
+    color: #e4ad68;
     display: block;
     margin-bottom: 15px;
     word-break: break-all;
@@ -69,17 +68,26 @@ entry > link:hover {
 /* The date of the blog post */
 entry > updated {
     font-size: 0.8em;
-    color: #999;
+    color: #4f533a;
     display: block;
     margin-bottom: 10px;
     font-style: italic;
 }
 
-/* The content of the post */
+/* Style the raw HTML content so it looks like a neat text block */
 entry > content {
     display: block;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px dotted #eee;
-    font-size: 0.95em;
+    background-color: #f3d5b1; /* Light gray background */
+    border: 1px solid #e4ad68;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    
+    /* Make it look like readable code/text */
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 0.85em;
+    line-height: 1.5;
+    color: #855c28;
+    white-space: pre-wrap; /* This forces long lines to wrap nicely */
+    word-wrap: break-word;
 }
