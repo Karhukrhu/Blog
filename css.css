@@ -1035,7 +1035,7 @@ a.lightbox img {
 .img-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   justify-content: center;
   margin: 20px 0;
 }
