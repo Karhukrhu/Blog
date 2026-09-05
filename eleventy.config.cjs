@@ -6,30 +6,26 @@ const pluginRss = typeof rssModule === 'function' ? rssModule : rssModule.defaul
 
 module.exports = function(eleventyConfig) {
 
-  eleventyConfig.addFilter("makeUrlsAbsolute", function(content) {
-    if (!content) return content;
-    
-    let result = content;
+eleventyConfig.addFilter("makeUrlsAbsolute", function(content) {
+  if (!content) return content;
+  
+  let result = content;
 
-    // 1. Fix URLs
-    result = result.replace(/src="\//g, 'src="https://karhukarhu.place/blog/');
-    result = result.replace(/href="\//g, 'href="https://karhukarhu.place/blog/');
+  // 1. Safely fix root-relative URLs (src="/..." or href="/...")
+  // The (?!\/) ensures we don't accidentally break protocol-relative URLs like src="//example.com"
+  // This correctly maps /assets/ to https://karhukarhu.place/assets/
+  result = result.replace(/(src|href)="\/(?!\/)/g, '$1="https://karhukarhu.place/');
 
-    // 2. THE RETRO FIX: Replace the div with a <center> tag
-    // We match the opening div and replace it with <center>
-    result = result.replace(/<div\s+class=["']img-center["'][^>]*>/gi, '<center>');
-    
-    // We match the closing </div> that belongs to img-center. 
-    // Note: This is a bit tricky, so we will just replace the first </div> we see after an image, 
-    // OR we can just leave the </div> and hope <center> does the heavy lifting.
-    // Actually, let's just wrap the image directly to be safe!
-    
-    // 3. Wrap the image and link in <center> directly
-    result = result.replace(/<a\s/gi, '<center><a ');
-    result = result.replace(/<\/a>/gi, '</a></center>');
+  // 2. Safely replace the .img-center div with <center> for RSS compatibility
+  result = result.replace(/<div\s+class=["']img-center["'][^>]*>/gi, '<center>');
+  
+  // 3. REMOVED the global <a> tag wrapping. 
+  // Wrapping every link in <center> breaks inline text links. 
+  // Instead, rely on the inline styles you already have on the <img> tags 
+  // (like style="display: block; margin: 0 auto;") which RSS readers respect much better.
 
-    return result;
-  });
+  return result;
+});
   // 3. Add the RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
