@@ -1,0 +1,43 @@
+---
+permalink: /blog/atom.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <title>Karhukarhu Blog</title>
+  <subtitle>Latest posts from Karhukarhu</subtitle>
+  
+  <!-- UPDATED THIS LINE TO MATCH THE NEW /blog/ PATH -->
+  <link href="https://karhukarhu.place/blog/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://karhukarhu.place/blog/" rel="alternate" type="text/html"/>
+  
+  {% assign sorted_posts = collections.post | sort: 'date' | reverse %}
+  {% assign newest_post = sorted_posts | first %}
+  <updated>{{ newest_post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
+  <id>https://karhukarhu.place/blog/</id>
+  <author>
+    <name>Karhukarhu</name>
+  </author>
+  
+  {% for post in sorted_posts %}
+    {% assign postPath = post.url | url %}
+    {% assign absolutePostUrl = "https://karhukarhu.place" | append: postPath %}
+    <entry>
+      <title>{{ post.data.title | xml_escape }}</title>
+      <link href="{{ absolutePostUrl }}" rel="alternate" type="text/html"/>
+      <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      
+      {% if post.data.cover %}
+        {% assign absoluteCoverUrl = "https://karhukarhu.place" | append: post.data.cover %}
+        <link rel="enclosure" type="image/png" href="{{ absoluteCoverUrl }}" />
+        <media:content url="{{ absoluteCoverUrl }}" medium="image" />
+        <media:thumbnail url="{{ absoluteCoverUrl }}" />
+      {% endif %}
+
+      <content type="html"><![CDATA[
+        {{ post.templateContent | makeUrlsAbsolute }}
+      ]]></content>
+    </entry>
+  {% endfor %}
+</feed>
