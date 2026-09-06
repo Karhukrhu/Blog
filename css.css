@@ -824,7 +824,7 @@ li.nav-item {
   width: 100%;
 }
 
-.post-title {
+#the-content .post-list-wrapper .post-header .post-title {
   grid-column: 1;
   margin: 0;
   font-size: 11px;
