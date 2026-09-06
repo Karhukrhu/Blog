@@ -825,13 +825,24 @@ li.nav-item {
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 2px;
+  /* CRITICAL: Make it a block element so it respects grid width */
+  display: block; 
   
-  /* Remove width: fit-content so it can wrap */
-  /* width: fit-content; */
+  /* CRITICAL: Ensure it can wrap */
+  white-space: normal !important; 
+  
+  /* CRITICAL: Force it to fit within the grid column */
+  max-width: 100%; 
   
   /* Ensure long words break if necessary */
   overflow-wrap: break-word;
   word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Also check if there's any global 'a' tag styling with nowrap */
+a {
+  white-space: normal;
 }
 
 @media screen and (max-width: 600px) {
