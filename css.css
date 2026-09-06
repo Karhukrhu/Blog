@@ -797,10 +797,10 @@ li.nav-item {
 
 .post-header {
   display: flex;
+  justify-content: space-between; /* KEEPS DATE ON FAR RIGHT */
   align-items: flex-start;
-  gap: 10px;
   width: 100%;
-  flex-wrap: wrap; /* Allows wrapping if needed */
+  gap: 15px; /* Adds a little buffer so they don't touch */
 }
 
 
@@ -812,9 +812,10 @@ li.nav-item {
   text-transform: uppercase;
   letter-spacing: 2px;
   
-  display: inline-block;
-  width: auto; /* Natural width, no stretching */
-  max-width: 65%; /* Prevents box from getting too wide, forces wrapping */
+  /* THE FIX FOR THE STRETCHING BOX */
+  display: inline-block; 
+  width: fit-content; /* Makes the box shrink to the text width */
+  max-width: 65%; /* Forces the text to wrap if it gets too long */
   
   white-space: normal !important;
   word-break: break-word;
@@ -832,11 +833,11 @@ li.nav-item {
 }
 
 .post-date {
-  flex-shrink: 0; /* Prevents date from shrinking or wrapping */
+  flex-shrink: 0; /* Prevents date from shrinking */
   font-size: 11px;
   opacity: 0.75;
   white-space: nowrap;
-  margin-left: auto; /* Extra insurance to push it right */
+  /* Date stays on the far right because of the parent's justify-content */
 }
 
 .archive-year {
