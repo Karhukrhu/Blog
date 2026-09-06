@@ -790,22 +790,21 @@ li.nav-item {
 }
 
 .post-list-wrapper {
-  margin-top:40px;
+  margin-top: 40px;
   max-width: 100%;
-  overflow: hidden; /* Prevents children from overflowing */
 }
 
+
 .post-header {
-  display: grid;
-  /* Title: natural width with wrapping, Date: natural width */
-  grid-template-columns: fit-content(100%) max-content; 
-  gap: 10px;
+  display: flex;
+  justify-content: space-between; /* Pushes date to far right */
   align-items: baseline;
+  flex-wrap: wrap; /* Allows title to wrap to next line */
+  gap: 10px;
   width: 100%;
 }
 
 #the-content .post-list-wrapper .post-header .post-title {
-  grid-column: 1;
   margin: 0;
   font-size: 11px;
   line-height: 1.2;
@@ -813,18 +812,13 @@ li.nav-item {
   text-transform: uppercase;
   letter-spacing: 2px;
   
-  /* Change from block to inline-block for natural width */
+  /* Natural width that wraps */
   display: inline-block;
-  
-  /* Allow wrapping but constrain max width to container */
-  max-width: 100%;
+  flex: 0 1 auto; /* Don't grow, can shrink if needed */
   white-space: normal !important;
-  word-break: break-word; 
+  word-break: break-word;
 }
 
-a {
-  white-space: normal;
-}
 
 @media screen and (max-width: 600px) {
   .post-title {
@@ -835,12 +829,13 @@ a {
 }
 
 .post-date {
-  grid-column: 2; /* Explicitly put it in the second column */
+  flex: 0 0 auto; /* Don't grow or shrink - keep natural width */
   white-space: nowrap; 
   font-size: 11px;
   opacity: 0.75;
-  /* Removed flex properties (margin-left: auto, flex-shrink) because this is a grid now */
+  margin-left: auto; /* Extra insurance to push it right */
 }
+
 
 .archive-year {
   margin-top: 30px;
