@@ -817,9 +817,6 @@ li.nav-item {
 }
 
 #the-content .post-list-wrapper .post-header .post-title {
-  /* Remove display: grid, it's not needed here */
-  /* display: grid; */ 
-  
   grid-column: 1;
   margin: 0;
   font-size: 11px;
@@ -827,19 +824,13 @@ li.nav-item {
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 2px;
-  /* CRITICAL: Make it a block element so it respects grid width */
-  display: block; 
   
-  /* CRITICAL: Ensure it can wrap */
-  white-space: normal !important; 
-  
-  /* CRITICAL: Force it to fit within the grid column */
-  max-width: 100%; 
-  
-  /* Ensure long words break if necessary */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
+  /* --- THE MAGIC FIXES --- */
+  display: block;             /* Makes the link fill the grid cell width */
+  min-width: 0;               /* THE SECRET SAUCE: Allows the grid item to shrink below its text length */
+  white-space: normal !important; /* Forces wrapping, overriding any global 'nowrap' rules */
+  word-break: break-word;     /* Ensures long words wrap instead of overflowing */
+
 }
 
 /* Also check if there's any global 'a' tag styling with nowrap */
