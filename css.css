@@ -816,20 +816,38 @@ li.nav-item {
 }
 
 .post-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* This vertically centers them */
+  display: grid;
+  /* Column 1: Title (natural width), Column 2: Date (takes remaining space so we can push it right) */
+  grid-template-columns: max-content 1fr; 
+  gap: 10px;
+  align-items: baseline;
   width: 100%;
-  max-width: 100%;
 }
 
 .post-title {
-  max-width: 200px;
-  font-size: 11px !important;
-    flex: 1;                
+  grid-column: 1;
   margin: 0;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
+  font-size: 11px;
+  line-height: 1.2;
+  color: #111;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  /* CRITICAL FIX: This forces the styled link to shrink-wrap to the text width */
+  width: fit-content; 
+  /* If fit-content doesn't work in your specific setup, use: display: inline-block; */
+}
+
+.post-date {
+  grid-column: 2;
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  /* CRITICAL FIX: This pushes the date to the far right edge */
+  justify-self: end; 
 }
 
 @media screen and (max-width: 600px) {
