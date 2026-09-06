@@ -796,15 +796,14 @@ li.nav-item {
 
 
 .post-header {
-  display: grid;
-  grid-template-columns: 1fr auto; /* Title takes available space, date takes natural width */
-  align-items: start; /* Aligns both to the TOP */
+  display: flex;
+  justify-content: space-between; /* Pushes date to far right */
+  align-items: flex-start; /* Aligns both to the top */
   gap: 10px;
   width: 100%;
 }
 
 #the-content .post-list-wrapper .post-header .post-title {
-  grid-column: 1;
   margin: 0;
   font-size: 11px;
   line-height: 1.2;
@@ -812,8 +811,11 @@ li.nav-item {
   text-transform: uppercase;
   letter-spacing: 2px;
   
-  display: block;
-  min-width: 0; /* Allows grid item to shrink */
+  /* --- THE FIXES --- */
+  display: inline-block; /* Makes the background/border shrink to fit the text */
+  width: fit-content; /* Sets width to natural text size */
+  max-width: calc(100% - 100px); /* Forces wrapping before it hits the date (adjust 100px if your date is wider) */
+  
   white-space: normal !important;
   word-break: break-word;
 }
@@ -829,11 +831,11 @@ li.nav-item {
 }
 
 .post-date {
-  grid-column: 2;
-  white-space: nowrap; 
+  flex-shrink: 0; /* Prevents date from shrinking or wrapping */
   font-size: 11px;
   opacity: 0.75;
-  align-self: start; /* Keeps date at the top */
+  white-space: nowrap;
+  margin-left: auto; /* Extra insurance to push it right */
 }
 
 .archive-year {
