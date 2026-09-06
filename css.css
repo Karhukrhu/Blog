@@ -797,8 +797,8 @@ li.nav-item {
 
 .post-header {
   display: grid;
-  /* Title takes remaining space (wraps), Date takes natural width */
-  grid-template-columns: 1fr max-content; 
+  /* Title: natural width with wrapping, Date: natural width */
+  grid-template-columns: fit-content(100%) max-content; 
   gap: 10px;
   align-items: baseline;
   width: 100%;
@@ -813,15 +813,15 @@ li.nav-item {
   text-transform: uppercase;
   letter-spacing: 2px;
   
-  /* --- THE MAGIC FIXES --- */
-  display: block;             /* Makes the link fill the grid cell width */
-  min-width: 0;               /* THE SECRET SAUCE: Allows the grid item to shrink below its text length */
-  white-space: normal !important; /* Forces wrapping, overriding any global 'nowrap' rules */
-  word-break: break-word;     /* Ensures long words wrap instead of overflowing */
-
+  /* Change from block to inline-block for natural width */
+  display: inline-block;
+  
+  /* Allow wrapping but constrain max width to container */
+  max-width: 100%;
+  white-space: normal !important;
+  word-break: break-word; 
 }
 
-/* Also check if there's any global 'a' tag styling with nowrap */
 a {
   white-space: normal;
 }
