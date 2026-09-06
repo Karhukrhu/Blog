@@ -804,7 +804,7 @@ li.nav-item {
 }
 
 
-#the-content .post-list-wrapper .post-header .post-title {
+#the-content .post-header .post-title {
   margin: 0;
   font-size: 11px;
   line-height: 1.2;
@@ -850,6 +850,7 @@ li.nav-item {
     color:#2d300e;
     letter-spacing: 2px;
 }
+
 
 
 
