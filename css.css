@@ -832,13 +832,12 @@ li.nav-item {
 }
 
 .post-date {
-  flex-shrink: 0;
+  flex-shrink: 0; /* Prevents date from shrinking or wrapping */
   font-size: 11px;
   opacity: 0.75;
   white-space: nowrap;
-  margin-left: 10px; /* Small gap instead of pushing to far right */
+  margin-left: auto; /* Extra insurance to push it right */
 }
-
 
 .archive-year {
   margin-top: 30px;
