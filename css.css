@@ -797,11 +797,12 @@ li.nav-item {
 
 .post-header {
   display: flex;
-  justify-content: space-between; /* Pushes date to far right */
-  align-items: flex-start; /* Aligns both to the top */
+  align-items: flex-start;
   gap: 10px;
   width: 100%;
+  flex-wrap: wrap; /* Allows wrapping if needed */
 }
+
 
 #the-content .post-list-wrapper .post-header .post-title {
   margin: 0;
@@ -811,14 +812,14 @@ li.nav-item {
   text-transform: uppercase;
   letter-spacing: 2px;
   
-  /* --- THE FIXES --- */
-  display: inline-block; /* Makes the background/border shrink to fit the text */
-  width: fit-content; /* Sets width to natural text size */
-  max-width: calc(100% - 100px); /* Forces wrapping before it hits the date (adjust 100px if your date is wider) */
+  display: inline-block;
+  width: auto; /* Natural width, no stretching */
+  max-width: 65%; /* Prevents box from getting too wide, forces wrapping */
   
   white-space: normal !important;
   word-break: break-word;
 }
+
 
 
 
@@ -831,12 +832,13 @@ li.nav-item {
 }
 
 .post-date {
-  flex-shrink: 0; /* Prevents date from shrinking or wrapping */
+  flex-shrink: 0;
   font-size: 11px;
   opacity: 0.75;
   white-space: nowrap;
-  margin-left: auto; /* Extra insurance to push it right */
+  margin-left: 10px; /* Small gap instead of pushing to far right */
 }
+
 
 .archive-year {
   margin-top: 30px;
