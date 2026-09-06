@@ -610,9 +610,8 @@ margin:2px;
 }
 .blog-post {
   display: grid;
-  grid-template-columns: 90px 1fr; 
-  grid-template-rows: auto auto;
-  gap: 10px 10px; /* 10px row gap, 30px column gap */
+  grid-template-columns: max-content max-content; 
+  gap: 10px;
   align-items: baseline;
 }
 
@@ -623,6 +622,7 @@ margin:2px;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  width: max-content; 
 }
 
 .post-title {
@@ -635,8 +635,8 @@ margin:2px;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 2px;
+  width: max-content; 
 }
-
 /* Tag Cloud Styles */
 .tag-cloud {
   display: flex;
