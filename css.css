@@ -801,6 +801,7 @@ li.nav-item {
   align-items: flex-start;
   width: 100%;
   gap: 15px; /* Adds a little buffer so they don't touch */
+  margin-top:10px;
 }
 
 
