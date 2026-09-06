@@ -615,16 +615,6 @@ margin:2px;
   align-items: baseline;
 }
 
-.post-date {
-  grid-column: 1;
-  grid-row: 1;
-  font-size: 11px;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  width: max-content; 
-}
-
 .post-title {
   grid-column: 2;
   grid-row: 1;
@@ -825,11 +815,11 @@ li.nav-item {
 }
 
 #the-content .post-list-wrapper .post-header .post-title {
+  display: grid;
   grid-column: 1;
   margin: 0;
   font-size: 11px;
   line-height: 1.2;
-  color: #111;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -838,18 +828,6 @@ li.nav-item {
   width: fit-content; 
   /* If fit-content doesn't work in your specific setup, use: display: inline-block; */
 }
-
-.post-date {
-  grid-column: 2;
-  font-size: 11px;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  
-  /* CRITICAL FIX: This pushes the date to the far right edge */
-  justify-self: end; 
-}
-
 @media screen and (max-width: 600px) {
 .post-title {
     max-width: 100px;
@@ -869,20 +847,13 @@ li.nav-item {
     letter-spacing: 2px;
 }
 
-/* Optional: Add a little space between posts so they don't bunch up */
-.post-header {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: flex-start; 
-  gap: 12px;
-}
-
 .post-date {
   margin-left: auto; /* Pushes date to the far right */
   white-space: nowrap; 
   font-size: 11px;
   opacity: 0.75;
-  flex-shrink: 0;           /* date never shrinks */
+  flex-shrink: 0;
+  justify-self: end;
 }
 
 
