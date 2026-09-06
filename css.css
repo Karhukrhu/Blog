@@ -807,15 +807,17 @@ li.nav-item {
 
 .post-header {
   display: grid;
-  /* Column 1: Title (natural width), Column 2: Date (takes remaining space so we can push it right) */
-  grid-template-columns: max-content 1fr; 
+  /* Title takes remaining space (wraps), Date takes natural width */
+  grid-template-columns: 1fr max-content; 
   gap: 10px;
   align-items: baseline;
   width: 100%;
 }
 
 #the-content .post-list-wrapper .post-header .post-title {
-  display: grid;
+  /* Remove display: grid, it's not needed here */
+  /* display: grid; */ 
+  
   grid-column: 1;
   margin: 0;
   font-size: 11px;
@@ -824,16 +826,28 @@ li.nav-item {
   text-transform: uppercase;
   letter-spacing: 2px;
   
-  /* CRITICAL FIX: This forces the styled link to shrink-wrap to the text width */
-  width: fit-content; 
-  /* If fit-content doesn't work in your specific setup, use: display: inline-block; */
-}
-@media screen and (max-width: 600px) {
-.post-title {
-    max-width: 100px;
-    font-size: 10px !important;
+  /* Remove width: fit-content so it can wrap */
+  /* width: fit-content; */
+  
+  /* Ensure long words break if necessary */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
+@media screen and (max-width: 600px) {
+  .post-title {
+    /* You can remove this max-width now, the grid handles the wrapping automatically! */
+    /* max-width: 100px; */ 
+    font-size: 10px !important;
+  }
+}
+
+.post-date {
+  grid-column: 2; /* Explicitly put it in the second column */
+  white-space: nowrap; 
+  font-size: 11px;
+  opacity: 0.75;
+  /* Removed flex properties (margin-left: auto, flex-shrink) because this is a grid now */
 }
 
 .archive-year {
@@ -847,14 +861,7 @@ li.nav-item {
     letter-spacing: 2px;
 }
 
-.post-date {
-  margin-left: auto; /* Pushes date to the far right */
-  white-space: nowrap; 
-  font-size: 11px;
-  opacity: 0.75;
-  flex-shrink: 0;
-  justify-self: end;
-}
+
 
 
 .post-navigation {
