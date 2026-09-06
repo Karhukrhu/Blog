@@ -5,7 +5,7 @@ cover: "/blog/posts/2026/9/bitmapping-tutorial/ba.png"
 categories: ["Photo editing", "Tutorial", "Bitmap"]
 tags: post
 ---
-<div class="img-center">
+<div class="img-center" style="margin-top:10px">
 <a href="/posts/2026/9/bitmapping-tutorial/ba.png" class="lightbox" data-gallery="bitmapping">
   <img src="/posts/2026/9/bitmapping-tutorial/ba.png" 
        alt="Before after comparizon between unpixelated and pixelated image" 
