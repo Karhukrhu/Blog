@@ -15,9 +15,6 @@ eleventyConfig.addFilter("makeUrlsAbsolute", function(content) {
   // The (?!\/) ensures we don't accidentally break protocol-relative URLs like src="//example.com"
   // This correctly maps /assets/ to https://karhukarhu.place/assets/
   result = result.replace(/(src|href)="\/(?!\/)/g, '$1="https://karhukarhu.place/');
-
-  // 2. Safely replace the .img-center div with <center> for RSS compatibility
-  result = result.replace(/<div\s+class=["']img-center["'][^>]*>/gi, '<center>');
   
   // 3. REMOVED the global <a> tag wrapping. 
   // Wrapping every link in <center> breaks inline text links. 
