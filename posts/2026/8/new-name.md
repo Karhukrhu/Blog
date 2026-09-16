@@ -3,6 +3,7 @@ title: New Website Name
 date: 2026-08-31
 categories: ["website"]
 tags: post
+description: "New name is karhukarhu.place"
 ---
 
 Here we go! We have a new domain and a name. In the future this blog can be found at https://karhukarhu.place/blog. 

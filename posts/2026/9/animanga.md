@@ -3,6 +3,7 @@ title: My Relationship With Animanga
 date: 2026-09-05
 categories: ["Personal"]
 tags: post
+description: "Rant about not finding anything good to read or watch"
 ---
 Soo... Maybe some of you have already noticed if you have been browsing through my art gallery, I'm one of those few among indiewebbers who doesn't do animanga at all. I'll try to expain that in a while, even though there's nothing to explain really tbh.
 

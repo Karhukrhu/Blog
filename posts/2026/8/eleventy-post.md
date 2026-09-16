@@ -3,6 +3,7 @@ title: Bumpy Road of Installing 11ty
 date: 2026-08-27
 categories: ["website","coding", "blog"]
 tags: post
+description: "Had a hard time installing 11ty"
 ---
 
 For a few days now I've been struggling to deploy 11ty to my site. Eventually I got it working (maybe you can see that ;D)
