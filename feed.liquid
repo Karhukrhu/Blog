@@ -27,6 +27,11 @@ eleventyExcludeFromCollections: true
       <pubDate>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</pubDate>
       <id>{{ absolutePostUrl }}</id>
       <guid isPermaLink="true">{{ absolutePostUrl }}</guid>
+
+      {% if post.data.description %}
+        <description>{{ post.data.description | xml_escape }}</description>
+        <summary>{{ post.data.description | xml_escape }}</summary>
+      {% endif %}
       
       {% if post.data.cover %}
         {% assign absoluteCoverUrl = site.url | append: post.data.cover %}

@@ -3,6 +3,7 @@ title: Website Ready
 date: 2026-08-24
 categories: ["website","coding"]
 tags: post
+description: "Announcement of website being officially published"
 ---
 
 I'm happy to announce that this site is officially up. Some things are still WIP, but the base structure and most of content is there.
