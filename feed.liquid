@@ -27,7 +27,6 @@ eleventyExcludeFromCollections: true
       <title>{{ post.data.title | xml_escape }}</title>
       <link>{{ absolutePostUrl }}</link>
       <pubDate>{{ post.date | date: "%a %d %b %Y, %H:%M:%S %z" }}</pubDate>
-      <id>{{ absolutePostUrl }}</id>
       <guid>{{ absolutePostUrl }}</guid>
 
       {% if post.data.description %}
