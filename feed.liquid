@@ -27,7 +27,7 @@ eleventyExcludeFromCollections: true
       <title>{{ post.data.title | xml_escape }}</title>
       <link>{{ absolutePostUrl }}</link>
       <pubDate>{{ post.date | date: "%a %d %b %Y, %H:%M:%S %z" }}</pubDate>
-      <guid>{{ absolutePostUrl }}</guid>
+      <guid>{{ post.date | date: "%Y%m%d%H%M%S" | append: post.fileSlug | replace: "-", "" }}</guid>
 
       {% if post.data.description %}
         <description>{{ post.data.description | xml_escape }}</description>
