@@ -23,7 +23,7 @@ eleventyExcludeFromCollections: true
     {% assign absolutePostUrl = site.url | append: postPath %}
     <item>
       <title>{{ post.data.title | xml_escape }}</title>
-      <link href="{{ absolutePostUrl }}" rel="alternate" type="text/html"/>
+      <link>{{ absolutePostUrl }}</link>
       <pubDate>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</pubDate>
       <id>{{ absolutePostUrl }}</id>
       <guid isPermaLink="true">{{ absolutePostUrl }}</guid>
