@@ -33,12 +33,7 @@ eleventyExcludeFromCollections: true
         <summary>{{ post.data.description | xml_escape }}</summary>
       {% endif %}
       
-      {% if post.data.cover %}
-        {% assign absoluteCoverUrl = site.url | append: post.data.cover %}
-        <link rel="enclosure" type="image/png" href="{{ absoluteCoverUrl }}" />
-        <media:content url="{{ absoluteCoverUrl }}" medium="image" />
-        <media:thumbnail url="{{ absoluteCoverUrl }}" />
-      {% endif %}
+
 
       <content type="html"><![CDATA[
         <style>
