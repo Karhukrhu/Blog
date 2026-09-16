@@ -1,15 +1,21 @@
 ---
 title: Blog
 layout: main
+pagination:
+  data: collections.post
+  size: 5
+  alias: posts
+  reverse: true
+  permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 
 <p>Warning sign <svg class="warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M256 0c14.7 0 28.2 8.1 35.2 21l216 400c6.7 12.4 6.4 27.4-.8 39.5S486.1 480 472 480L40 480c-14.1 0-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9 20.5-21 35.2-21zm0 352a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm0-192c-18.2 0-32.7 15.5-31.4 33.7l7.4 104c.9 12.5 11.4 22.3 23.9 22.3 12.6 0 23-9.7 23.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z"/></svg> means that the blog post contains heavy topics and might cause distress.</p>
 
-{% for post in collections.post reversed %}
+{% for post in posts %}
 
   <div class="post-list-wrapper">
     <div class="post-header">
-      <a class="post-title" href="{{post.url}}">{{ post.data.title }}</a> 
+      <a class="post-title" href="{{ post.url }}">{{ post.data.title }}</a> 
       <div class="post-date">{{ post.date | niceDate }}</div> 
     </div>
     
@@ -17,3 +23,28 @@ layout: main
   </div>
 
 {% endfor %}
+
+<nav class="pagination-nav" style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
+  {% if pagination.href.previous %}
+    <a href="{{ pagination.href.previous }}" class="pagination-link">← Newer Posts</a>
+  {% else %}
+    <span></span>
+  {% endif %}
+
+  <div class="pagination-numbers">
+    {% for pageEntry in pagination.pages %}
+      {% assign pageNum = forloop.index %}
+      {% if pagination.pageNumber == forloop.index0 %}
+        <strong>{{ pageNum }}</strong>
+      {% else %}
+        <a href="{{ pagination.hrefs[forloop.index0] }}" class="pagination-link" style="margin: 0 0.5rem;">{{ pageNum }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% if pagination.href.next %}
+    <a href="{{ pagination.href.next }}" class="pagination-link">Older Posts →</a>
+  {% else %}
+    <span></span> 
+  {% endif %}
+</nav>
