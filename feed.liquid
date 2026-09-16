@@ -21,11 +21,12 @@ eleventyExcludeFromCollections: true
   {% for post in sorted_posts %}
     {% assign postPath = post.url | url %}
     {% assign absolutePostUrl = site.url | append: postPath %}
-    <entry>
+    <item>
       <title>{{ post.data.title | xml_escape }}</title>
       <link href="{{ absolutePostUrl }}" rel="alternate" type="text/html"/>
-      <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
+      <pubDate>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</pubDate>
       <id>{{ absolutePostUrl }}</id>
+      <guid isPermaLink="true">{{ absolutePostUrl }}</guid>
       
       {% if post.data.cover %}
         {% assign absoluteCoverUrl = site.url | append: post.data.cover %}
@@ -97,6 +98,6 @@ eleventyExcludeFromCollections: true
         </div>
       ]]></content>
       
-    </entry>
+    </item>
   {% endfor %}
 </feed>
