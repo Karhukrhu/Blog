@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
   <title>Karhukarhu Blog</title>
   <subtitle>Latest posts from Karhukarhu</subtitle>
   
-  <link href="{{ site.url }}/blog/" rel="alternate" type="text/html"/>
+
   
   {% assign sorted_posts = collections.post | sort: 'date' | reverse %}
   {% assign newest_post = sorted_posts | first %}
