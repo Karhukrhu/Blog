@@ -7,8 +7,6 @@ eleventyExcludeFromCollections: true
   <title>Karhukarhu Blog</title>
   <subtitle>Latest posts from Karhukarhu</subtitle>
   
-
-  
   {% assign sorted_posts = collections.post | sort: 'date' | reverse %}
   {% assign newest_post = sorted_posts | first %}
   <updated>{{ newest_post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
@@ -20,6 +18,8 @@ eleventyExcludeFromCollections: true
   {% for post in sorted_posts %}
     {% assign postPath = post.url | url %}
     {% assign absolutePostUrl = site.url | append: postPath %}
+
+
     <item>
       <title>{{ post.data.title | xml_escape }}</title>
       <link>{{ absolutePostUrl }}</link>
@@ -30,9 +30,7 @@ eleventyExcludeFromCollections: true
         <description>{{ post.data.description | xml_escape }}</description>
         <summary>{{ post.data.description | xml_escape }}</summary>
       {% endif %}
-      
-
-      
+       
     </item>
   {% endfor %}
 </channel>
