@@ -496,16 +496,9 @@ h3 {
     z-index: 1; 
     text-transform: uppercase;
     letter-spacing: 1px;
-}
-#the-content strong::before {
-    content: "";
-    position: absolute;
-    z-index: -1; 
-    width: 97%;  
-    height: 49%; 
-    top: 42%;   
-    left: 3%;   
     background-color: #e2bea1; 
+    padding: 7px 7px 5px 7px;
+    line-height: 0.5;
 }
 
 
