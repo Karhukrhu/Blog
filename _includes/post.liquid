@@ -85,6 +85,27 @@ layout: main
   {% endfor %}
 </p>
 
+<!-- Post Navigation -->
+{% assign previousPost = collections.post | getPreviousCollectionItem %}
+{% assign nextPost = collections.post | getNextCollectionItem %}
+
+<div class="post-navigation">
+  {% if previousPost %}
+    <a href="{{ previousPost.url }}" class="nav-link prev">
+      ← Previous
+    </a>
+  {% else %}
+    <div></div> <!-- Empty div to keep the layout balanced -->
+  {% endif %}
+
+  {% if nextPost %}
+    <a href="{{ nextPost.url }}" class="nav-link next">
+      Next →
+    </a>
+  {% endif %}
+</div>
+
+
 <section id="comments" style="margin-top:50px">
   <h3>Leave a Comment</h3>
 <form id="c_form" action="https://api.web3forms.com/submit" method="POST" onsubmit="submitForm(event)">
