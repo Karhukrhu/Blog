@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Test",
+    "website": "https://example.com",
+    "comment": "Test comment",
+    "slug": "website-ready",
+    "date": "24.8.2026"
+  },
+    {
+    "name": "Karhukarhu",
+    "comment": "Test reply",
+    "slug": "website-ready",
+    "date": "24.8.2026",
+    "is_author": true 
+  }
+]

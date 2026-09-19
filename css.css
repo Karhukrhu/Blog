@@ -109,6 +109,7 @@ body, html {
 	height: auto; 
     position: relative; 
     width: 490px;
+    --frame-scale: 1;
 }
 
 @media screen and (max-width: 600px) {
@@ -124,6 +125,8 @@ body, html {
 	margin-left: calc(50% + 2px);
   transform: translateX(-50%);
   overflow: hidden;
+    margin: 0 auto;
+  transform: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -162,6 +165,11 @@ body, html {
   grid-template-columns: 42px 395px 42px;
   gap: 0rem;
   margin:0 auto;
+    width: calc(486px * var(--frame-scale));
+  grid-template-columns:
+    calc(47px * var(--frame-scale))
+    minmax(0, 1fr)
+    calc(47px * var(--frame-scale));
 }
 
 @media screen and (max-width: 600px) {
@@ -189,7 +197,30 @@ body, html {
   }
 }
 
+#left-side,
+#right-side {
+  width: calc(47px * var(--frame-scale));
+  background-size:
+    calc(47px * var(--frame-scale))
+    calc(32px * var(--frame-scale));
+}
 
+.lace-measure {
+  display: flow-root;
+}
+
+
+@media (max-width: 600px) {
+  /* Match the existing 345px mobile frame. */
+  #content-wrapper {
+    --frame-scale: calc(345 / 490);
+  }
+
+  #top,
+  #footer {
+    height: calc(216px * var(--frame-scale));
+  }
+}
 
 /* NAVIGATION */
 
@@ -1309,7 +1340,7 @@ a.lightbox img {
     opacity:0.6;
 }
 
-/* Input section */
+
 #c_inputDiv {
     margin-bottom: 15px;
 }
@@ -1351,6 +1382,33 @@ a.lightbox img {
     margin-left: auto; 
     margin-right: 0;
 }
+
+button#c_submitButton {
+    padding:10px 7px 6px 10px;
+    font-family: rat;
+    font-size: 10px;
+    text-decoration: none;
+	text-align: center;
+    text-transform: uppercase;
+    background-color: #d1b48d;
+    color: #432d14;
+        border-top:1px solid #f3d5b1;
+    border-left:1px solid #f3d5b1;
+    border-right:1px solid #70480d;
+    border-bottom:1px solid #70480d;
+    border-radius: 5px;
+}
+
+button#c_submitButton:hover {
+    color: #432d14;
+    background-color: #a19c86;
+    border-top:1px solid #70480d;
+    border-left:1px solid #70480d;
+    border-right:1px solid #f3d5b1;
+    border-bottom:1px solid #f3d5b1;
+}
+
+
 #c_replyingText {
 	margin-top:5px;
     color: #70480d;
@@ -1364,33 +1422,26 @@ a.lightbox img {
 }
 .c-reply {
     display: block;
-    width: 90%;
+    width: 100%; 
     margin-bottom: 10px;
-    margin-left: auto;
+    margin-left: 0; 
     margin-right: 0;
     padding: 10px;
 }
 
 .c-reply:last-child {margin-bottom: 0;}
 
-.c-replyContainer {
-    display: flex !important; /* Use !important to override any hidden 'inline' or 'block' rules */
-    align-items: center; /* THIS vertically centers the arrow in the middle */
-    margin: -10px;
-    margin-top: 10px;
-    padding: 10px;
-}
 
 .c-replyContainer::before {
     content: "⤷";
     font-size: 20px;
     margin-right: 8px;
     
-    /* These two lines are the secret to fixing the "still on top" issue */
+   
     display: inline-flex; 
     align-items: center;
     
-    flex-shrink: 0; /* Prevents the arrow from squishing */
+    flex-shrink: 0;
 }
 .c-name {
     display: inline-block;
@@ -1411,6 +1462,144 @@ a.lightbox img {
     float: right;
     opacity: 75%;
 }
+
+
+
+/* 1. Add this new wrapper class */
+.c-reply-wrapper {
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+/* 3. The Header Row */
+.c-reply-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px; /* Small gap between name and text */
+}
+
+/* 3. Update .c-reply (Remove width/margin-left, keep padding) */
+.c-reply {
+    display: block;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-left: auto; 
+    margin-right: 0;
+    padding: 0px; 
+    
+    /* ADD THIS: Pushes the visual center down to align with the text box */
+    padding-bottom: 20px; 
+    
+}
+
+/* 4. Your existing .c-replyContainer stays exactly the same! */
+.c-replyContainer {
+    display: flex !important; 
+    align-items: center; 
+    margin-top: -10px;
+
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .c-comment {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
+        margin-bottom: 15px;
+        padding: 10px;
+        gap: 5px; 
+    }
+
+    .c-name {
+        order: 1 !important;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-right: 10px;
+    }
+
+    .c-site {
+        order: 2 !important;
+        margin-left: auto !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #B766FF;
+    }
+
+    .c-timestamp {
+        order: 3 !important;
+        width: 100% !important;
+        text-align: right !important;
+        opacity: 75%;
+        margin-top: 10px !important; 
+        margin-bottom: 10px !important;
+        display: block !important;
+    }
+
+    .c-text {
+        order: 4 !important;
+        width: 100% !important; 
+        box-sizing: border-box !important;
+        margin-top: 0 !important;
+        margin-left: 0 !important; 
+        margin-right: 0 !important; 
+        padding: 10px; 
+        font-size: 11px;
+        text-align: justify;
+        background-color: #d1b48d;
+        border-radius: 5px;
+        border-top: 1px solid #f3d5b1;
+        border-left: 1px solid #f3d5b1;
+        border-right: 1px solid #70480d;
+        border-bottom: 1px solid #70480d;
+    }
+
+ 
+    .c-expandButton {
+        order: 5 !important;
+        display: inline-block !important;
+        position: static !important;
+        margin-top: 5px !important;
+        margin-right: 10px !important;
+        flex-shrink: 0 !important;
+    }
+    
+
+    .c-replyButton {
+        position: static !important;
+        order: 6 !important; 
+        display: inline-block !important;
+        margin-top: 5px !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+        flex-shrink: 0 !important; 
+    }
+    
+    .c-replyContainer {
+        order: 7 !important;
+        width: 100% !important;
+        margin-top: 15px !important;
+        padding-left: 15px !important;
+    }
+
+    .c-reply {
+        width: 100% !important;
+        position: static !important;
+        margin-top: 10px !important;
+    }
+}
+
+
+
+
+.c-replyContainer .c-text {
+  margin-right:0px;
+}
+
 .c-text {
     margin-top: 10px;
     margin-left: -10px;
@@ -1418,7 +1607,6 @@ a.lightbox img {
     padding: 10px;
     font-size: 11px;
     text-align: justify;
-    color: white;
     background-color: #d1b48d;
     border-radius: 5px;
     border-top:1px solid #f3d5b1;
@@ -1440,4 +1628,16 @@ a.lightbox img {
 .c-paginationButton {
     margin-right: 4px;
     margin-left: 4px;
+}
+
+#c_successMessage {
+  display: none; 
+  margin: 30px 10px; 
+  padding: 10px; 
+    background-color: #d1b48d;
+    border-radius: 5px;
+    border-top:1px solid #f3d5b1;
+    border-left:1px solid #f3d5b1;
+    border-right:1px solid #70480d;
+    border-bottom:1px solid #70480d;;
 }

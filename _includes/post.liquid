@@ -85,22 +85,119 @@ layout: main
   {% endfor %}
 </p>
 
-<!-- Post Navigation -->
-{% assign previousPost = collections.post | getPreviousCollectionItem %}
-{% assign nextPost = collections.post | getNextCollectionItem %}
+<section id="comments" style="margin-top:50px">
+  <h3>Leave a Comment</h3>
+<form id="c_form" action="https://api.web3forms.com/submit" method="POST" onsubmit="submitForm(event)">
+  
+  <input type="hidden" name="access_key" value="36606ee4-364b-486f-9615-60ce6b9c6694">
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+  <input type="hidden" name="Post_URL" value="{{ page.url }}">
+  <input type="hidden" name="Post_Title" value="{{ title }}">
 
-<div class="post-navigation">
-  {% if previousPost %}
-    <a href="{{ previousPost.url }}" class="nav-link prev">
-      ← Previous
-    </a>
+  <div id="c_nameWrapper" class="c-inputWrapper"><label class="c-label c-nameLabel">Name <input class="c-input c-nameInput" type="text" name="name" required /></label></div>
+  <div id="c_websiteWrapper" class="c-inputWrapper"><label class="c-label c-websiteLabel">Website (Optional) <input class="c-input c-websiteInput" type="url" name="website" placeholder="https://example.com" /></label></div>
+  <div id="c_textWrapper" class="c-inputWrapper"><label class="c-label c-textLabel"><textarea class="c-input c-textInput" name="message" rows="4" cols="50" maxlength="600" required></textarea></label></div>
+  
+  <button id="c_submitButton" type="submit">Submit</button>
+  
+  <!-- Success message (hidden by default) -->
+  <div id="c_successMessage">
+    Thank you for your comment! It will appear after approval.
+  </div>
+</form>
+</section>
+
+<section id="approved-comments">
+  
+  {% assign page_comments = comments | where: "slug", page.fileSlug %}
+
+  {% if page_comments.size > 0 %}
+    
+    <!-- 1. Render Regular Comments First -->
+    {% for comment in page_comments %}
+      {% unless comment.is_author %}
+        <div class="c-comment" id="comment-{{ forloop.index }}">
+          <h3 class="c-name">{{ comment.name }}</h3>
+          
+          {% if comment.website %}
+            <a href="{{ comment.website }}" target="_blank" rel="noopener noreferrer" class="c-site">website</a>
+          {% endif %}
+          
+          <span class="c-timestamp">{{ comment.date }}</span>
+          <div class="c-text">{{ comment.comment }}</div>
+        </div>
+      {% endunless %}
+    {% endfor %}
+
+    <!-- 2. Render Author Replies Below -->
+    {% for comment in page_comments %}
+      {% if comment.is_author %}
+        
+        <div class="c-replyContainer">
+          <div class="c-reply">
+            
+            <!-- Header Row -->
+            <div class="c-reply-header">
+              <h3 class="c-name">{{ comment.name }}</h3>
+              <span class="c-timestamp">{{ comment.date }}</span>
+            </div>
+
+            <!-- Text Box -->
+            <div class="c-text">{{ comment.comment }}</div>
+            
+          </div>
+        </div>
+
+      {% endif %}
+    {% endfor %}
+
   {% else %}
-    <div></div> <!-- Empty div to keep the layout balanced if there is no previous post -->
+    <p>No comments yet. Be the first to leave one below!</p>
   {% endif %}
+</section>
 
-  {% if nextPost %}
-    <a href="{{ nextPost.url }}" class="nav-link next">
-      Next →
-    </a>
-  {% endif %}
-</div>
+<script>
+async function submitForm(event) {
+  event.preventDefault();
+  
+  const form = event.target;
+  const submitBtn = form.querySelector('#c_submitButton');
+  const successMsg = form.querySelector('#c_successMessage');
+  
+  // Disable button while submitting
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+  
+  // Submit the form via AJAX
+  const formData = new FormData(form);
+  
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    });
+    
+    const result = await response.json();
+    
+    if (result.success) {
+      // Hide the form fields
+      form.querySelector('#c_nameWrapper').style.display = 'none';
+      form.querySelector('#c_websiteWrapper').style.display = 'none';
+      form.querySelector('#c_textWrapper').style.display = 'none';
+      submitBtn.style.display = 'none';
+      
+      // Show success message
+      successMsg.style.display = 'block';
+    } else {
+      alert('Something went wrong. Please try again.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit';
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Something went wrong. Please try again.');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit';
+  }
+}
+</script>

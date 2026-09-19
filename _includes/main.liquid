@@ -43,6 +43,7 @@ title: Blog
     <div class="grid-container">
       <div id="left-side"></div>
       <div id="content">
+       <div class="lace-measure">
   	  	    <div id="daisies"></div>
   	  	
   	  	    <div id="menu-text">↓ menu ↓ </div>
@@ -151,7 +152,7 @@ title: Blog
           
   		    <div id="watering"></div>
 
-        </div>
+        </div></div>
 
         <div id="right-side"></div>
 
@@ -243,5 +244,31 @@ document.addEventListener('mouseleave', () => {
   customCursor.style.display = 'none';
 });
 </script>
+
+<script>
+  (() => {
+    const frame = document.querySelector('#content-wrapper');
+    const grid = document.querySelector('.grid-container');
+    const measure = document.querySelector('.lace-measure');
+
+    function fitLace() {
+      // Scale the original 32px repeat to the displayed frame width.
+      const scale = frame.getBoundingClientRect().width / 490;
+      const tileHeight = 32 * scale;
+      const contentHeight = measure.getBoundingClientRect().height;
+
+      // Add only enough space to finish the last repeat.
+      grid.style.minHeight =
+        Math.ceil(contentHeight / tileHeight) * tileHeight + 'px';
+    }
+
+    // Runs initially and follows content changes and responsive resizing.
+    const observer = new ResizeObserver(fitLace);
+    observer.observe(measure);
+    observer.observe(frame);
+  })();
+</script>
+
+
 </body>
 </html>
