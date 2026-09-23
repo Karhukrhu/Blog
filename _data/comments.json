@@ -1,16 +1,16 @@
 [
   {
-    "name": "Test",
-    "website": "https://example.com",
-    "comment": "Test comment",
-    "slug": "website-ready",
-    "date": "24.8.2026"
+    "name": "Aeskenic",
+    "website": "https://aeskenic.nekoweb.org/",
+    "comment": "You are not stupid but wonderful: and this new comment widget works :)",
+    "slug": "stupid",
+    "date": "23.9.2026"
   },
     {
     "name": "Karhukarhu",
-    "comment": "Test reply",
-    "slug": "website-ready",
-    "date": "24.8.2026",
+    "comment": "Thank you for your kind words! I'm slowly but surely working my way out of this feeling. And yes, I decided to give this comment section a try and see how this will end up working.",
+    "slug": "stupid",
+    "date": "23.9.2026",
     "is_author": true 
   }
 ]
