@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+    .top-menu a, .top-menu a:visited { color: #c1bdb0 !important; }
+  </style>
+
+  <link rel="stylesheet" href="/css.css">
+  <link rel="stylesheet" href="/css.css?v=202609302016">
+
+</head>
+<body>
+  
+  <canvas id="fire-canvas"></canvas>
+
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/assets/fire-bg.mp4" type="video/mp4">
+  </video>
+
+  <div id="top">
+      <nav class="top-menu">
+
+          <button class="hamburger-btn" aria-label="Open Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+
+        <ul class="main-menu-list">
+          <li><a href="/">Home</a></li>
+
+          <li><a href="#" class="dropdown-toggle">About</a>
+          
+              <ul class="dropdown-content">
+              <li><a href="/me/">Me</a></li>
+              <li><a href="/site/">Site</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="dropdown-toggle">Gallery</a>
+          
+            <ul class="dropdown-content">
+              <li><a href="/traditional/">Traditional</a></li>
+              <li><a href="/digital/">Digital</a></li>
+              <li><a href="/photos/">Photos</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#" class="dropdown-toggle">Blog</a>
+          
+          <ul class="dropdown-content">
+              <li><a href="/blog/">Home</a></li>
+              <li><a href="/blog/yearly-archive/">Archives</a></li>
+              <li><a href="/blog/tags/">Tags</a></li>
+              <li><a href="/blog/feed.xml"><svg class="rss-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zM32 160c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg></a></li>
+            </ul>
+          </li>
+
+          <li><a href="/links/">Links</a></li>
+
+          <li><a href="#" class="dropdown-toggle">Contact</a>
+          
+            <ul class="dropdown-content">
+              <li><a href="/email/">Email</a></li>
+              <li><a href="/guestbook/">Guestbook</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+  <div id="header">
+      <div id="title-wrapper"><h1>Karhukarhu .place</h1></div>
+  </div>
+
+</div>
+
+  <div id="middle">
+    <div id="sidebar"><div id="sidebar-wrapper">
+
+    <h2>Status</h2>
+
+    <div class="clock-widget"><p class="sml">My current time is: <span id="owner-clock" class="clock-widget">Loading time...</span> (UTC+3) <span id="owner-status" class="status-widget"></span></p></div>
+
+
+                
+                <h4 id="track-label">Loading music...</h4>
+                <div class="lastfm-container">
+                    <div id="track-image"></div>
+                    <div class="lastfm-text-container">
+                        <span id="track-name"></span>
+                        <span id="track-artist"></span>
+                    </div>
+                </div>
+                
+                <h4 id="game-label">Most played</h4>
+                <div class="steam-game-container">
+                    <div id="game-icon" src="" alt="Game Icon"></div>
+                    <div class="steam-text-container">
+                        
+                        <span id="game-name">Loading...</span>
+                    </div>
+                </div>
+
+<div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=karhukarhu" defer></script>
+
+    </div></div>
+    <main class="content-area">
+      <div id="content-wrapper">
+        
+<h2>Blog</h2>
+
+<p class="sml">Warning sign <svg class="warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M256 0c14.7 0 28.2 8.1 35.2 21l216 400c6.7 12.4 6.4 27.4-.8 39.5S486.1 480 472 480L40 480c-14.1 0-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9 20.5-21 35.2-21zm0 352a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm0-192c-18.2 0-32.7 15.5-31.4 33.7l7.4 104c.9 12.5 11.4 22.3 23.9 22.3 12.6 0 23-9.7 23.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z"/></svg> means that the blog post contains heavy topics or harsh language.</p>
+
+
+
+  <div class="post-list-wrapper">
+      <div class="post-header">
+        <a class="post-title" href="/blog/posts/2026/8/website-ready/">Website Ready</a> 
+        <div class="post-date">August 24, 2026</div> 
+      </div>
+    
+    Announcement of website being officially published
+  </div>
+
+
+
+<nav class="pagination-nav" style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
+  
+    <a href="/blog/" class="pagination-link">← Newer Posts</a>
+  
+
+  <div class="pagination-numbers">
+    
+      
+      
+        <a href="/blog/" class="pagination-link" style="margin: 0 0.5rem;">1</a>
+      
+    
+      
+      
+        <strong>2</strong>
+      
+    
+  </div>
+
+  
+    <span></span> 
+  
+</nav> 
+      </div>
+    </main>
+        <div id="footer">
+      <video autoplay muted loop playsinline class="box-video">
+    <source src="/assets/fire-bg.mp4" type="video/mp4">
+  </video>
+      <div class="footer-content"><span class="footer-text">© Karhukarhu 2026</span></div>
+    
+  </div>
+</div>
+  </div>
+
+
+
+  <button id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <span class="lightbox-next">&#10095;</span>
+    <img class="lightbox-image" src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script src="/dropdown.js"></script>
+  <script src="/fire.js"></script>
+  <script src="/back-to-top.js"></script>
+  <script src="/backend.js"></script>
+  <script src="/comment-widget.js"></script>
+
+</body>
+</html>
